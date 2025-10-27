@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+  --font-sans: ui-sans-serif, "Inter", system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
@@ -27,7 +27,7 @@
 }
 
 .LandingHeadsetBG {
-  background-image: url("/images/landing-headset.jpg");
+  background: linear-gradient(120deg, #142b4e, #192d53, #1f3058, #25335d, #2c3760, #333b63, #3b4066, #444668);
   background-size: cover;
   background-position: center;
   height: 100vh;

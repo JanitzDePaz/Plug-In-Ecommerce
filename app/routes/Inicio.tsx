@@ -1,7 +1,7 @@
 export default function(){
     return (
-        <section className="LandingHeadsetBG">
-
+        <section className="LandingHeadsetBG max-h-full">
+            
         </section>
     );
 }

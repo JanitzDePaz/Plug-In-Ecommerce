@@ -1,10 +1,15 @@
 import { headerItems } from "constants/headerItems";
 import { Link } from "react-router";
+import Menu from "./Menu";
+import { menuStorage } from "stores/menuStore";
 
 export default function Header(){
+
+    const {openedMenu, openMenu, closeMenu} = menuStorage()
+    
     return(
-        <header className="flex-between border-b-1 border-red max-h-[10vh] p-4">
-            <img src="ShoppingCart.svg" alt="Logo icon" />
+        <header className="flex-between border-b-2 border-black max-h-[15vh] p-6">
+            <img src="Header/PlugInLogo.svg" alt="Logo icon" />
             <nav className="hidden md:block">
                 <ul className="flex gap-5">
                     {headerItems.map((item, i) => (
@@ -16,15 +21,16 @@ export default function Header(){
             </nav>
             <div className="flex-between gap-4">
                 <button className="header-button">
-                    <img src="Header/Search.svg" alt="Loupe icon" />
+                    <img src="Header/Search.svg" alt="Magnifying glass icon" />
                 </button>
                 <button className="header-button">
                     <img src="Header/ShoppingCart.svg" alt="Shopping cart icon" />
                 </button>
-                <button className="header-button">
-                    <img src="Header/HeaderMenu.svg" alt="MenuIcon" />
+                <button className="block  md:hidden header-button" onClick={openMenu}>
+                    <img src="Header/HeaderMenu.svg" alt="MenuIcon"/>
                 </button>
             </div>
+            {openedMenu && <Menu />}
         </header>
     );
 }
