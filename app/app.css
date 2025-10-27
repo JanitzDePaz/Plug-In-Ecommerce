@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.header-button{
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header-button img{
+  width: 24px;
+  height: 24px;
+
+}
+
+.LandingHeadsetBG {
+  background-image: url("/images/landing-headset.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+}
