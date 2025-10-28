@@ -2,12 +2,12 @@ import { create } from 'zustand';
 
 type menuProp = {
     openedMenu: boolean,
-    openMenu: () => void,
+    toggleMenu: () => void,
     closeMenu: () => void
 }
 
 export const menuStorage = create<menuProp>((set) => ({
     openedMenu: false,
-    openMenu: () => set((state) => ({openedMenu:true})),
-    closeMenu: () => set({openedMenu: false})
-}))
+    toggleMenu: () => set((state) => ({openedMenu: !state.openedMenu})),
+    closeMenu: () => set({openedMenu:false})
+}));

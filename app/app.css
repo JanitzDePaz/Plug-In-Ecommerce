@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@midudev/tailwind-animations";
 
 @theme {
   --font-sans: ui-sans-serif, "Inter", system-ui, sans-serif,
@@ -27,7 +28,7 @@
 }
 
 .LandingHeadsetBG {
-  background: linear-gradient(120deg, #142b4e, #192d53, #1f3058, #25335d, #2c3760, #333b63, #3b4066, #444668);
+  background: linear-gradient(120deg, #142b4e, #1a2b4c, #1f2b49, #232b47, #262b45, #292c42, #292a3e, #282739, #262434, #24212f, #221f2a, #1f1c25);
   background-size: cover;
   background-position: center;
   height: 100vh;
