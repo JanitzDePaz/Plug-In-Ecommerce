@@ -11,3 +11,15 @@ export const menuStorage = create<menuProp>((set) => ({
     toggleMenu: () => set((state) => ({openedMenu: !state.openedMenu})),
     closeMenu: () => set({openedMenu:false})
 }));
+
+type searchProp ={
+    searchInput: boolean,
+    toggleSearchInput: () => void,
+    outSearch: () => void
+}
+
+export const searchStorage = create<searchProp>((set) => ({
+    searchInput: false,
+    toggleSearchInput: () => set((state) => ({searchInput: !state.searchInput})),
+    outSearch: () => ({searchInput: false})
+}))
