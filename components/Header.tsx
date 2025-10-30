@@ -13,7 +13,7 @@ export default function Header(){
 
     return(
         <>
-            <header className="flex-between border-b-2 border-black max-h-[15vh] p-6 relative">
+            <header className="flex-between border-b-2 border-black max-h-[15vh] p-6 relative overflow-x-clip">
                 <img src="Header/PlugInLogo.svg" alt="Logo icon" />
                 <nav className="hidden md:block">
                     <ul className="flex md:gap-10 gap-5">
