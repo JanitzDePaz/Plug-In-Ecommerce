@@ -1,4 +1,3 @@
-import { CartMenu } from 'components/CartMenu';
 import { create } from 'zustand';
 
 type menuProp = {
@@ -35,4 +34,18 @@ export const cartStorage = create<cartProp>((set) => ({
     cartMenu: false,
     toggleCart: () => set((state) => ({cartMenu: !state.cartMenu})),
     closeCart: () => ({CartMenu: false})
+}))
+
+type HeadsetColorProp = {
+    headsetColor1: string,
+    headsetColor2: string,
+    changeColorBlack: () => void,
+    changeColorWhite: () => void
+}
+
+export const headsetColorControl = create<HeadsetColorProp>((set) => ({
+    headsetColor1: "#615E74",
+    headsetColor2: "#3D3B3B",
+    changeColorBlack: () => set({headsetColor1: "#615E74", headsetColor2: "#3D3B3B"}),
+    changeColorWhite: () => set({headsetColor1: "#E8E6E6", headsetColor2: "#D6D6D6"})
 }))
