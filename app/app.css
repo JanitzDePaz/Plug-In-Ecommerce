@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@plugin "@midudev/tailwind-animations";
+
 
 @theme {
   --font-sans: ui-sans-serif, "Inter", system-ui, sans-serif,
@@ -12,7 +12,10 @@
   justify-content: space-between;
 }
 
-
+.flex-center{
+  display: flex;
+  justify-content: center;
+}
 
 .header-button{
 
@@ -31,6 +34,48 @@
   background: linear-gradient(120deg, #142b4e, #1a2b4c, #1f2b49, #232b47, #262b45, #292c42, #292a3e, #282739, #262434, #24212f, #221f2a, #1f1c25);
   background-size: cover;
   background-position: center;
-  height: 100vh;
   width: 100%;
+}
+
+.landingTitle{
+  font-size: 4.5rem;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+}
+
+.landingSubtitle{
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: white;
+}
+
+.landingParagraph{
+  font-size: 2rem;
+  color: white;
+  font-weight: 100;
+}
+
+.landingPrimaryButton, .landingSecondaryButton{
+  width: fit-content;
+  border: 1px solid white;
+  border-radius: 80px;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  font-size: 1.5rem;
+}
+.landingPrimaryButton{
+  background-color: white;
+  color: #163461;
+  font-weight: 400;
+}
+
+.landingPrimaryButton:hover, .landingSecondaryButton:hover{
+  transition: 0.2s ease-out;
+  transform: scale(1.1);
+}
+
+.landingSecondaryButton{
+  color: white;
+  font-weight: 300;
 }
