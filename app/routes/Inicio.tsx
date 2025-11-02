@@ -12,15 +12,15 @@ export default function () {
   return (
     <section className="LandingHeadsetBG py-[5vh] flex flex-col">
         <h1 className="landingTitle">Nuevo color disponible</h1>
-        <div className="flex justify-center gap-[10vw] flex-col lg:flex-row">
-            <div className="flex-center flex-col items-center h-[70vh]">
-                <Canvas style={{ width: '25vw', height: '70vh' }} camera={{ position: [0, 0, 4] }} frameloop="demand">
+        <div className="flex justify-center gap-[10vw] flex-col lg:flex-row py-30">
+            <div className="flex-center flex-col items-center w-full lg:w-[30vw] min-h-full">
+                <Canvas className="h-full w-full" camera={{ position: [0, 0, 4] }} frameloop="demand">
                     <Suspense fallback={null}>
-                        <ambientLight intensity={1}/>
-                        <directionalLight position={[20, 15, -5]} intensity={1} />
-                        <directionalLight position={[-20, 15, 5]} intensity={1} />
+                        <ambientLight intensity={0.8}/>
+                        <directionalLight position={[30, 10, 5]} intensity={1} />
+                        <directionalLight position={[-30, 10, 5]} intensity={1} />
                         <Headphone scale={0.9} rotation={[0, Math.PI / Math.sin(50), 0]}/>
-                        <OrbitControls enableZoom={false} enableDamping={false} enablePan={false} enableRotate={false} autoRotate={true}/>
+                        <OrbitControls enableZoom={false} enableDamping={false} enablePan={false} enableRotate={false} autoRotate={false}/>
                     </Suspense>
                 </Canvas>
                 <div className="px-3 py-2 rounded-full flex-center gap-2 bg-[#615E74]">
@@ -28,7 +28,7 @@ export default function () {
                     <button className="rounded-full bg-[#E8E6E6] w-10 h-10" onClick={changeColorWhite}></button>
                 </div>
             </div>
-            <div className="w-[25vw] flex-center flex-col gap-10">
+            <div className="w-full p-10 lg:p-0 lg:w-[25vw] flex-center flex-col gap-10">
                 <h2 className="landingSubtitle">NeoSound</h2>
                 <p className="landingParagraph">
                     Cada nota cobra vida con una nitidez que te envuelve. 
