@@ -79,3 +79,9 @@
   color: white;
   font-weight: 300;
 }
+
+.screenData{
+  background-color: white;
+  width: 10vw;
+  height: 10vw;
+}
