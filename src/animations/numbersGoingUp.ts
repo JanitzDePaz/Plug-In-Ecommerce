@@ -11,7 +11,7 @@ export default function numbersGoingUp(ref: HTMLElement, from: number, to: numbe
         ease: "power1.out",
         scrollTrigger: {
             trigger: ref,
-            start: "top 80%",
+            start: "top 95%",
             toggleActions: "play none none none",
         },
         onUpdate: () => {

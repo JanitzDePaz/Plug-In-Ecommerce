@@ -5,23 +5,23 @@ import { OrbitControls } from "@react-three/drei";
 import { headsetColorControl } from "src/stores/menuStore";
 import { Link } from "react-router";
 import numbersGoingUp from "src/animations/numbersGoingUp";
+import Tienda from "./Tienda";
 
 export default function () {
-  const { changeColorAquamarine, changeColorPurple, changeColorWhite } = headsetColorControl();
+  const { changeColorAquamarine, changeColorPurple, changeColorWhite } =
+    headsetColorControl();
 
   const hzRef = useRef<HTMLHeadingElement | null>(null);
   const msRef = useRef<HTMLHeadingElement | null>(null);
-  
+
   useEffect(() => {
-    if(hzRef.current){
+    if (hzRef.current) {
       numbersGoingUp(hzRef.current, 0, 720, false, "hz");
     }
-    if(msRef.current){
+    if (msRef.current) {
       numbersGoingUp(msRef.current, 1000, 0.1, true, "ms");
     }
-    
   }, []);
-    
 
   return (
     <>
@@ -42,8 +42,8 @@ export default function () {
                   enableZoom={false}
                   enableDamping={false}
                   enablePan={false}
-                  enableRotate={false}
-                  autoRotate={false}
+                  enableRotate={true}
+                  autoRotate={true}
                 />
               </Suspense>
             </Canvas>
@@ -81,43 +81,53 @@ export default function () {
         </div>
       </section>
 
-
-      <section className="bg-[#1E1E1E] h-screen flex-center items-center gap-5">
-        <div className="flex-center items-center w-2/6 h-4/5">
-          <div className="w-4/5 h-4/5 lg:grid lg:grid-rows-2 lg:grid-cols-2 gap-5 hidden place-content-center">
+      <section className="bg-[rgb(19,19,19)] h-screen flex-center items-center">
+        <div className="2xl:flex justify-center items-center w-2/6 h-4/5 flex-col gap-20 hidden">
+          <div className="w-fit gap-10 grid grid-rows-2 grid-cols-2 place-content-center">
             <article className="screenData">
               <h3>Tasa de refresco</h3>
-              <div className="flex">
+              <div className="flex-between">
                 <h4 ref={hzRef}>0 Hz</h4>
-                <img src="" alt="HZ Icon" />
-              </div>  
+                <img src="landingPage/screenSection/hertz.svg" alt="HZ Icon"/>
+              </div>
             </article>
             <article className="screenData">
               <h3>Latencia</h3>
-              <div className="flex-center items-center w-full gap-5">
+              <div className="flex-between">
                 <h4 ref={msRef}>ms</h4>
-                <img src="landingPage/screenSection/latency.svg" alt="Latencia Icon" className="w-1/2" />
+                <img
+                  src="landingPage/screenSection/latency.svg"
+                  alt="Latencia Icon"
+                />
               </div>
             </article>
             <article className="screenData">
               <h3>Resolución</h3>
-              <div className="flex w-full">
+              <div className="flex-between">
                 <h4>1920 x 1080 px</h4>
-                <img src="" alt="Resolución icon" className="w-6 h-6" />
-              </div>  
+                <img src="landingPage/screenSection/resolution.svg" alt="Resolución icon"/>
+              </div>
             </article>
             <article className="screenData">
-              <h3>Tasa de refresco</h3>
-              <div className="flex">
-                <h4>Panel</h4>
-                <img src="" alt="Panel icon" />
-              </div>  
+              <h3>PANEL</h3>
+              <div className="flex-between">
+                <h4>OLED</h4>
+                <img src="landingPage/screenSection/panel.svg" alt="Panel icon"/>
+              </div>
             </article>
           </div>
+          <Link to={"/Tienda"}><button className="landingPrimaryButton">Comprar ahora</button></Link>
         </div>
 
-        <div className="w-screen lg:w-3/6 h-4/5 flex-center items-center">
-          <img src="landingPage/screenSection/screen.png" alt="Screen image" className="h-full" />
+        <div className=" h-full 2xl:w-3/6 2xl:h-4/5 flex-center items-center flex-col">
+          <video
+            src="landingPage/screenSection/screenVideo.webm"
+            className="h-full"
+            autoPlay
+            loop
+            muted
+          />
+          <Link to={"/Tienda"}><button className="landingPrimaryButton 2xl:hidden block">Comprar ahora</button></Link>
         </div>
       </section>
     </>
