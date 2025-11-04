@@ -81,10 +81,21 @@
 }
 
 .screenData{
+  display: flex;
+  flex-direction: column;
   width: 100%;
   aspect-ratio: 1/1;
   padding: 1rem;
   place-self: center;
   border-radius: 30px;
   color: white;
+  border: 1px solid blue;
+}
+
+.screenData h3{
+  font-size: 1.5rem;
+}
+
+.screenData div h4{
+  font-size: 1rem;
 }

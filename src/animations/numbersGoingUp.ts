@@ -3,9 +3,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function numbersGoingUp(ref: HTMLElement, to: number) {
-    const hz = { value: 0 };
-        gsap.to(hz, {
+export default function numbersGoingUp(ref: HTMLElement, from: number, to: number, decimals: boolean, dataType: string) {
+    const startNumb = { value: from };
+    gsap.to(startNumb, {
         value: to,
         duration: 2,
         ease: "power1.out",
@@ -15,7 +15,12 @@ export default function numbersGoingUp(ref: HTMLElement, to: number) {
             toggleActions: "play none none none",
         },
         onUpdate: () => {
-            ref.textContent = `${Math.floor(hz.value)} Hz`;
+            if(decimals){
+                ref.textContent = `${startNumb.value.toFixed(1)} ${dataType}`;
+            }else{
+                ref.textContent = `${Math.floor(startNumb.value)} ${dataType}`;
+            }
+            
         },
-        });
+    });
 }

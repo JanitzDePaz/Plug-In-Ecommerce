@@ -10,13 +10,18 @@ export default function () {
   const { changeColorAquamarine, changeColorPurple, changeColorWhite } = headsetColorControl();
 
   const hzRef = useRef<HTMLHeadingElement | null>(null);
+  const msRef = useRef<HTMLHeadingElement | null>(null);
   
   useEffect(() => {
     if(hzRef.current){
-      numbersGoingUp(hzRef.current, 720);
+      numbersGoingUp(hzRef.current, 0, 720, false, "hz");
+    }
+    if(msRef.current){
+      numbersGoingUp(msRef.current, 1000, 0.1, true, "ms");
     }
     
   }, []);
+    
 
   return (
     <>
@@ -75,19 +80,45 @@ export default function () {
           </div>
         </div>
       </section>
-      <section className="bg-[#1E1E1E] h-screen flex justify-around items-center gap-5">
+
+
+      <section className="bg-[#1E1E1E] h-screen flex-center items-center gap-5">
         <div className="flex-center items-center w-2/6 h-4/5">
-          <div className="w-3/5 h-3/5 lg:grid lg:grid-rows-2 lg:grid-cols-2 gap-5 hidden place-content-center">
+          <div className="w-4/5 h-4/5 lg:grid lg:grid-rows-2 lg:grid-cols-2 gap-5 hidden place-content-center">
             <article className="screenData">
-              <h3 ref={hzRef}>0 Hz</h3>
+              <h3>Tasa de refresco</h3>
+              <div className="flex">
+                <h4 ref={hzRef}>0 Hz</h4>
+                <img src="" alt="HZ Icon" />
+              </div>  
             </article>
-            <article className="screenData">Ms</article>
-            <article className="screenData">Resolucion</article>
-            <article className="screenData">Oled</article>
+            <article className="screenData">
+              <h3>Latencia</h3>
+              <div className="flex-center items-center w-full gap-5">
+                <h4 ref={msRef}>ms</h4>
+                <img src="landingPage/screenSection/latency.svg" alt="Latencia Icon" className="w-1/2" />
+              </div>
+            </article>
+            <article className="screenData">
+              <h3>Resolución</h3>
+              <div className="flex w-full">
+                <h4>1920 x 1080 px</h4>
+                <img src="" alt="Resolución icon" className="w-6 h-6" />
+              </div>  
+            </article>
+            <article className="screenData">
+              <h3>Tasa de refresco</h3>
+              <div className="flex">
+                <h4>Panel</h4>
+                <img src="" alt="Panel icon" />
+              </div>  
+            </article>
           </div>
         </div>
 
-        <div className="w-screen lg:w-3/6 h-4/5 bg-red-400"></div>
+        <div className="w-screen lg:w-3/6 h-4/5 flex-center items-center">
+          <img src="landingPage/screenSection/screen.png" alt="Screen image" className="h-full" />
+        </div>
       </section>
     </>
   );
