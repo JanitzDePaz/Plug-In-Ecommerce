@@ -119,7 +119,7 @@ export default function () {
       <section className="bg-[rgb(19,19,19)] min-h-screen flex-center items-center flex-col gap-20 flex-wrap py-30">
         <h1 className="landingTitle w-full">ROG Swift OLED</h1>
         <div className="flex-center w-full">
-          <div className="2xl:flex justify-center items-center w-2/6 h-4/5 flex-col gap-5 hidden">
+          <div className="2xl:flex justify-center items-center w-2/6 h-4/5 flex-col gap-5 hidden p-5">
             <div className="w-fit gap-10 grid grid-rows-2 grid-cols-2 place-content-center">
               <article className="screenData">
                 <h3>Tasa de refresco</h3>
@@ -163,8 +163,8 @@ export default function () {
               </article>
             </div>
             <div></div>
-            <div className="flex flex-col gap-3">
-              <p className="text-white text-center">Desde 1.399 €</p>
+            <div className="flex flex-col gap-5">
+              <p className="text-white text-center text-2xl">Desde 1.399 €</p>
               <Link to={"/Tienda"}>
                 <button className="landingPrimaryButton">Comprar ahora</button>
               </Link>
@@ -180,7 +180,7 @@ export default function () {
               muted
             />
             <div className="flex flex-col gap-3 2xl:hidden">
-              <p className="text-white text-center">Desde 1.399 €</p>
+              <p className="text-white text-center text-2xl">Desde 1.399 €</p>
               <Link to={"/Tienda"}>
                 <button className="landingPrimaryButton ">Comprar ahora</button>
               </Link>
