@@ -20,7 +20,12 @@ type cartProp = {
 type HeadsetColorProp = {
     headsetColor1: string,
     headsetColor2: string,
-    changeColorAquamarine: () => void,
-    changeColorPurple: () => void,
-    changeColorWhite: () => void
+    changeColorAquamarineContour: () => void,
+    changeColorPurpleContour: () => void,
+    changeColorWhiteContour: () => void,
+    changeColorBlackContour: () => void,
+    changeColorGrayPads: () => void,
+    changeColorWhitePads: () => void,
+    changeColorBlackPads: () => void,
+    changeColorBrownPads: () => void,
 }

@@ -21,7 +21,12 @@ export const cartStorage = create<cartProp>((set) => ({
 export const headsetColorControl = create<HeadsetColorProp>((set) => ({
     headsetColor1: "#B0D6D9",
     headsetColor2: "#C4C4C4",
-    changeColorAquamarine: () => set({headsetColor1: "#B0D6D9", headsetColor2: "#C4C4C4"}),
-    changeColorPurple: () => set({headsetColor1: "#C091CC", headsetColor2: "#C4C4C4"}),
-    changeColorWhite: () => set({headsetColor1: "#fff", headsetColor2: "#C4C4C4"})
+    changeColorAquamarineContour: () => set({headsetColor1: "#B0D6D9"}),
+    changeColorPurpleContour: () => set({headsetColor1: "#C091CC"}),
+    changeColorWhiteContour: () => set({headsetColor1: "#fff"}),
+    changeColorBlackContour: () => set({headsetColor1: "#3a3a3a"}),
+    changeColorGrayPads: () => set({headsetColor2: "#C4C4C4"}),
+    changeColorWhitePads: () => set({headsetColor2: "#fff"}),
+    changeColorBlackPads: () => set({headsetColor2: "#2E2E2E"}),
+    changeColorBrownPads: () => set({headsetColor2: "#574C44"}),
 }))
