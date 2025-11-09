@@ -1,11 +1,10 @@
-import Headphone from "../../components/landingPage/Headphone";
-import { Canvas } from "@react-three/fiber";
-import { Suspense, useEffect, useRef } from "react";
-import { OrbitControls } from "@react-three/drei";
+import { useEffect, useRef } from "react";
+
 import { headsetColorControl } from "src/stores/menuStore";
 import { Link } from "react-router";
 import numbersGoingUp from "src/animations/numbersGoingUp";
 import Tienda from "./Tienda";
+import Headset from "src/components/3dElements/Headset";
 
 export default function () {
   const { changeColorAquamarineContour, changeColorPurpleContour, changeColorWhiteContour, changeColorBlackContour, changeColorWhitePads, changeColorBlackPads, changeColorGrayPads, changeColorBrownPads} =
@@ -29,24 +28,7 @@ export default function () {
         <h1 className="landingTitle">Nuevo color disponible</h1>
         <div className="flex justify-center gap-[10vw] flex-col lg:flex-row py-10">
           <div className="flex-center flex-col items-center w-full lg:w-[30vw] min-h-full">
-            <Canvas className="h-full w-full" camera={{ position: [0, 0, 4] }}>
-              <Suspense fallback={null}>
-                <ambientLight intensity={0.8} />
-                <directionalLight position={[30, 10, 5]} intensity={1} />
-                <directionalLight position={[-30, 10, 5]} intensity={1} />
-                <Headphone
-                  scale={0.9}
-                  rotation={[0, Math.PI / Math.sin(50), 0]}
-                />
-                <OrbitControls
-                  enableZoom={false}
-                  enableDamping={false}
-                  enablePan={false}
-                  enableRotate={true}
-                  autoRotate={true}
-                />
-              </Suspense>
-            </Canvas>
+            <Headset />
             <div className="flex-center gap-0 2xl:gap-5 flex-col 2xl:flex-row">
               <div className="flex-center flex-col">
                 <h2 className="text-white text-center mt-5 mb-3 text-2xl">
