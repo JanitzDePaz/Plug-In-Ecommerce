@@ -29,3 +29,22 @@ type HeadsetColorProp = {
     changeColorBlackPads: () => void,
     changeColorBrownPads: () => void,
 }
+
+
+type LandingPrimaryButtonProps = {
+    text: string,
+    route: string
+}
+
+type ChangeColorButtonProps = {
+    color: string;
+    onClick: () => void;
+};
+
+type ScreenDataCardsProps = {
+    header: String,
+    ref: React.RefObject<HTMLHeadingElement> | null,
+    svg: String,
+    alt: String,
+    value: String
+}

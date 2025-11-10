@@ -1,13 +1,5 @@
 import { forwardRef } from "react";
 
-type ScreenDataCardsProps = {
-    header: String,
-    ref: React.RefObject<HTMLHeadingElement> | null,
-    svg: String,
-    alt: String,
-    value: String
-}
-
 export const ScreenDataCards = forwardRef<HTMLHeadingElement, ScreenDataCardsProps> (({header,
     svg,
     alt,

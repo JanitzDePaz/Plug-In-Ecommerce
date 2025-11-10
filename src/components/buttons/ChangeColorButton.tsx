@@ -1,10 +1,4 @@
-export default function ChangeColorButton({
-  color,
-  onClick,
-}: {
-  color: string;
-  onClick: () => void;
-}) {
+export const ChangeColorButton = ({ color, onClick }: ChangeColorButtonProps) => {
   return (
     <button
       className={`changeColorButtons ${color}`}

@@ -5,7 +5,8 @@ import { Link } from "react-router";
 import numbersGoingUp from "src/animations/numbersGoingUp";
 import Tienda from "./Tienda";
 import Headset from "src/three/viewers/HeadsetScene";
-import ChangeColorButton from "src/components/buttons/ChangeColorButton";
+import { LandingPrimaryButton } from "src/components/buttons/LandingPrimaryButton";
+import { ChangeColorButton } from "src/components/buttons/ChangeColorButton";
 import { ScreenDataCards } from "src/components/cards/ScreenDataCards";
 
 export default function () {
@@ -76,9 +77,7 @@ export default function () {
               <Link to={"/tienda"}>
                 <button className="landingSecondaryButton">Leer más</button>
               </Link>
-              <Link to={"/tienda"}>
-                <button className="landingPrimaryButton">Comprar ahora</button>
-              </Link>
+              <LandingPrimaryButton text="Comprar ahora" route="/Tienda" />
             </div>
           </div>
         </div>
@@ -97,9 +96,7 @@ export default function () {
             <div></div>
             <div className="flex flex-col gap-5">
               <p className="text-white text-center text-2xl">Desde 1.399 €</p>
-              <Link to={"/Tienda"}>
-                <button className="landingPrimaryButton">Comprar ahora</button>
-              </Link>
+              <LandingPrimaryButton text="Comprar ahora" route="/Tienda" />
             </div>
           </div>
 
@@ -113,9 +110,7 @@ export default function () {
             />
             <div className="flex flex-col gap-3 2xl:hidden">
               <p className="text-white text-center text-2xl">Desde 1.399 €</p>
-              <Link to={"/Tienda"}>
-                <button className="landingPrimaryButton ">Comprar ahora</button>
-              </Link>
+              <LandingPrimaryButton text="Comprar ahora" route="/Tienda" />
             </div>
           </div>
         </div>
