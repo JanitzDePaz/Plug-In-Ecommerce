@@ -4,11 +4,20 @@ import { headsetColorControl } from "src/stores/menuStore";
 import { Link } from "react-router";
 import numbersGoingUp from "src/animations/numbersGoingUp";
 import Tienda from "./Tienda";
-import Headset from "src/components/3dElements/Headset";
+import Headset from "src/three/viewers/HeadsetScene";
+import ChangeColorButton from "src/components/buttons/ChangeColorButton";
 
 export default function () {
-  const { changeColorAquamarineContour, changeColorPurpleContour, changeColorWhiteContour, changeColorBlackContour, changeColorWhitePads, changeColorBlackPads, changeColorGrayPads, changeColorBrownPads} =
-    headsetColorControl();
+  const {
+    changeColorAquamarineContour,
+    changeColorPurpleContour,
+    changeColorWhiteContour,
+    changeColorBlackContour,
+    changeColorWhitePads,
+    changeColorBlackPads,
+    changeColorGrayPads,
+    changeColorBrownPads,
+  } = headsetColorControl();
 
   const hzRef = useRef<HTMLHeadingElement | null>(null);
   const msRef = useRef<HTMLHeadingElement | null>(null);
@@ -27,7 +36,7 @@ export default function () {
       <section className="LandingHeadsetBG py-[2vh] flex flex-col">
         <h1 className="landingTitle">Nuevo color disponible</h1>
         <div className="flex justify-center gap-[10vw] flex-col lg:flex-row py-10">
-          <div className="flex-center flex-col items-center w-full lg:w-[30vw] min-h-full">
+          <div className="flex-center flex-col items-center w-full lg:w-[40vw] xl:w-[30vw] min-h-full">
             <Headset />
             <div className="flex-center gap-0 2xl:gap-5 flex-col 2xl:flex-row">
               <div className="flex-center flex-col">
@@ -35,22 +44,10 @@ export default function () {
                   Contorno
                 </h2>
                 <div className="px-3 py-2 rounded-full flex-center gap-2 bg-[#615E74]">
-                  <button
-                    className="changeColorButtons bg-[#B0D6D9]"
-                    onClick={changeColorAquamarineContour}
-                  ></button>
-                  <button
-                    className="changeColorButtons bg-[#C091CC]"
-                    onClick={changeColorPurpleContour}
-                  ></button>
-                  <button
-                    className="changeColorButtons bg-white"
-                    onClick={changeColorWhiteContour}
-                  ></button>
-                  <button
-                    className="changeColorButtons bg-[#3a3a3a]"
-                    onClick={changeColorBlackContour}
-                  ></button>
+                  <ChangeColorButton color="bg-[#B0D6D9]" onClick={changeColorAquamarineContour} />
+                  <ChangeColorButton color= "bg-[#C091CC]" onClick={changeColorPurpleContour} />
+                  <ChangeColorButton color= "bg-white" onClick={changeColorWhiteContour} />
+                  <ChangeColorButton color= "bg-[#3a3a3a]" onClick={changeColorBlackContour} />
                 </div>
               </div>
 
@@ -59,27 +56,15 @@ export default function () {
                   Almohadillas
                 </h2>
                 <div className="px-3 py-2 rounded-full flex-center gap-2 bg-[#615E74]">
-                  <button
-                    className="changeColorButtons bg-[#C4C4C4]"
-                    onClick={changeColorGrayPads}
-                  ></button>
-                  <button
-                    className="changeColorButtons bg-white"
-                    onClick={changeColorWhitePads}
-                  ></button>
-                  <button
-                    className="changeColorButtons bg-[#2E2E2E]"
-                    onClick={changeColorBlackPads}
-                  ></button>
-                  <button
-                    className="changeColorButtons bg-[#574C44]"
-                    onClick={changeColorBrownPads}
-                  ></button>
+                  <ChangeColorButton color="bg-[#C4C4C4]" onClick={changeColorGrayPads} />
+                  <ChangeColorButton color="bg-white" onClick={changeColorWhitePads} />
+                  <ChangeColorButton color="bg-[#2E2E2E]" onClick={changeColorBlackPads} />
+                  <ChangeColorButton color="bg-[#574C44]" onClick={changeColorBrownPads} />
                 </div>
               </div>
             </div>
           </div>
-          <div className="w-full p-10 lg:p-0 lg:w-[25vw] flex-center flex-col gap-10">
+          <div className="w-full p-10 lg:p-0 lg:w-[40vw] xl:w-[25vw] flex-center flex-col gap-10">
             <h2 className="landingSubtitle">NeoSound</h2>
             <p className="landingParagraph">
               Cada nota cobra vida con una nitidez que te envuelve. Los graves
