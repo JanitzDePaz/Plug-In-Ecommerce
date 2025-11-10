@@ -6,7 +6,7 @@ import clsx from "clsx";
 import { CartMenu } from "./CartMenu";
 
 export default function Header() {
-  const { cartMenu, toggleCart } = cartStorage();
+  const { toggleCart } = cartStorage();
   const { openedMenu, toggleMenu, closeMenu } = menuStorage();
   const { searchInput, toggleSearchInput } = searchStorage();
 
