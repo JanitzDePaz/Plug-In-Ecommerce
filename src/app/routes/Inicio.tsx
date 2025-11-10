@@ -6,6 +6,7 @@ import numbersGoingUp from "src/animations/numbersGoingUp";
 import Tienda from "./Tienda";
 import Headset from "src/three/viewers/HeadsetScene";
 import ChangeColorButton from "src/components/buttons/ChangeColorButton";
+import { ScreenDataCards } from "src/components/cards/ScreenDataCards";
 
 export default function () {
   const {
@@ -88,46 +89,10 @@ export default function () {
         <div className="flex-center w-full">
           <div className="2xl:flex justify-center items-center w-2/6 h-4/5 flex-col gap-5 hidden p-5">
             <div className="w-fit gap-10 grid grid-rows-2 grid-cols-2 place-content-center">
-              <article className="screenData">
-                <h3>Tasa de refresco</h3>
-                <div className="flex-between">
-                  <h4 ref={hzRef}>0 Hz</h4>
-                  <img
-                    src="landingPage/screenSection/hertz.svg"
-                    alt="HZ Icon"
-                  />
-                </div>
-              </article>
-              <article className="screenData">
-                <h3>Latencia</h3>
-                <div className="flex-between">
-                  <h4 ref={msRef}>ms</h4>
-                  <img
-                    src="landingPage/screenSection/latency.svg"
-                    alt="Latencia Icon"
-                  />
-                </div>
-              </article>
-              <article className="screenData">
-                <h3>Resolución</h3>
-                <div className="flex-between">
-                  <h4>1920 x 1080 px</h4>
-                  <img
-                    src="landingPage/screenSection/resolution.svg"
-                    alt="Resolución icon"
-                  />
-                </div>
-              </article>
-              <article className="screenData">
-                <h3>Panel</h3>
-                <div className="flex-between">
-                  <h4>OLED</h4>
-                  <img
-                    src="landingPage/screenSection/panel.svg"
-                    alt="Panel icon"
-                  />
-                </div>
-              </article>
+              <ScreenDataCards header="Tasa de refresco" ref={hzRef} svg="hertz.svg" alt="HZ Icon" value="0Hz" />
+              <ScreenDataCards header="Latencia" ref={msRef} svg="latency.svg" alt="Latencia Icon" value="ms" />
+              <ScreenDataCards header="Resolución" ref={null} svg="resolution.svg" alt="Resolución icon" value="1920 x 1080 px" />
+              <ScreenDataCards header="Panel" ref={null} svg="panel.svg" alt="Panel icon" value="OLED" />
             </div>
             <div></div>
             <div className="flex flex-col gap-5">
