@@ -1,21 +1,27 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import clsx from "clsx";
 import { texts } from "../../constants/typingText";
-import { add } from "three/tsl";
 
+let wordCount = 0;
 export const KeyboardSection = () => {
-  const writedText: string[] = [];
-  let addWords: string = "";
+    const [currentWord, setCurrentWord] = useState<string>("");
+    const [writedText, setWritedText] = useState<string[]>([]);
 
   useEffect(() => {
     const handleKeydown = (event: KeyboardEvent) => {
       console.log(event.key);
       if (event.key == " ") {
-        writedText.push(addWords);
-        addWords = "";
-        console.log(writedText);
-      } else if(/^[a-zA-Z]$/.test(event.key)){
-        addWords += event.key;
+        setCurrentWord(prev => {
+          const word = prev.trim();
+          if (word) setWritedText(arr => [...arr, word]);
+          return "";
+        });
+
+      }
+       if (/^[a-zA-ZñÑáéíóúÁÉÍÓÚ]$/.test(event.key)) {
+        setCurrentWord(prev => prev + event.key);
+      } else if (event.key === "Backspace") {
+        setCurrentWord(prev => prev.slice(0, -1));
       }
     };
 
@@ -24,9 +30,9 @@ export const KeyboardSection = () => {
     return () => {
       removeEventListener("keydown", handleKeydown);
     };
-  }, []);
+  }, [currentWord]);
 
-  const expectedText = texts[0].split("");
+  const expectedText = texts[0].split(" ");
 
   return (
     <section className="max-h-screen flex-center gap-30 items-center bg-amber-600">
@@ -43,26 +49,21 @@ export const KeyboardSection = () => {
       </div>
       <div className="w-[40vw] min-h-[70vh] flex relative">
         <div className="flex flex-wrap gap-6 h-fit p-10">
-          {writedText.map((char, index) =>
-            char === " " ? (
-              <span
-                key={index}
-                className="bg-white w-4 h-8 inline-block"
-              ></span>
-            ) : (
-              <span
-                key={index}
-                className={clsx(
-                  "text-2xl font-mono",
-                  char === expectedText[index]
-                    ? "text-green-500"
-                    : "text-red-500"
-                )}
-              >
-                {char}
-              </span>
-            )
+          {writedText.map((word, index) =>
+            <span className="flex" key={index}>
+                {word.split("").map((char, i) => (
+                    <p className={clsx("text-2xl", char === expectedText[i] ? "text-green-500" : "text-red-500")} key={i}>
+                        {char}
+                    </p>
+                ))}
+            </span>
           )}
+          {
+            currentWord.split("").map((char, i) => (
+                <p className={clsx("text-xl", char === expectedText[i] ? "text-green-500 bg-amber-300" : "text-shadow-purple-600 bg-amber-900")} key={i}>
+                    {char}
+                </p>
+            ))}
         </div>
       </div>
     </section>
