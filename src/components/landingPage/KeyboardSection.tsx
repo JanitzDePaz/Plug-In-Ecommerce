@@ -52,18 +52,24 @@ export const KeyboardSection = () => {
           {writedText.map((word, index) =>
             <span className="flex" key={index}>
                 {word.split("").map((char, i) => (
-                    <p className={clsx("text-2xl", char === expectedText[i] ? "text-green-500" : "text-red-500")} key={i}>
+                    <p className={clsx("text-2xl", char === expectedText[i] ? "text-green-500" : "text-black")} key={i}>
                         {char}
                     </p>
                 ))}
             </span>
           )}
-          {
-            currentWord.split("").map((char, i) => (
-                <p className={clsx("text-xl", char === expectedText[i] ? "text-green-500 bg-amber-300" : "text-shadow-purple-600 bg-amber-900")} key={i}>
-                    {char}
-                </p>
-            ))}
+          {currentWord.length > 0 
+            ? 
+                <span className="flex">
+                    {currentWord.split("").map((char, i) => (
+                        <p className={clsx("text-2xl", char === expectedText[i] ? "text-green-500" : "text-black")} key={i}>
+                            {char}
+                        </p>
+                    ))}
+                </span>
+            :
+                null
+            }
         </div>
       </div>
     </section>
