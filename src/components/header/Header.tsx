@@ -1,6 +1,6 @@
 import { headerItems } from "src/constants/headerItems";
 import { Link } from "react-router";
-import MobileMenu from "./MobileMenu";
+import MobileMenu from "../MobileMenu";
 import { searchStorage, cartStorage, menuStorage } from "src/stores/menuStore";
 import clsx from "clsx";
 import { CartMenu } from "./CartMenu";
