@@ -7,7 +7,7 @@ import {
   ScrollRestoration,
 } from "react-router";
 
-import Header from "src/components/Header";
+import Header from "src/components/header/Header";
 
 import "./app.css";
 
