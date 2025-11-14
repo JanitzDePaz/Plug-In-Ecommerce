@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { texts } from "../../constants/typingText";
 
@@ -8,22 +8,39 @@ import { texts } from "../../constants/typingText";
 
 export const KeyboardSection = () => {
     const [writedText, setWritedText] = useState <String>("")
-    const writedTextSplited = writedText.split("")
-    const textToCompareSplited = textToCompare.split("")
+    let counter = 0
+    const cancelSpacing = useRef<String>("")
+  
+
+    //takes the las character the user typed
+  useEffect(() => {
+    cancelSpacing.current = writedText.length > 0 ? writedText[writedText.length-1] : "";
+  }, [writedText])
+
+  //this manage the keydown with a listener
   useEffect(() => {
     const handleKeydown = (event: KeyboardEvent) => {
-       if (/^[\p{L} ,.]$/u.test(event.key)) {
+      
+      //If is a unicode key adds to a writed list
+      if (/^[\p{L} ,.]$/u.test(event.key)) {
         setWritedText(prev => prev + event.key);
-      } else if (event.key === "Backspace") {
+      }
+
+      //Uses the useRef cancelSpacing to quit double space in the typing test
+      if(event.key === " " && cancelSpacing.current == " "){
         setWritedText(prev => prev.slice(0, -1));
       }
-    };
-
-    addEventListener("keydown", handleKeydown);
+      
+      //Deletes the las character of the writedText
+      if (event.key === "Backspace") {
+        setWritedText(prev => prev.slice(0, -1));
+      }
+    }
+    window.addEventListener("keydown", handleKeydown);
 
     return () => {
-      removeEventListener("keydown", handleKeydown);
-    };
+      window.removeEventListener("keydown", handleKeydown);
+    }
   }, []);
 
   return (
@@ -40,20 +57,35 @@ export const KeyboardSection = () => {
         </div>
       </div>
       <div className="w-[40vw] min-h-[70vh] flex flex-col">
-        <section className="flex">
-          {screenText.split("").map((char , i) => {
-            const charsWithSpaces = char === " " ? "\u00A0" : char
-           return(
-            <p key={i} className="text-2xl w-6 inline-block">{`${charsWithSpaces}`}</p>
-          )})}
+        <section className="flex justify-start items-start w-full flex-wrap">
+          {screenText.split(" ").map((word , i) => (
+            <div key={i} className="flex h-fit">{
+              word.split("").map((char, charIndex) => (
+                <p className="text-2xl">{`${char}`}</p>
+              ))
+            }
+            <p className="text-2xl">&nbsp;</p>
+            </div>
+          ))}
         </section>
 
-        <section className="flex">
-          {writedText.split("").map((char, i) => {
-            const charsWithSpaces = char === " " ? "\u00A0" : char
-            return(
-            <p key={i} className={clsx("text-2xl", textToCompareSplited[i] === writedTextSplited[i] ? "text-green-400" : "text-red-500")}>{charsWithSpaces}</p>
-          )})}
+        <section className="flex flex-wrap content-start relative h-[50vh] overflow-y-auto overflow-x-hidden border-2 border-gray-400">
+          {writedText.length < 1 ? <p className="text-2xl absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">Esribe para empezar...</p> : writedText.split(" ").map((word, i) => {
+              counter++
+              return(
+                <div className="flex h-fit">
+                  {
+                    word.split("").map((char, i) => {
+                      return(
+                        <p className={clsx("text-2xl" , writedText.split(" ")[counter-1] === textToCompare.split(" ")[counter-1] ? "text-green-500" : "text-black")}>{`${char}`}</p>
+                      )
+                    })
+                  }
+                  <p className="text-2xl">&nbsp;</p>
+                </div>
+                
+              )})
+          }
         </section>
       </div>
     </section>
