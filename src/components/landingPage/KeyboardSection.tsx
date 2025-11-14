@@ -2,15 +2,17 @@ import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { texts } from "../../constants/typingText";
 
-  const stringToCompare = texts[Math.floor(Math.random()*10+1)]
-  const screenText = stringToCompare
+  const textToCompare = texts[Math.floor(Math.random()*10+1)]
+  const screenText = textToCompare
+  
 
 export const KeyboardSection = () => {
     const [writedText, setWritedText] = useState <String>("")
-
+    const writedTextSplited = writedText.split("")
+    const textToCompareSplited = textToCompare.split("")
   useEffect(() => {
     const handleKeydown = (event: KeyboardEvent) => {
-       if (/^[a-zA-ZñÑáéíóúÁÉÍÓÚ]$/.test(event.key)) {
+       if (/^[\p{L} ,.]$/u.test(event.key)) {
         setWritedText(prev => prev + event.key);
       } else if (event.key === "Backspace") {
         setWritedText(prev => prev.slice(0, -1));
@@ -37,22 +39,22 @@ export const KeyboardSection = () => {
           <img src="" alt="" />
         </div>
       </div>
-      <div className="w-[40vw] min-h-[70vh] flex relative">
-        <div className="flex flex-wrap gap-6 h-fit p-10 absolute">
-          //Hacer el typing test con el mismo array siempre
-          {
-            screenText.split(" ").map((word, wordIndex) =>(
-              <div key={wordIndex} className="flex">
-                  {
-                    word.split("").map((char, charIndex) => (
-                      <p>{char}</p>
-                    ))
-                  }
-              </div>
-            ))
+      <div className="w-[40vw] min-h-[70vh] flex flex-col">
+        <section className="flex">
+          {screenText.split("").map((char , i) => {
+            const charsWithSpaces = char === " " ? "\u00A0" : char
+           return(
+            <p key={i} className="text-2xl w-6 inline-block">{`${charsWithSpaces}`}</p>
+          )})}
+        </section>
 
-          }
-        </div>
+        <section className="flex">
+          {writedText.split("").map((char, i) => {
+            const charsWithSpaces = char === " " ? "\u00A0" : char
+            return(
+            <p key={i} className={clsx("text-2xl", textToCompareSplited[i] === writedTextSplited[i] ? "text-green-400" : "text-red-500")}>{charsWithSpaces}</p>
+          )})}
+        </section>
       </div>
     </section>
   );
