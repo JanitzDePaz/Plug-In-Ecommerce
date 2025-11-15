@@ -48,3 +48,9 @@ type ScreenDataCardsProps = {
     alt: String,
     value: String
 }
+
+type typingTestProp ={
+    activeTypingTest: boolean,
+    toggleTypingTest: () => void,
+    closeTypingTest: () => void,
+}
