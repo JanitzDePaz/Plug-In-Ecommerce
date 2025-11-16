@@ -31,8 +31,11 @@ export const headsetColorControl = create<HeadsetColorProp>((set) => ({
     changeColorBrownPads: () => set({headsetColor2: "#574C44"}),
 }))
 
-export const typingTest = create<typingTestProp>((set) => ({
+export const typingTestStorage = create<typingTestProp>((set) => ({
     activeTypingTest: false,
     toggleTypingTest: () => set((state) => ({activeTypingTest: !state.activeTypingTest})),
-    closeTypingTest: () => ({activTypingTest: false})
+    closeTypingTest: () => ({activTypingTest: false}),
+
+        typingTestTimer: 0,
+        restartTypingTestTimer: () => set({typingTestTimer: 0})
 }))

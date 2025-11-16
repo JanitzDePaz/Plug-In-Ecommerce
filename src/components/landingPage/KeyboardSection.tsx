@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
-import { texts } from "../../constants/typingText";
+import { typingTestTexts } from "../../constants/typingText";
 
-  const textToCompare = texts[Math.floor(Math.random()*10+1)]
+  const textToCompare = typingTestTexts[Math.floor(Math.random()*10+1)]
   const screenText = textToCompare
   
 
 export const KeyboardSection = () => {
     const [writedText, setWritedText] = useState <String>("")
-    let counter = 0
+    let compareCharIndex = 0
     const cancelSpacing = useRef<String>("")
   
 
@@ -44,9 +44,9 @@ export const KeyboardSection = () => {
   }, []);
 
   return (
-    <section className="max-h-screen flex-center gap-30 items-center bg-amber-600">
-      <div className="">
-        <h1 className="landingTitle">Teclado ...</h1>
+    <section className="max-h-screen flex-center gap-30 items-center bg-gray-700 text-white">
+      <div className="min-h-[60vh] w-2/5">
+        <h1 className="landingTitle">Teclado X</h1>
         <img src="" alt="" />
         <div>
           <img src="" alt="" />
@@ -56,28 +56,31 @@ export const KeyboardSection = () => {
           <img src="" alt="" />
         </div>
       </div>
-      <div className="w-[40vw] min-h-[70vh] flex flex-col">
-        <section className="flex justify-start items-start w-full flex-wrap">
-          {screenText.split(" ").map((word , i) => (
-            <div key={i} className="flex h-fit">{
-              word.split("").map((char, charIndex) => (
-                <p className="text-2xl">{`${char}`}</p>
-              ))
-            }
-            <p className="text-2xl">&nbsp;</p>
-            </div>
+      <div className="w-[40vw] min-h-[70vh] flex-center flex-col gap-20">
+        <section className="flex-center items-start w-full">
+          <div className="flex flex-wrap">
+               {screenText.split(" ").map((word , i) => (
+                <div key={i} className="flex h-fit">{
+                    word.split("").map((char, charIndex) => (
+                      <p className="text-2xl">{`${char}`}</p>
+                  ))
+                  }
+                    <p className="text-2xl">&nbsp;</p>
+                </div>
           ))}
+          </div>
+         
         </section>
 
-        <section className="flex flex-wrap content-start relative h-[50vh] overflow-y-auto overflow-x-hidden border-2 border-gray-400">
+        <section className="flex flex-wrap content-start relative h-[35vh] overflow-y-auto overflow-x-hidden border-2 border-gray-400">
           {writedText.length < 1 ? <p className="text-2xl absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">Esribe para empezar...</p> : writedText.split(" ").map((word, i) => {
-              counter++
+              compareCharIndex++
               return(
                 <div className="flex h-fit">
                   {
                     word.split("").map((char, i) => {
                       return(
-                        <p className={clsx("text-2xl" , writedText.split(" ")[counter-1] === textToCompare.split(" ")[counter-1] ? "text-green-500" : "text-black")}>{`${char}`}</p>
+                        <p className={clsx("text-2xl" , writedText.split(" ")[compareCharIndex-1] === textToCompare.split(" ")[compareCharIndex-1] ? "text-green-500" : "text-white")}>{`${char}`}</p>
                       )
                     })
                   }

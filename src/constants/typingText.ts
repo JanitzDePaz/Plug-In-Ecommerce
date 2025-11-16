@@ -1,4 +1,6 @@
-export const texts = [
+//texts comes from database
+
+export const typingTestTexts = [
     "El sol se filtraba entre las nubes mientras la ciudad despertaba lentamente con un murmullo constante de coches y conversaciones apresuradas.",
     "Nunca imagine que un pequeño cambio en mi rutina diaria pudiera transformar por completo mi forma de ver el mundo que me rodea.",
     "Mientras caminaba por el paseo maritimo, el olor a sal y el sonido de las olas me devolvieron recuerdos que creia olvidados.",
