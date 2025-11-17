@@ -6,7 +6,7 @@ import { startTypingTest } from "src/hooks/startTypingTest";
 export const KeyboardSection = () => {
   const [writedText, setWritedText] = useState<String>("");
   const cancelSpacing = useRef<String>("");
-  const { typingTestTimer, textToWrite, activeTypingTest } = typingTestStorage();
+  const { typingTestTimer, textToWrite } = typingTestStorage();
 
   let compareCharIndex = 0;
 
@@ -45,6 +45,8 @@ export const KeyboardSection = () => {
 
   return (
     <section className="max-h-screen flex-center gap-30 items-center bg-gray-700 text-white">
+
+      
       <div className="min-h-[60vh] w-2/5 xl:flex hidden">
         <h1 className="landingTitle">Teclado X</h1>
         <img src="" alt="" />
@@ -56,6 +58,8 @@ export const KeyboardSection = () => {
           <img src="" alt="" />
         </div>
       </div>
+
+
       <div className="w-2/3 xl:w-[40vw] min-h-[70vh] flex-center flex-col gap-20">
         <section className="flex-center items-start w-full">
           <div className="flex flex-wrap">
@@ -69,17 +73,16 @@ export const KeyboardSection = () => {
             ))}
           </div>
         </section>
-
         <section className="flex flex-wrap content-start relative h-[35vh] overflow-y-auto overflow-x-hidden border-2 border-gray-400">
           {writedText.length < 1 ? (
             <p className="text-2xl absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-              Esribe para empezar...
+              Escribe para empezar...
             </p>
           ) : (
             writedText.split(" ").map((word, i) => {
               compareCharIndex++;
               return (
-                <div className="flex h-fit">
+                <div key={i} className="flex h-fit">
                   {word.split("").map((char, i) => {
                     return (
                       <p
