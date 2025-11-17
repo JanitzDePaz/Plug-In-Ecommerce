@@ -51,10 +51,13 @@ type ScreenDataCardsProps = {
 
 type typingTestProp ={
     activeTypingTest: boolean,
-    toggleTypingTest: () => void,
+    activateTypingTest: () => void,
     closeTypingTest: () => void,
 
     typingTestTimer: number,
     addSeconds: () => void,
-    restartTypingTestTimer: () => void
+    restartTypingTestTimer: () => void,
+
+    textToWrite: string,
+    changeTextToWrite: (string) => void
 }
