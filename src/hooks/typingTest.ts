@@ -5,6 +5,9 @@ export const startTypingTest = () => {
     
     const {activeTypingTest} = typingTestStorage()
 
+    
+
+
     //timer
     //active
     //wordsWrited

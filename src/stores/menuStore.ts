@@ -34,8 +34,9 @@ export const headsetColorControl = create<HeadsetColorProp>((set) => ({
 export const typingTestStorage = create<typingTestProp>((set) => ({
     activeTypingTest: false,
     toggleTypingTest: () => set((state) => ({activeTypingTest: !state.activeTypingTest})),
-    closeTypingTest: () => ({activTypingTest: false}),
+    closeTypingTest: () => ({activeTypingTest: false}),
 
-        typingTestTimer: 0,
-        restartTypingTestTimer: () => set({typingTestTimer: 0})
+    typingTestTimer: 0,
+    addSeconds: () => set((state) => ({typingTestTimer: state.typingTestTimer+1})),
+    restartTypingTestTimer: () => set(({typingTestTimer: 0}))
 }))

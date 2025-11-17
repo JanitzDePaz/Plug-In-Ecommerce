@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { typingTestTexts } from "../../constants/typingText";
+import { timer } from "src/hooks/timer";
+import { typingTestStorage } from "src/stores/menuStore";
 
   const textToCompare = typingTestTexts[Math.floor(Math.random()*10+1)]
   const screenText = textToCompare
@@ -10,7 +12,8 @@ export const KeyboardSection = () => {
     const [writedText, setWritedText] = useState <String>("")
     let compareCharIndex = 0
     const cancelSpacing = useRef<String>("")
-  
+    const {typingTestTimer} = typingTestStorage()
+
 
     //takes the las character the user typed
   useEffect(() => {
@@ -37,7 +40,7 @@ export const KeyboardSection = () => {
       }
     }
     window.addEventListener("keydown", handleKeydown);
-
+    
     return () => {
       window.removeEventListener("keydown", handleKeydown);
     }
@@ -90,7 +93,12 @@ export const KeyboardSection = () => {
               )})
           }
         </section>
+        <button onClick={() => timer(60)}>
+          {typingTestTimer}
+        </button>
       </div>
+      
     </section>
+    
   );
 };

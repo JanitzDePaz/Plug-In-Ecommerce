@@ -54,6 +54,7 @@ type typingTestProp ={
     toggleTypingTest: () => void,
     closeTypingTest: () => void,
 
-    typingTestTimer: 0,
+    typingTestTimer: number,
+    addSeconds: () => void,
     restartTypingTestTimer: () => void
 }
