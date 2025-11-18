@@ -67,4 +67,10 @@ type typingTestProp ={
 
     lastTextWrited: string,
     updateLastTextWrited: (string) => void
+
+    wordPerMinute: float,
+    changeWordPerMinute: (float) => void,
+
+    wordPerSecond: float,
+    changeWordPerSecond: (int) => void
 }

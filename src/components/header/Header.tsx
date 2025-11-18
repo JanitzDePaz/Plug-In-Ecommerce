@@ -48,7 +48,7 @@ export default function Header() {
           </button>
           {openedMenu ? (
             <button
-              className=" block  md:hidden header-button z-10"
+              className=" block md:hidden header-button z-10"
               onClick={closeMenu}
             >
               <img
@@ -59,7 +59,7 @@ export default function Header() {
             </button>
           ) : (
             <button
-              className="block  md:hidden header-button z-10"
+              className="block md:hidden header-button z-10"
               onClick={toggleMenu}
             >
               <img src="Header/HeaderMenu.svg" alt="MenuIcon" />

@@ -6,11 +6,12 @@ import { startTypingTest } from "src/hooks/startTypingTest";
 export const KeyboardSection = () => {
   const [writedText, setWritedText] = useState<String>("");
   const cancelSpacing = useRef<String>("");
-  const { typingTestTimer, textToWrite } = typingTestStorage();
+  const { typingTestTimer, textToWrite, updateLastTextWrited} = typingTestStorage();
 
+  updateLastTextWrited(writedText)
   let compareCharIndex = 0;
 
-  //takes the las character the user typed
+  //takes the last character the user typed
   useEffect(() => {
     cancelSpacing.current =
       writedText.length > 0 ? writedText[writedText.length - 1] : "";
