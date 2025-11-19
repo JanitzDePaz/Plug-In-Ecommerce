@@ -3,8 +3,8 @@ import { typingTestStorage } from "src/stores/menuStore";
 import { onTypingTestEnd } from "./onTypingTestEnd";
 
 export const startTypingTest = (time: number) => {
-  typingTestStorage.getState().changeTextToWrite(typingTestTexts[Math.floor(Math.random() * 10 + 1)])
   typingTestStorage.getState().activateTypingTest();
+  typingTestStorage.getState().changeTextToWrite(typingTestTexts[Math.floor(Math.random() * 9 + 1)])
   
   const secondsInterval = setInterval(() => {
     const currentTimer = typingTestStorage.getState().typingTestTimer;
