@@ -76,6 +76,10 @@ type typingTestProp ={
 
     writedWordsAccuracy: number,
     changeWordAccuracy: (number) => void
+
+    stopTest: boolean,
+    finishTest: () => void,
+    StartTest: () => void
 }
 
 type typingTestCards = {

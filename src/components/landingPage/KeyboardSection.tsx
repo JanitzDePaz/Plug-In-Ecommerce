@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { typingTestStorage } from "src/stores/menuStore";
 import { startTypingTest } from "src/hooks/startTypingTest";
 import { TypingTestResultCard } from "../cards/TypingTestResultCard";
+import { onTypingTestEnd } from "src/hooks/onTypingTestEnd";
 
 export const KeyboardSection = () => {
   const [writedText, setWritedText] = useState<String>("");
@@ -40,6 +41,10 @@ export const KeyboardSection = () => {
       //Deletes the las character of the writedText
       if (event.key === "Backspace") {
         setWritedText((prev) => prev.slice(0, -1));
+      }
+
+      if(event.key === "Enter" && typingTestStorage.getState().activeTypingTest){
+        typingTestStorage.getState().finishTest()
       }
     };
     window.addEventListener("keydown", handleKeydown);

@@ -7,10 +7,14 @@ export const startTypingTest = (time: number) => {
   typingTestStorage.getState().restartTypingTestTimer()
   typingTestStorage.getState().updateLastTextWrited("")
   typingTestStorage.getState().changeTextToWrite(typingTestTexts[Math.floor(Math.random() * 9 + 1)])
+  typingTestStorage.getState().StartTest()
   
+
   const secondsInterval = setInterval(() => {
+    
     const currentTimer = typingTestStorage.getState().typingTestTimer;
-    if (currentTimer >= time) {
+    const stopTest = typingTestStorage.getState().stopTest
+    if (currentTimer >= time || stopTest) {
       clearInterval(secondsInterval);
       onTypingTestEnd()
       return;
