@@ -16,14 +16,10 @@ export const onTypingTestEnd = () => {
       correctWords++
     }
   }
-  typingTestStorage.getState().changeWordAccuracy(Math.floor(correctWords/splitedWritedText.length*100))
+  typingTestStorage.getState().changeWordAccuracy(Math.floor(splitedWritedText.length*100/splitedTextToWrite.length))
 
-  typingTestStorage.getState().changeWordPerSecond(correctWords/60)
+  typingTestStorage.getState().changeWordPerSecond(correctWords/typingTestStorage.getState().typingTestTimer)
 
-  typingTestStorage.getState().changeWordPerMinute(typingTestStorage.getState().wordPerSecond*60)
-  //1. Desactivate ✓
-  //2. Take the words writen ✓
-  //3. Calculate good writed words (word per second and word per minute)
-  //4. 
+  typingTestStorage.getState().changeWordPerMinute(Math.floor(typingTestStorage.getState().wordPerSecond*60))
 
 };

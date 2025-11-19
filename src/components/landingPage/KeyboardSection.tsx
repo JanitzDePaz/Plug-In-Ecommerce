@@ -71,7 +71,7 @@ export const KeyboardSection = () => {
                 {textToWrite.split(" ").map((word, i) => (
                   <div key={i} className="flex h-fit">
                     {word.split("").map((char, charIndex) => (
-                      <p className="text-2xl text-black" key={charIndex}>{`${char}`}</p>
+                      <p className="text-2xl font-mono text-black" key={charIndex}>{`${char}`}</p>
                     ))}
                     <p className="text-2xl">&nbsp;</p>
                   </div>
@@ -95,7 +95,7 @@ export const KeyboardSection = () => {
                               <p
                                 key={i}
                                 className={clsx(
-                                  "text-2xl",
+                                  "text-2xl font-mono",
                                   writedText.split(" ")[compareCharIndex - 1] ===
                                     textToWrite.split(" ")[compareCharIndex - 1]
                                     ? "text-green-500"
@@ -114,11 +114,12 @@ export const KeyboardSection = () => {
           </div>
         </>
       ) : (
-        <section className="w-[40vw] h-[50vh] p-[5vh] border-2 border-black grid grid-cols-3 grid-rows-2 items-center justify-items-center rounded-2xl bg-gray-300">
+        <section className="w-[40vw] h-[50vh] p-[5vh] border-2 border-black grid grid-cols-3 grid-rows-3 items-center justify-items-center rounded-2xl bg-gray-300">
+          <h3 className=" row-1 col-start-1 col-end-4 text-black text-4xl self-start font-light font-mono">Typing test</h3>
           <TypingTestResultCard numberResult={wordPerMinute} typingTestResultType="wpm"/>
           <TypingTestResultCard numberResult={typingTestTimer} typingTestResultType="s"/>
           <TypingTestResultCard numberResult={writedWordsAccuracy} typingTestResultType="%"/>
-          <button onClick={() => {startTypingTest(60); setWritedText("")}} className="row-2 col-start-1 col-end-4 text-2xl bg-gray-500 rounded-2xl border-2 border-black px-5 py-2">
+          <button onClick={() => {startTypingTest(60); setWritedText("")}} className="row-3 col-start-1 col-end-4 text-2xl font-mono bg-gray-500 rounded-2xl border-2 border-black px-5 py-2">
             Empieza el typing test aqui
           </button>
         </section>
