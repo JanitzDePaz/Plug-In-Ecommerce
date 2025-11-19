@@ -7,7 +7,7 @@ import { TypingTestResultCard } from "../cards/TypingTestResultCard";
 export const KeyboardSection = () => {
   const [writedText, setWritedText] = useState<String>("");
   const cancelSpacing = useRef<String>("");
-  const {textToWrite, activeTypingTest, wordPerMinute} =
+  const {textToWrite, activeTypingTest, wordPerMinute, writedWordsAccuracy} =
     typingTestStorage();
   const typingTestTimer = typingTestStorage(s => s.typingTestTimer)
   const updateLastTextWrited = typingTestStorage(s => s.updateLastTextWrited);
@@ -112,7 +112,7 @@ export const KeyboardSection = () => {
         <section className="w-[40vw] h-[50vh] p-[5vh] border-2 border-black grid grid-cols-3 grid-rows-2 items-center justify-items-center rounded-2xl bg-gray-300">
           <TypingTestResultCard numberResult={wordPerMinute} typingTestResultType="wpm"/>
           <TypingTestResultCard numberResult={typingTestTimer} typingTestResultType="s"/>
-          <TypingTestResultCard numberResult={wordPerMinute} typingTestResultType="%"/>
+          <TypingTestResultCard numberResult={writedWordsAccuracy} typingTestResultType="%"/>
           <button onClick={() => {startTypingTest(60); setWritedText("")}} className="row-2 col-start-1 col-end-4 text-2xl bg-gray-500 rounded-2xl border-2 border-black px-5 py-2">
             Empieza el typing test aqui
           </button>

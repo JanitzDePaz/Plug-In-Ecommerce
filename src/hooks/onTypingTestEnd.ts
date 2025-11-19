@@ -16,6 +16,7 @@ export const onTypingTestEnd = () => {
       correctWords++
     }
   }
+  typingTestStorage.getState().changeWordAccuracy(correctWords/splitedWritedText.length*100)
 
   typingTestStorage.getState().changeWordPerSecond(correctWords/60)
 

@@ -69,10 +69,13 @@ type typingTestProp ={
     updateLastTextWrited: (string) => void
 
     wordPerMinute: float,
-    changeWordPerMinute: (float) => void,
+    changeWordPerMinute: (number) => void,
 
     wordPerSecond: float,
-    changeWordPerSecond: (int) => void
+    changeWordPerSecond: (number) => void,
+
+    writedWordsAccuracy: number,
+    changeWordAccuracy: (number) => void
 }
 
 type typingTestCards = {

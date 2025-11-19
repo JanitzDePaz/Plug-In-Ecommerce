@@ -54,5 +54,8 @@ export const typingTestStorage = create<typingTestProp>((set) => ({
     changeWordPerMinute: (wps) => set({wordPerMinute: wps}),
 
     wordPerSecond: 0,
-    changeWordPerSecond: (wpm) => set({wordPerSecond: wpm})
+    changeWordPerSecond: (wpm) => set({wordPerSecond: wpm}),
+
+    writedWordsAccuracy: 0,
+    changeWordAccuracy: (accuracy) => set({writedWordsAccuracy: accuracy})
 }))
