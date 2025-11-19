@@ -10,15 +10,15 @@ export const KeyboardSection = () => {
   const {textToWrite, activeTypingTest, wordPerMinute} =
     typingTestStorage();
   const typingTestTimer = typingTestStorage(s => s.typingTestTimer)
-  const updateLastTextWrited = typingTestStorage((s) => s.updateLastTextWrited);
+  const updateLastTextWrited = typingTestStorage(s => s.updateLastTextWrited);
 
   let compareCharIndex = 0;
 
   //takes the last character the user typed
   useEffect(() => {
+    updateLastTextWrited(writedText);
     cancelSpacing.current =
       writedText.length > 0 ? writedText[writedText.length - 1] : "";
-    updateLastTextWrited(writedText);
   }, [writedText]);
 
   //this manage the keydown with a listener
@@ -52,7 +52,7 @@ export const KeyboardSection = () => {
   return (
     <section className="h-[80vh] flex-center gap-30 items-center typingTestGradient text-white">
       <div className="h-[70vh] w-2/5 xl:flex justify-center flex-col hidden ">
-        <h1 className="landingTitle">Teclado X</h1>
+        <h1 className="landingTitle">Teclado X60</h1>
         <img src="/landingPage/keyboard.png" alt="keyboard image" className="h-2/3"/>
       </div>
 
@@ -113,7 +113,7 @@ export const KeyboardSection = () => {
           <TypingTestResultCard numberResult={wordPerMinute} typingTestResultType="wpm"/>
           <TypingTestResultCard numberResult={typingTestTimer} typingTestResultType="s"/>
           <TypingTestResultCard numberResult={wordPerMinute} typingTestResultType="%"/>
-          <button onClick={() => startTypingTest(60)} className="row-2 col-start-1 col-end-4 text-2xl bg-gray-500 rounded-2xl border-2 border-black px-5 py-2">
+          <button onClick={() => {startTypingTest(60); setWritedText("")}} className="row-2 col-start-1 col-end-4 text-2xl bg-gray-500 rounded-2xl border-2 border-black px-5 py-2">
             Empieza el typing test aqui
           </button>
         </section>

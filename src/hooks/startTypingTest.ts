@@ -4,6 +4,8 @@ import { onTypingTestEnd } from "./onTypingTestEnd";
 
 export const startTypingTest = (time: number) => {
   typingTestStorage.getState().activateTypingTest();
+  typingTestStorage.getState().restartTypingTestTimer()
+  typingTestStorage.getState().updateLastTextWrited("")
   typingTestStorage.getState().changeTextToWrite(typingTestTexts[Math.floor(Math.random() * 9 + 1)])
   
   const secondsInterval = setInterval(() => {
