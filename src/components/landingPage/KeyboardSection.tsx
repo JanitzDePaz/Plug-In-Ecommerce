@@ -6,15 +6,16 @@ import { startTypingTest } from "src/hooks/startTypingTest";
 export const KeyboardSection = () => {
   const [writedText, setWritedText] = useState<String>("");
   const cancelSpacing = useRef<String>("");
-  const { typingTestTimer, textToWrite, updateLastTextWrited} = typingTestStorage();
-
-  updateLastTextWrited(writedText)
+  const { typingTestTimer, textToWrite} = typingTestStorage();
+  const updateLastTextWrited = typingTestStorage(s => s.updateLastTextWrited)
+ 
   let compareCharIndex = 0;
 
   //takes the last character the user typed
   useEffect(() => {
     cancelSpacing.current =
       writedText.length > 0 ? writedText[writedText.length - 1] : "";
+       updateLastTextWrited(writedText)
   }, [writedText]);
 
   //this manage the keydown with a listener
