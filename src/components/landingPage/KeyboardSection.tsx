@@ -2,12 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { typingTestStorage } from "src/stores/menuStore";
 import { startTypingTest } from "src/hooks/startTypingTest";
+import { TypingTestResultCard } from "../cards/TypingTestResultCard";
 
 export const KeyboardSection = () => {
   const [writedText, setWritedText] = useState<String>("");
   const cancelSpacing = useRef<String>("");
-  const { typingTestTimer, textToWrite, activeTypingTest, activateTypingTest } =
+  const {textToWrite, activeTypingTest, wordPerMinute} =
     typingTestStorage();
+  const typingTestTimer = typingTestStorage(s => s.typingTestTimer)
   const updateLastTextWrited = typingTestStorage((s) => s.updateLastTextWrited);
 
   let compareCharIndex = 0;
@@ -57,8 +59,10 @@ export const KeyboardSection = () => {
       {activeTypingTest ? (
         <>
           <div className="w-2/3 xl:w-[40vw] h-[50vh] p-[5vh] flex-center flex-col gap-10 bg-gray-200 rounded-2xl border-2 border-black">
-            <section className="flex-center items-start w-full">
+            <section className="flex-center items-start w-full relative">
+              <p className="w-10 text-center absolute bottom-0 right-0 translate-y-9 border border-black text-black  rounded-full">{typingTestTimer}</p>
               <div className="flex flex-wrap">
+                
                 {textToWrite.split(" ").map((word, i) => (
                   <div key={i} className="flex h-fit">
                     {word.split("").map((char, charIndex) => (
@@ -69,43 +73,46 @@ export const KeyboardSection = () => {
                 ))}
               </div>
             </section>
-            <section className="flex flex-wrap content-start relative h-[35vh] overflow-y-auto overflow-x-hidden border-2 border-gray-400">
+            <section className="flex flex-wrap content-start relative h-[35vh] overflow-y-scroll overflow-x-hidden border-2 border-gray-400">
               {writedText.length < 1 ? (
                 <p className="text-2xl text-black absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                   Escribe para empezar...
                 </p>
               ) : (
-                writedText.split(" ").map((word, i) => {
-                  compareCharIndex++;
-                  return (
-                    <div key={i} className="flex h-fit">
-                      {word.split("").map((char, i) => {
-                        return (
-                          <p
-                            key={i}
-                            className={clsx(
-                              "text-2xl",
-                              writedText.split(" ")[compareCharIndex - 1] ===
-                                textToWrite.split(" ")[compareCharIndex - 1]
-                                ? "text-green-500"
-                                : "text-black"
-                            )}
-                          >{`${char}`}</p>
-                        );
-                      })}
-                      <p className="text-2xl">&nbsp;</p>
-                    </div>
-                  );
-                })
+                  writedText.split(" ").map((word, i) => {
+                    
+                    compareCharIndex++;
+                    return (
+                      <>
+                        <div key={i} className="flex h-fit">
+                          {word.split("").map((char, i) => {
+                            return (
+                              <p
+                                key={i}
+                                className={clsx(
+                                  "text-2xl",
+                                  writedText.split(" ")[compareCharIndex - 1] ===
+                                    textToWrite.split(" ")[compareCharIndex - 1]
+                                    ? "text-green-500"
+                                    : "text-black"
+                                )}
+                              >{`${char}`}</p>
+                            );
+                          })}
+                          <p className="text-2xl">&nbsp;</p>
+                        </div>
+                      </>
+                    );
+                  })
               )}
             </section>
           </div>
         </>
       ) : (
         <section className="w-[40vw] h-[50vh] p-[5vh] border-2 border-black grid grid-cols-3 grid-rows-2 items-center justify-items-center rounded-2xl bg-gray-300">
-          <article className="w-3/4 aspect-square rounded-xl bg-red-400"></article>
-          <article className="w-3/4 aspect-square bg-red-400"></article>
-          <article className="w-3/4 aspect-square bg-red-400"></article>
+          <TypingTestResultCard numberResult={wordPerMinute} typingTestResultType="wpm"/>
+          <TypingTestResultCard numberResult={typingTestTimer} typingTestResultType="s"/>
+          <TypingTestResultCard numberResult={wordPerMinute} typingTestResultType="%"/>
           <button onClick={() => startTypingTest(60)} className="row-2 col-start-1 col-end-4 text-2xl bg-gray-500 rounded-2xl border-2 border-black px-5 py-2">
             Empieza el typing test aqui
           </button>

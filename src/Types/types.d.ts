@@ -74,3 +74,8 @@ type typingTestProp ={
     wordPerSecond: float,
     changeWordPerSecond: (int) => void
 }
+
+type typingTestCards = {
+    numberResult: number,
+    typingTestResultType: string
+}
