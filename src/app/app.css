@@ -110,3 +110,8 @@
   width: 20%;
   aspect-ratio: 1/1;
 }
+
+.typingTestGradient{
+  background: #a3babf;
+background: linear-gradient(135deg, rgba(163, 186, 191, 1) 0%, rgba(46, 105, 120, 1) 100%);
+}

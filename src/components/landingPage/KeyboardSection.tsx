@@ -6,23 +6,25 @@ import { startTypingTest } from "src/hooks/startTypingTest";
 export const KeyboardSection = () => {
   const [writedText, setWritedText] = useState<String>("");
   const cancelSpacing = useRef<String>("");
-  const { typingTestTimer, textToWrite} = typingTestStorage();
-  const updateLastTextWrited = typingTestStorage(s => s.updateLastTextWrited)
- 
+  const { typingTestTimer, textToWrite, activeTypingTest, activateTypingTest } =
+    typingTestStorage();
+  const updateLastTextWrited = typingTestStorage((s) => s.updateLastTextWrited);
+
   let compareCharIndex = 0;
 
   //takes the last character the user typed
   useEffect(() => {
     cancelSpacing.current =
       writedText.length > 0 ? writedText[writedText.length - 1] : "";
-       updateLastTextWrited(writedText)
+    updateLastTextWrited(writedText);
   }, [writedText]);
 
   //this manage the keydown with a listener
   useEffect(() => {
-    
     const handleKeydown = (event: KeyboardEvent) => {
-      if(!typingTestStorage.getState().activeTypingTest){return}
+      if (!typingTestStorage.getState().activeTypingTest) {
+        return;
+      }
       //If is a unicode key adds to a writed list
       if (/^[\p{L} ,.]$/u.test(event.key)) {
         setWritedText((prev) => prev + event.key);
@@ -46,67 +48,69 @@ export const KeyboardSection = () => {
   }, []);
 
   return (
-    <section className="max-h-screen flex-center gap-30 items-center bg-gray-700 text-white">
-
-      
-      <div className="min-h-[60vh] w-2/5 xl:flex hidden">
+    <section className="h-[80vh] flex-center gap-30 items-center typingTestGradient text-white">
+      <div className="h-[70vh] w-2/5 xl:flex justify-center flex-col hidden ">
         <h1 className="landingTitle">Teclado X</h1>
-        <img src="" alt="" />
-        <div>
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-        </div>
+        <img src="/landingPage/keyboard.png" alt="keyboard image" className="h-2/3"/>
       </div>
 
-
-      <div className="w-2/3 xl:w-[40vw] min-h-[70vh] flex-center flex-col gap-20">
-        <section className="flex-center items-start w-full">
-          <div className="flex flex-wrap">
-            {textToWrite.split(" ").map((word, i) => (
-              <div key={i} className="flex h-fit">
-                {word.split("").map((char, charIndex) => (
-                  <p className="text-2xl" key={charIndex}>{`${char}`}</p>
+      {activeTypingTest ? (
+        <>
+          <div className="w-2/3 xl:w-[40vw] h-[50vh] p-[5vh] flex-center flex-col gap-10 bg-gray-200 rounded-2xl border-2 border-black">
+            <section className="flex-center items-start w-full">
+              <div className="flex flex-wrap">
+                {textToWrite.split(" ").map((word, i) => (
+                  <div key={i} className="flex h-fit">
+                    {word.split("").map((char, charIndex) => (
+                      <p className="text-2xl text-black" key={charIndex}>{`${char}`}</p>
+                    ))}
+                    <p className="text-2xl">&nbsp;</p>
+                  </div>
                 ))}
-                <p className="text-2xl">&nbsp;</p>
               </div>
-            ))}
+            </section>
+            <section className="flex flex-wrap content-start relative h-[35vh] overflow-y-auto overflow-x-hidden border-2 border-gray-400">
+              {writedText.length < 1 ? (
+                <p className="text-2xl text-black absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                  Escribe para empezar...
+                </p>
+              ) : (
+                writedText.split(" ").map((word, i) => {
+                  compareCharIndex++;
+                  return (
+                    <div key={i} className="flex h-fit">
+                      {word.split("").map((char, i) => {
+                        return (
+                          <p
+                            key={i}
+                            className={clsx(
+                              "text-2xl",
+                              writedText.split(" ")[compareCharIndex - 1] ===
+                                textToWrite.split(" ")[compareCharIndex - 1]
+                                ? "text-green-500"
+                                : "text-black"
+                            )}
+                          >{`${char}`}</p>
+                        );
+                      })}
+                      <p className="text-2xl">&nbsp;</p>
+                    </div>
+                  );
+                })
+              )}
+            </section>
           </div>
+        </>
+      ) : (
+        <section className="w-[40vw] h-[50vh] p-[5vh] border-2 border-black grid grid-cols-3 grid-rows-2 items-center justify-items-center rounded-2xl bg-gray-300">
+          <article className="w-3/4 aspect-square rounded-xl bg-red-400"></article>
+          <article className="w-3/4 aspect-square bg-red-400"></article>
+          <article className="w-3/4 aspect-square bg-red-400"></article>
+          <button onClick={() => startTypingTest(60)} className="row-2 col-start-1 col-end-4 text-2xl bg-gray-500 rounded-2xl border-2 border-black px-5 py-2">
+            Empieza el typing test aqui
+          </button>
         </section>
-        <section className="flex flex-wrap content-start relative h-[35vh] overflow-y-auto overflow-x-hidden border-2 border-gray-400">
-          {writedText.length < 1 ? (
-            <p className="text-2xl absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-              Escribe para empezar...
-            </p>
-          ) : (
-            writedText.split(" ").map((word, i) => {
-              compareCharIndex++;
-              return (
-                <div key={i} className="flex h-fit">
-                  {word.split("").map((char, i) => {
-                    return (
-                      <p
-                        key={i}
-                        className={clsx(
-                          "text-2xl",
-                          writedText.split(" ")[compareCharIndex - 1] ===
-                            textToWrite.split(" ")[compareCharIndex - 1]
-                            ? "text-green-500"
-                            : "text-white"
-                        )}
-                      >{`${char}`}</p>
-                    );
-                  })}
-                  <p className="text-2xl">&nbsp;</p>
-                </div>
-              );
-            })
-          )}
-        </section>
-        <button onClick={() => startTypingTest(60)}>{typingTestTimer}</button>
-      </div>
+      )}
     </section>
   );
 };
