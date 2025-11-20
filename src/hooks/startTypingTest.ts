@@ -20,5 +20,5 @@ export const startTypingTest = (time: number) => {
       return;
     }
     typingTestStorage.getState().addSeconds();
-  }, 1000);
+  }, 100);
 };

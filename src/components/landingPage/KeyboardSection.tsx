@@ -8,6 +8,7 @@ import { onTypingTestEnd } from "src/hooks/onTypingTestEnd";
 export const KeyboardSection = () => {
   const [writedText, setWritedText] = useState<String>("");
   const cancelSpacing = useRef<String>("");
+  const notPlayed = useRef<boolean>(true)
   const {textToWrite, activeTypingTest, wordPerMinute, writedWordsAccuracy} =
     typingTestStorage();
   const typingTestTimer = typingTestStorage(s => s.typingTestTimer)
@@ -114,12 +115,28 @@ export const KeyboardSection = () => {
           </div>
         </>
       ) : (
-        <section className="w-[40vw] h-[50vh] p-[5vh] border-2 border-black grid grid-cols-3 grid-rows-3 items-center justify-items-center rounded-2xl bg-gray-300">
+        <section className="w-[40vw] h-[50vh] p-[5vh] border-2 border-black grid grid-cols-3 grid-rows-[1fr, 400px, 1fr] items-center justify-items-center rounded-2xl bg-gray-300">
           <h3 className=" row-1 col-start-1 col-end-4 text-black text-4xl self-start font-light font-mono">Typing test</h3>
-          <TypingTestResultCard numberResult={wordPerMinute} typingTestResultType="wpm"/>
-          <TypingTestResultCard numberResult={typingTestTimer} typingTestResultType="s"/>
-          <TypingTestResultCard numberResult={writedWordsAccuracy} typingTestResultType="%"/>
-          <button onClick={() => {startTypingTest(60); setWritedText("")}} className="row-3 col-start-1 col-end-4 text-2xl font-mono bg-gray-500 rounded-2xl border-2 border-black px-5 py-2">
+          {
+            notPlayed.current 
+            ? 
+              <article className="w-full col-start-1 col-end-4">
+                <h4 className="text-black font-mono text-2xl font-medium">Manual del test</h4>
+                <p className="text-black font-mono">
+                  En este typing test se <strong>valorará</strong> las palabras por <strong>minuto, la duracion y la precision.</strong> <br />
+                  El test se puede parar pulsando la tecla <strong>Enter</strong> y se valorará con el texto escrito. <br />
+                  El test corrige palabra por palabra y una palabra mal escrita <strong>no contará</strong> para los resultados.
+                </p>
+              </article>
+            :
+              <>
+                <TypingTestResultCard numberResult={wordPerMinute} typingTestResultType="wpm"/>
+                <TypingTestResultCard numberResult={typingTestTimer} typingTestResultType="s"/>
+                <TypingTestResultCard numberResult={writedWordsAccuracy} typingTestResultType="%"/>
+              </>
+          }
+          
+          <button onClick={() => {startTypingTest(60); setWritedText(""); notPlayed.current = false}} className="row-3 col-start-1 col-end-4 text-2xl font-mono bg-gray-500 rounded-2xl border-2 border-black px-5 py-2">
             Empieza el typing test aqui
           </button>
         </section>
