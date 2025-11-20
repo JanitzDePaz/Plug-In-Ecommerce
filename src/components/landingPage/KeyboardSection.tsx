@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { typingTestStorage } from "src/stores/menuStore";
 import { startTypingTest } from "src/hooks/startTypingTest";
 import { TypingTestResultCard } from "../cards/TypingTestResultCard";
-import { onTypingTestEnd } from "src/hooks/onTypingTestEnd";
+import { LandingPrimaryButton } from "../buttons/LandingPrimaryButton";
 
 export const KeyboardSection = () => {
   const [writedText, setWritedText] = useState<String>("");
@@ -56,15 +56,16 @@ export const KeyboardSection = () => {
   }, []);
 
   return (
-    <section className="h-[80vh] flex-center gap-30 items-center typingTestGradient text-white">
-      <div className="h-[70vh] w-2/5 xl:flex justify-center flex-col hidden ">
+    <section className="min-h-screen py-10 xl:h-[80vh] flex-center flex-col xl:flex-row gap-30 items-center typingTestGradient text-white">
+      <div className=" h-[70vh] w-5/6 xl:w-2/5 flex justify-center items-center flex-col gap-0">
         <h1 className="landingTitle">Teclado X60</h1>
-        <img src="/landingPage/keyboard.png" alt="keyboard image" className="h-2/3"/>
+        <img src="/landingPage/keyboard.png" alt="keyboard image"/>
+        <LandingPrimaryButton text="Compra aquí" route="/Tienda"/>
       </div>
 
       {activeTypingTest ? (
         <>
-          <div className="w-2/3 xl:w-[40vw] h-[50vh] p-[5vh] flex-center flex-col gap-10 bg-gray-200 rounded-2xl border-2 border-black">
+          <div className="w-[90vw] lg:w-[60vw] xl:w-[40vw] h-[80vh] lg:h-[50vh] p-[5vh] flex-center items-center flex-col gap-10 bg-gray-200 rounded-2xl border-2 border-black">
             <section className="flex-center items-start w-full relative">
               <p className="w-10 text-center absolute bottom-0 right-0 translate-y-9 border border-black text-black  rounded-full">{typingTestTimer}</p>
               <div className="flex flex-wrap">
@@ -72,14 +73,14 @@ export const KeyboardSection = () => {
                 {textToWrite.split(" ").map((word, i) => (
                   <div key={i} className="flex h-fit">
                     {word.split("").map((char, charIndex) => (
-                      <p className="text-2xl font-mono text-black" key={charIndex}>{`${char}`}</p>
+                      <p className="text-sm sm:text-2xl font-mono text-black" key={charIndex}>{`${char}`}</p>
                     ))}
                     <p className="text-2xl">&nbsp;</p>
                   </div>
                 ))}
               </div>
             </section>
-            <section className="flex flex-wrap content-start relative h-[35vh] overflow-y-scroll overflow-x-hidden border-2 border-gray-400">
+            <section className="w-full flex flex-wrap content-start relative h-[35vh] overflow-y-scroll overflow-x-hidden border-2 border-gray-400">
               {writedText.length < 1 ? (
                 <p className="text-2xl text-black absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                   Escribe para empezar...
@@ -115,14 +116,14 @@ export const KeyboardSection = () => {
           </div>
         </>
       ) : (
-        <section className="w-[40vw] h-[50vh] p-[5vh] border-2 border-black grid grid-cols-3 grid-rows-[1fr, 400px, 1fr] items-center justify-items-center rounded-2xl bg-gray-300">
-          <h3 className=" row-1 col-start-1 col-end-4 text-black text-4xl self-start font-light font-mono">Typing test</h3>
+        <div className="w-[90vw] sm:w-[65vw] lg:w-[60vw] xl:w-[40vw] min-h-[65vh] lg:h-[65vh] 2xl:h-[60vh] p-4 xl:p-[5vh] border-2 border-black flex flex-col gap-10 items-center justify-items-center rounded-2xl bg-gray-300">
+          <h3 className=" row-1 col-start-1 col-end-4 text-black text-4xl font-light font-mono">Typing test</h3>
           {
             notPlayed.current 
             ? 
               <article className="w-full col-start-1 col-end-4">
-                <h4 className="text-black font-mono text-2xl font-medium">Manual del test</h4>
-                <p className="text-black font-mono">
+                <h4 className="lg:text-2xl text-black font-mono sm:text-xl text-lg font-medium">Manual del test</h4>
+                <p className="text-black font-mono text-lg sm:text-xl lg:text-xl">
                   En este typing test se <strong>valorará</strong> las palabras por <strong>minuto, la duracion y la precision.</strong> <br />
                   El test se puede parar pulsando la tecla <strong>Enter</strong> y se valorará con el texto escrito. <br />
                   El test corrige palabra por palabra y una palabra mal escrita <strong>no contará</strong> para los resultados.
@@ -136,10 +137,10 @@ export const KeyboardSection = () => {
               </>
           }
           
-          <button onClick={() => {startTypingTest(60); setWritedText(""); notPlayed.current = false}} className="row-3 col-start-1 col-end-4 text-2xl font-mono bg-gray-500 rounded-2xl border-2 border-black px-5 py-2">
+          <button onClick={() => {startTypingTest(60); setWritedText(""); notPlayed.current = false}} className="row-3 col-start-1 col-end-4 text-xl lg:text-2xl font-mono bg-gray-500 rounded-2xl border-2 border-black px-5 py-2">
             Empieza el typing test aqui
           </button>
-        </section>
+        </div>
       )}
     </section>
   );

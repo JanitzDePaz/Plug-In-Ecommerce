@@ -18,7 +18,7 @@ export const HeadsetSection = () => {
     <section className="LandingHeadsetBG py-[2vh] flex flex-col">
         <h1 className="landingTitle">Nuevo color disponible</h1>
         <div className="flex justify-center gap-[10vw] flex-col lg:flex-row py-10">
-          <div className="flex-center flex-col items-center w-full lg:w-[40vw] xl:w-[30vw] min-h-full">
+          <div className="flex-center flex-col items-center w-full lg:w-[40vw] xl:w-[30vw] h-[60vh]">
             <Headset />
             <div className="flex-center gap-0 2xl:gap-5 flex-col 2xl:flex-row">
               <div className="flex-center flex-col">
