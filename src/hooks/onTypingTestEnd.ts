@@ -16,10 +16,21 @@ export const onTypingTestEnd = () => {
       correctWords++
     }
   }
-  typingTestStorage.getState().changeWordAccuracy(Math.floor(splitedWritedText.length*100/splitedTextToWrite.length))
 
-  typingTestStorage.getState().changeWordPerSecond(correctWords/typingTestStorage.getState().typingTestTimer)
+  if(splitedWritedText.length > 1){
+    typingTestStorage.getState().changeWordAccuracy(Math.floor(splitedWritedText.length*100/splitedTextToWrite.length))
+  }else{
+    typingTestStorage.getState().changeWordAccuracy(0)
+  }
+  
+  if(splitedWritedText.length > 1){
+    typingTestStorage.getState().changeWordPerSecond(correctWords/typingTestStorage.getState().typingTestTimer)
+    typingTestStorage.getState().changeWordPerMinute(Math.floor(typingTestStorage.getState().wordPerSecond*60))
+  }else{
+    typingTestStorage.getState().changeWordPerMinute(0)
+  }
+ 
 
-  typingTestStorage.getState().changeWordPerMinute(Math.floor(typingTestStorage.getState().wordPerSecond*60))
+  
 
 };
