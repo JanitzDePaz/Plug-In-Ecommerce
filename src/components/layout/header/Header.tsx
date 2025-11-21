@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <>
       <header className="flex-between border-b-2 border-black max-h-[15vh] p-6 relative overflow-x-clip">
-        <img src="Header/PlugInLogo.svg" alt="Logo icon" />
+        <img src="header/PlugInLogo.svg" alt="Logo icon" />
         <nav className="hidden md:block">
           <ul className="flex md:gap-10 gap-5">
             {headerItems.map((item, i) => (
@@ -38,13 +38,13 @@ export default function Header() {
           />
           <button className="header-button z-10">
             <img
-              src="Header/Search.svg"
+              src="header/Search.svg"
               alt="Magnifying glass icon"
               onClick={toggleSearchInput}
             />
           </button>
           <button className="header-button relative" onClick={toggleCart}>
-            <img src="Header/ShoppingCart.svg" alt="Shopping cart icon" />
+            <img src="header/ShoppingCart.svg" alt="Shopping cart icon" />
           </button>
           {openedMenu ? (
             <button
@@ -52,7 +52,7 @@ export default function Header() {
               onClick={closeMenu}
             >
               <img
-                src="Header/CloseMenu.svg"
+                src="header/CloseMenu.svg"
                 alt="CloseMenuIcon"
                 className="w-6 h-6"
               />
@@ -62,7 +62,7 @@ export default function Header() {
               className="block md:hidden header-button z-10"
               onClick={toggleMenu}
             >
-              <img src="Header/HeaderMenu.svg" alt="MenuIcon" />
+              <img src="header/HeaderMenu.svg" alt="MenuIcon" />
             </button>
           )}
         </div>
