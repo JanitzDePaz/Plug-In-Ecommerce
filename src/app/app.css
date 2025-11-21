@@ -113,5 +113,27 @@
 
 .typingTestGradient{
   background: #a3babf;
-background: linear-gradient(135deg, rgba(163, 186, 191, 1) 0%, rgba(46, 105, 120, 1) 100%);
+  background: linear-gradient(135deg, rgba(163, 186, 191, 1) 0%, rgba(46, 105, 120, 1) 100%);
+}
+
+
+
+
+.footerSections{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerSectionTitles{
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5%;
+}
+
+.footerDivs{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
