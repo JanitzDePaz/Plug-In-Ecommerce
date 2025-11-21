@@ -1,62 +1,74 @@
 @import "tailwindcss";
 
-
 @theme {
-  --font-sans: ui-sans-serif, "Inter", system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans:
+    ui-sans-serif, "Inter", system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-
 
 .flex-between {
   display: flex;
   justify-content: space-between;
 }
 
-.flex-center{
+.flex-center {
   display: flex;
   justify-content: center;
 }
 
-.header-button{
-
+.header-button {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
-.header-button img{
+.header-button img {
   width: 24px;
   height: 24px;
-
 }
 
 .LandingHeadsetBG {
-  background: linear-gradient(120deg, #142b4e, #1a2b4c, #1f2b49, #232b47, #262b45, #292c42, #292a3e, #282739, #262434, #24212f, #221f2a, #1f1c25);
+  background: linear-gradient(
+    120deg,
+    #142b4e,
+    #1a2b4c,
+    #1f2b49,
+    #232b47,
+    #262b45,
+    #292c42,
+    #292a3e,
+    #282739,
+    #262434,
+    #24212f,
+    #221f2a,
+    #1f1c25
+  );
   background-size: cover;
   background-position: center;
   width: 100%;
 }
 
-.landingTitle{
+.landingTitle {
   font-size: 4.5rem;
   font-weight: 500;
   color: white;
   text-align: center;
 }
 
-.landingSubtitle{
+.landingSubtitle {
   font-size: 2.5rem;
   font-weight: 400;
   color: white;
 }
 
-.landingParagraph{
+.landingParagraph {
   font-size: 2rem;
   color: white;
   font-weight: 100;
 }
 
-.landingPrimaryButton, .landingSecondaryButton{
+.landingPrimaryButton,
+.landingSecondaryButton {
   width: fit-content;
   border: 1px solid white;
   border-radius: 80px;
@@ -64,29 +76,30 @@
   padding-block: 1rem;
   font-size: 1.5rem;
 }
-.landingPrimaryButton{
+.landingPrimaryButton {
   background-color: white;
   color: #163461;
   font-weight: 400;
 }
 
-.landingPrimaryButton:hover, .landingSecondaryButton:hover{
+.landingPrimaryButton:hover,
+.landingSecondaryButton:hover {
   transition: 0.2s ease-out;
   transform: scale(1.1);
 }
 
-.landingSecondaryButton{
+.landingSecondaryButton {
   color: white;
   font-weight: 300;
 }
 
-.changeColorButtons{
+.changeColorButtons {
   height: 2.5rem;
   width: 2.5rem;
   border-radius: 50%;
 }
 
-.screenData{
+.screenData {
   flex-direction: column;
   gap: 1rem;
   height: fit-content;
@@ -98,42 +111,61 @@
   border: 1px solid blue;
 }
 
-.screenData h3{
+.screenData h3 {
   font-size: 1.6rem;
 }
 
-.screenData div h4{
+.screenData div h4 {
   font-size: 1.3rem;
 }
 
-.screenData div img{
+.screenData div img {
   width: 20%;
   aspect-ratio: 1/1;
 }
 
-.typingTestGradient{
+.typingTestGradient {
   background: #a3babf;
-  background: linear-gradient(135deg, rgba(163, 186, 191, 1) 0%, rgba(46, 105, 120, 1) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(163, 186, 191, 1) 0%,
+    rgba(46, 105, 120, 1) 100%
+  );
 }
 
-
-
-
-.footerSections{
+.footerSections {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 25vw;
 }
 
-.footerSectionTitles{
-  font-size: 1.2rem;
+.footerSectionTitles {
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 5%;
+  margin-bottom: 0.8rem;
 }
 
-.footerDivs{
+.footerDivs {
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
+  gap: 10px;
+}
+
+.footerLinks {
+  font-size: 1.2rem;
+  text-decoration:underline;
+  color: #163461;
+}
+
+.footerLinks:hover {
+  transition: 0.2s;
+  transform: scale(1.1);
+}
+
+.imageLink:hover {
+  transition: ease-out 0.3s;
+  transform: scale(1.1);
 }
