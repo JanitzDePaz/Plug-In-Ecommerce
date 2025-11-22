@@ -23,7 +23,7 @@ export const HeadsetSection = () => {
           slideDownHeadsetSection(".slideAnimation")
           firstRecharge.current = true
         }
-      })
+      }, [])
 
   return (
     <section className="LandingHeadsetBG py-[2vh] flex flex-col min-h-screen ">

@@ -15,7 +15,6 @@ export const slideDownHeadsetSection = (elements: string) => {
         scrollTrigger: {
             trigger: elementsToAnimate[0],
             start: "top 80%",
-            toggleActions: "play none none reverse"
         }
     });
 }
