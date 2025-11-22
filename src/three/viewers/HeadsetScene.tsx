@@ -17,6 +17,7 @@ export default function () {
           enablePan={false}
           enableRotate={true}
           autoRotate={true}
+          autoRotateSpeed={1.5}
         />
       </Suspense>
     </Canvas>

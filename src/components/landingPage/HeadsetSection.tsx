@@ -4,7 +4,7 @@ import { LandingPrimaryButton } from "src/components/buttons/LandingPrimaryButto
 import { ChangeColorButton } from "src/components/buttons/ChangeColorButton";
 import { headsetColorControl } from "src/stores/menuStore";
 import { slideDownHeadsetSection } from "src/animations/slideDownHeadsetSection"
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 export const HeadsetSection = () => {
     const {
         changeColorAquamarineContour,
@@ -17,9 +17,12 @@ export const HeadsetSection = () => {
         changeColorBrownPads,
       } = headsetColorControl();
 
-      
+      const firstRecharge = useRef<boolean>(false)
       useEffect(()=>{
-        slideDownHeadsetSection(".slideAnimation")
+        if(!firstRecharge.current){
+          slideDownHeadsetSection(".slideAnimation")
+          firstRecharge.current = true
+        }
       })
 
   return (
