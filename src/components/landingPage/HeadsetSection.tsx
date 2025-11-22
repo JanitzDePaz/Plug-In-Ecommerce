@@ -3,6 +3,8 @@ import Headset from "src/three/viewers/HeadsetScene";
 import { LandingPrimaryButton } from "src/components/buttons/LandingPrimaryButton";
 import { ChangeColorButton } from "src/components/buttons/ChangeColorButton";
 import { headsetColorControl } from "src/stores/menuStore";
+import { slideDownHeadsetSection } from "src/animations/slideDownHeadsetSection"
+import { useEffect } from "react";
 export const HeadsetSection = () => {
     const {
         changeColorAquamarineContour,
@@ -14,11 +16,17 @@ export const HeadsetSection = () => {
         changeColorGrayPads,
         changeColorBrownPads,
       } = headsetColorControl();
+
+      
+      useEffect(()=>{
+        slideDownHeadsetSection(".slideAnimation")
+      })
+
   return (
-    <section className="LandingHeadsetBG py-[2vh] flex flex-col">
-        <h1 className="landingTitle">Nuevo color disponible</h1>
+    <section className="LandingHeadsetBG py-[2vh] flex flex-col min-h-screen ">
+        <h1 className="landingTitle slideAnimation">Nuevo color disponible</h1>
         <div className="flex justify-center gap-[10vw] flex-col lg:flex-row py-10">
-          <div className="flex-center flex-col items-center w-full lg:w-[40vw] xl:w-[30vw] h-[60vh]">
+          <div className="flex-center flex-col items-center w-full lg:w-[40vw] xl:w-[30vw] h-[60vh] slideAnimation">
             <Headset />
             <div className="flex-center gap-0 2xl:gap-5 flex-col 2xl:flex-row">
               <div className="flex-center flex-col">
@@ -47,17 +55,17 @@ export const HeadsetSection = () => {
             </div>
           </div>
           <div className="w-full p-10 lg:p-0 lg:w-[40vw] xl:w-[25vw] flex-center flex-col gap-10">
-            <h2 className="landingSubtitle">NeoSound</h2>
-            <p className="landingParagraph">
+            <h2 className="landingSubtitle slideAnimation">NeoSound</h2>
+            <p className="landingParagraph slideAnimation">
               Cada nota cobra vida con una nitidez que te envuelve. Los graves
               potentes y los agudos definidos te hacen sentir la música tal y
               como fue creada. No escuchas, vives la experiencia.
             </p>
             <div className="flex-center flex-col gap-5">
               <Link to={"/tienda"}>
-                <button className="landingSecondaryButton">Leer más</button>
+                <button className="landingSecondaryButton slideAnimation">Leer más</button>
               </Link>
-              <LandingPrimaryButton text="Comprar ahora" route="/Tienda" />
+              <LandingPrimaryButton text="Comprar ahora" route="/Tienda" style=".slide"/>
             </div>
           </div>
         </div>

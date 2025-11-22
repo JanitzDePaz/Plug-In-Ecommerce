@@ -33,7 +33,8 @@ type HeadsetColorProp = {
 
 type LandingPrimaryButtonProps = {
     text: string,
-    route: string
+    route: string,
+    style: string
 }
 
 type ChangeColorButtonProps = {

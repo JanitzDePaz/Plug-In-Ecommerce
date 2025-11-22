@@ -1,9 +1,9 @@
 import { Link } from "react-router"
 
-export const LandingPrimaryButton = ({text, route} : LandingPrimaryButtonProps) => {
+export const LandingPrimaryButton = ({text, route, style} : LandingPrimaryButtonProps) => {
     return(
         <Link to={route}>
-            <button className="landingPrimaryButton">{text}</button>
+            <button className="landingPrimaryButton slideAnimation">{text}</button>
         </Link>
     )
 }

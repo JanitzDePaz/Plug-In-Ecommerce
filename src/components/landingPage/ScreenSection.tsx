@@ -37,7 +37,7 @@ export const ScreenSection = () => {
             <div></div>
             <div className="flex flex-col gap-5">
               <p className="text-white text-center text-2xl">Desde 1.399 €</p>
-              <LandingPrimaryButton text="Comprar ahora" route="/Tienda" />
+              <LandingPrimaryButton text="Comprar ahora" route="/Tienda" style="" />
             </div>
           </div>
 
@@ -51,7 +51,7 @@ export const ScreenSection = () => {
             />
             <div className="flex flex-col gap-3 2xl:hidden">
               <p className="text-white text-center text-2xl">Desde 1.399 €</p>
-              <LandingPrimaryButton text="Comprar ahora" route="/Tienda" />
+              <LandingPrimaryButton text="Comprar ahora" route="/Tienda" style=""/>
             </div>
           </div>
         </div>
