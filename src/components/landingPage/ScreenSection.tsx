@@ -1,23 +1,31 @@
-import { useEffect, useRef } from "react";
+import { Component, useEffect, useRef } from "react";
 import numbersGoingUp from "src/animations/numbersGoingUp";
+import { slideDown } from "src/animations/slideDown";
 import { LandingPrimaryButton } from "src/components/buttons/LandingPrimaryButton";
 import { ScreenDataCards } from "src/components/cards/ScreenDataCards";
 
 export const ScreenSection = () => {
     const hzRef = useRef<HTMLHeadingElement | null>(null);
     const msRef = useRef<HTMLHeadingElement | null>(null);
+    const screenTitle = useRef<HTMLHeadingElement>(null);
 
     useEffect(() => {
-        if (hzRef.current) {
-        numbersGoingUp(hzRef.current, 0, 720, false, "hz");
-        }
-    if (msRef.current) {
-      numbersGoingUp(msRef.current, 1000, 0.1, true, "ms");
-    }
+      if (hzRef.current) {
+      numbersGoingUp(hzRef.current, 0, 720, false, "hz");
+      slideDown(hzRef.current, 2)
+      }
+      if (msRef.current) {
+        numbersGoingUp(msRef.current, 1000, 0.1, true, "ms");
+        slideDown(msRef.current, 2)
+      }
+      if(screenTitle.current){
+        slideDown(screenTitle.current, 2)
+      }
+
     }, []);
     return (
         <section className="bg-[rgb(19,19,19)] min-h-screen flex-center items-center flex-col gap-20 flex-wrap py-30">
-        <h1 className="landingTitle w-full">ROG Swift OLED</h1>
+        <h1 ref={screenTitle} className="landingTitle w-full">ROG Swift OLED</h1>
         <div className="flex-center w-full">
           <div className="2xl:flex justify-center items-center w-2/6 h-4/5 flex-col gap-5 hidden p-5">
             <div className="w-fit gap-10 grid grid-rows-2 grid-cols-2 place-content-center">

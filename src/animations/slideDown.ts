@@ -4,11 +4,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 
-export const slideDown = (ref: HTMLElement[]) => {
+export const slideDown = (ref: HTMLElement, duration: number) => {
     gsap.from(ref, {
         y: -100,
         opacity: 0,
-        duration: 1,
+        duration: duration,
         ease: "power3.out",
         scrollTrigger: {
             trigger: ref,
