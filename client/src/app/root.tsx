@@ -11,8 +11,13 @@ import Header from "src/components/layout/header/Header";
 import { Footer } from "src/components/layout/footer/Footer"
 
 import "./app.css";
+import { useEffect, useRef } from "react";
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const hideFooter = useRef<boolean>(false)
+  useEffect(() => {
+    hideFooter.current = true
+  },[])
   return (
     <html lang="en">
       <head>
@@ -28,7 +33,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <main className="flex-1">
           {children}
         </main>
-        <Footer />
+        {hideFooter.current ? <Footer /> : <></>}
+        
         <ScrollRestoration />
         <Scripts />
       </body>
