@@ -22,7 +22,9 @@ public class Product {
 
     public int getId(){return id; }
     public String getName(){return name;}
+    public String getDescription(){return description;}
     public double getPrice(){return price;}
     public String getCategory(){return category;}
-
+     public String getImageUrl(){return imgURL;}
+      public boolean getActive(){return active;}
 }
