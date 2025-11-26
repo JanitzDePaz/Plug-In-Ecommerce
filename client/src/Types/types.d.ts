@@ -87,3 +87,9 @@ type typingTestCards = {
     numberResult: number,
     typingTestResultType: string
 }
+
+type activeFiltersMenuProp = {
+    activeFilterMenu: boolean,
+    openFilterMenu: () => void,
+    closeFilterMenu: () => void,
+}
