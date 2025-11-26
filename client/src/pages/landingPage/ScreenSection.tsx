@@ -19,7 +19,7 @@ export const ScreenSection = () => {
         slideDown(msRef.current, 2)
       }
       if(screenTitle.current){
-        slideDown(screenTitle.current, 2)
+        slideDown(screenTitle.current, 1)
       }
 
     }, []);

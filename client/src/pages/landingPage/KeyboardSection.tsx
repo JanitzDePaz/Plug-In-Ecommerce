@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { typingTestStorage } from "src/stores/menuStore";
 import { startTypingTest } from "src/hooks/startTypingTest";
-import { TypingTestResultCard } from "../cards/TypingTestResultCard";
-import { LandingPrimaryButton } from "../buttons/LandingPrimaryButton";
+import { TypingTestResultCard } from "../../components/cards/TypingTestResultCard";
+import { LandingPrimaryButton } from "../../components/buttons/LandingPrimaryButton";
 
 export const KeyboardSection = () => {
   const [writedText, setWritedText] = useState<String>("");
