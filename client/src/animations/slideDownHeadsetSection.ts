@@ -9,7 +9,7 @@ export const slideDownHeadsetSection = (elements: string) => {
     gsap.from(elementsToAnimate, {
         y: -50,
         opacity: 0,
-        duration: 1,
+        duration: 0.7,
         ease: "power3.out",
         stagger: 0.2,
         scrollTrigger: {

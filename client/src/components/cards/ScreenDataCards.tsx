@@ -10,7 +10,7 @@ export const ScreenDataCards = forwardRef<HTMLHeadingElement, ScreenDataCardsPro
 
         useEffect(() =>{
             if(cardRef.current){
-                slideDown(cardRef.current, 1)
+                slideDown(cardRef.current, 0.7)
             }
         })
     return(

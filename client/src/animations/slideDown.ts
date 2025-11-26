@@ -13,7 +13,6 @@ export const slideDown = (ref: HTMLElement, duration: number) => {
         scrollTrigger: {
             trigger: ref,
             start: "top 80%",
-            toggleActions: "play none none reverse"
         }
     });
 }
