@@ -93,3 +93,20 @@ type activeFiltersMenuProp = {
     openFilterMenu: () => void,
     closeFilterMenu: () => void,
 }
+
+type productProp = {
+    id: number,
+    name: string,
+    description: string,
+    price: number,
+    category: string,
+    imgUrl: string,
+    active: boolean
+}
+
+type productCard = {
+    name: string,
+    price: number,
+    imgUrl: string,
+    active: boolean
+}

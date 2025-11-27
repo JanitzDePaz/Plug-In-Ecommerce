@@ -5,3 +5,4 @@ export const filterMenu = create<activeFiltersMenuProp>((set) => ({
     openFilterMenu: () => set({activeFilterMenu: true}),
     closeFilterMenu: () =>  set({activeFilterMenu: false}),
 }))
+

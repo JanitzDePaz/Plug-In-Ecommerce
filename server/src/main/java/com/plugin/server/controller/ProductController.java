@@ -21,8 +21,7 @@ public class ProductController {
         List<Product> productList = new ArrayList<>();
 
         for(int i = 0; i < 10; i++){
-            String imageUrl = "/url/url"+i;
-            productList.add(new Product(i, "PC"+i, "Description of PC" + (i+1), Math.random()*45+i, "PCs", imageUrl, true));
+            productList.add(new Product(i, "Monitor "+i, "Description of this monitor...", Math.random()*45+i, "Monitor", "/monitor.png", true));
         }
 
         return productList;
