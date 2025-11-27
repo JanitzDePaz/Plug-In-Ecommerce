@@ -1,9 +1,14 @@
 import { headerItems } from "src/constants/headerItems";
 import { Link } from "react-router";
-import MobileMenu from "../../MobileMenu";
+import MobileMenu from "./MobileMenu";
 import { searchStorage, cartStorage, menuStorage } from "src/stores/menuStore";
 import clsx from "clsx";
 import { CartMenu } from "./CartMenu";
+import pluginLogo from "../../../assets/icons/header/PlugInLogo.svg"
+import searchIcon from "../../../assets/icons/header/Search.svg"
+import closeMenuIcon from "../../../assets/icons/header/CloseMenu.svg"
+import headerMenuIcon from "../../../assets/icons/header/HeaderMenu.svg"
+import shoppingCartIcon from "../../../assets/icons/header/ShoppingCart.svg"
 
 export default function Header() {
   const { toggleCart } = cartStorage();
@@ -13,7 +18,7 @@ export default function Header() {
   return (
     <>
       <header className="flex-between border-b-2 border-black max-h-[15vh] p-6 relative overflow-x-clip">
-        <img src="header/PlugInLogo.svg" alt="Logo icon" />
+        <img src={pluginLogo} alt="Logo icon" />
         <nav className="hidden md:block">
           <ul className="flex md:gap-10 gap-5">
             {headerItems.map((item, i) => (
@@ -38,21 +43,21 @@ export default function Header() {
           />
           <button className="header-button z-10">
             <img
-              src="header/Search.svg"
+              src={searchIcon}
               alt="Magnifying glass icon"
               onClick={toggleSearchInput}
             />
           </button>
           <button className="header-button relative" onClick={toggleCart}>
-            <img src="header/ShoppingCart.svg" alt="Shopping cart icon" />
+            <img src={shoppingCartIcon} alt="Shopping cart icon" />
           </button>
           {openedMenu ? (
             <button
-              className=" block md:hidden header-button z-10"
+              className=" block md:hidden header-button z-100"
               onClick={closeMenu}
             >
               <img
-                src="header/CloseMenu.svg"
+                src={closeMenuIcon}
                 alt="CloseMenuIcon"
                 className="w-6 h-6"
               />
@@ -62,7 +67,7 @@ export default function Header() {
               className="block md:hidden header-button z-10"
               onClick={toggleMenu}
             >
-              <img src="header/HeaderMenu.svg" alt="MenuIcon" />
+              <img src={headerMenuIcon} alt="MenuIcon" />
             </button>
           )}
         </div>

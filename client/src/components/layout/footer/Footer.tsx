@@ -1,4 +1,8 @@
 import { Link } from "react-router"
+import facebookLogo from "../../../assets/icons/social/Facebook.png"
+import instagramLogo from "../../../assets/icons/social/Instagram.png"
+import xLogo from "../../../assets/icons/social/X.png"
+import whatsappLogo from "../../../assets/icons/social/Whatsapp.png"
 export const Footer = () => {
     return(
         <footer className="flex-center gap-[5vw] py-5 border-t border-black">
@@ -13,11 +17,11 @@ export const Footer = () => {
             </section>
             <section className="footerSections">
                 <h3 className="footerSectionTitles">Redes</h3>
-                <ul className="flex-center gap-10 w-full">
-                    <li className="flex-1 max-w-[60px]"><a href=""><img src="/footer/Facebook.png" alt="Facebook logo" className="imageLink" /></a></li>
-                    <li className="flex-1 max-w-[60px]"><a href=""><img src="/footer/Instagram.png" alt="Instagram logo" className="imageLink" /></a></li>
-                    <li className="flex-1 max-w-[60px]"><a href=""><img src="/footer/Whatsapp.png" alt="Whatsapp logo" className="imageLink" /></a></li>
-                    <li className="flex-1 max-w-[60px]"><a href=""><img src="/footer/X.png" alt="X logo" className="imageLink" /></a></li>
+                <ul className="flex-center gap-2 xl:gap-10 w-full ">
+                    <li className="flex-1 max-w-[60px]"><a href=""><img src={facebookLogo} alt="Facebook logo" className="imageLink" /></a></li>
+                    <li className="flex-1 max-w-[60px]"><a href=""><img src={instagramLogo} alt="Instagram logo" className="imageLink" /></a></li>
+                    <li className="flex-1 max-w-[60px]"><a href=""><img src={whatsappLogo} alt="Whatsapp logo" className="imageLink" /></a></li>
+                    <li className="flex-1 max-w-[60px]"><a href=""><img src={xLogo} alt="X logo" className="imageLink" /></a></li>
                 </ul>
             </section>
             <section className="footerSections">
