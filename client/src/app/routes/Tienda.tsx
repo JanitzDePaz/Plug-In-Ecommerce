@@ -1,12 +1,11 @@
-import { useEffect } from "react";
-import { getProducts } from "src/api/getProducts";
-import { ShopFilters } from "src/pages/shop/ShopFilters";
+
+import { ShopMain } from "src/pages/shop/ShopMain";
 export default function Tienda(){
-    useEffect(() => {
-        getProducts()
-    },[])
-    
+   
     return(
-        <ShopFilters />
+        <>
+            <ShopMain />
+            
+        </>
     );
 }
