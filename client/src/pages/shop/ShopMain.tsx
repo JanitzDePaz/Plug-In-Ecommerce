@@ -22,10 +22,9 @@ export const ShopMain = () =>{
             <ShopFilters />
             <main className="mx-auto my-10 w-[90vw] grid grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-10">
                 {   
-                    productData.map((prod) => {console.log(prod.imgUrl)
-                    return(
-                    <ProductCards name={prod.name} price={prod.price} imgUrl={prod.imgUrl} active={prod.active}/>
-                )})}
+                    productData.map((prod) => (
+                    <ProductCards name={prod.name} price={prod.price} imgUrl={prod.imgUrl} desc={prod.description} active={prod.active}/>
+                ))}
                 
 
             </main>
