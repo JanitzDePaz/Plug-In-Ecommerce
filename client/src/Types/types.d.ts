@@ -108,5 +108,6 @@ type productCard = {
     name: string,
     price: number,
     imgUrl: string,
+    desc: string,
     active: boolean
 }
