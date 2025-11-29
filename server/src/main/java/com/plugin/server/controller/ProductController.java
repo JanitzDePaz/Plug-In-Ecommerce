@@ -93,7 +93,7 @@ public class ProductController {
                 219, "Monitor", "monitor.png", false));
 
         productList.add(new Product(19, "Acer SA243YP1BI 24\" Full‑HD 144Hz",
-                "Perfil ultra delgado que ocupa el mínimo espacio en el escritorio. Tasa de refresco mejorada de 100Hz para transiciones suaves.",
+                "Perfil ultra delgado que ocupa el mínimo espaçcio en el escritorio. Tasa de refresco mejorada de 100Hz para transiciones suaves.",
                 79, "Monitor", "monitor.png", false));
 
         productList.add(new Product(20, "Philips 24\" Full HD",
