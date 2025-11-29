@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "src/api/getProducts";
 import { ProductCards } from "src/components/cards/ProductCards";
-import { ShopFilters } from "./ShopFilters";
-
-    
 
 export const ShopMain = () =>{
     const [productData, setProductData] = useState<productProp[]>([])
