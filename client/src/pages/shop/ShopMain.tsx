@@ -18,18 +18,15 @@ export const ShopMain = () =>{
     },[])
         console.log(productData)
     return(
-        <>
-            <ShopFilters />
-            <main className="mx-auto my-10 w-[90vw] grid grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-10">
-                {   
-                    productData.map((prod) => (
-                    <ProductCards name={prod.name} price={prod.price} imgUrl={prod.imgUrl} desc={prod.description} active={prod.active}/>
-                ))}
-                
-
-            </main>
+         <main className="mx-auto grid grid-cols-[repeat(auto-fill,minmax(13rem,1fr))] gap-5">
+            {   
+                productData.map((prod) => (
+                <ProductCards name={prod.name} price={prod.price} imgUrl={prod.imgUrl} desc={prod.description} active={prod.active}/>
+            ))}
             
-        </>
+
+        </main>
+
 
     )
 }
