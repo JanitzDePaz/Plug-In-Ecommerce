@@ -9,6 +9,7 @@ import {
 
 import Header from "src/components/layout/header/Header";
 import { Footer } from "src/components/layout/footer/Footer"
+import PlugInLogo from "../assets/icons/header/PlugInLogo.svg"
 
 import "./app.css";
 import { useEffect, useRef } from "react";
@@ -23,7 +24,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/svg+xml" href="Header/PlugInLogo.svg" />
+        <link rel="icon" type="image/svg+xml" href={PlugInLogo} />
         <title>Plug In</title>
         <Meta />
         <Links />
