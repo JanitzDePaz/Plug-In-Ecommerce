@@ -1,4 +1,4 @@
-export const RateStars = () => {
+export const RateStars = (rate: ProdRating) => {
     return(
         <div className="flex">
             <svg viewBox="0 0 24 24" width="36" height="36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">

@@ -18,7 +18,7 @@ export const ShopMain = () =>{
          <main className="mx-auto grid grid-cols-[repeat(auto-fill,minmax(13rem,1fr))] gap-5">
             {   
                 productData.map((prod) => (
-                <ProductCards name={prod.name} price={prod.price} imgUrl={prod.imgUrl} desc={prod.description} active={prod.active}/>
+                <ProductCards name={prod.name} price={prod.price} imgUrl={prod.imgUrl} rating={prod.rate} deliveryTime={prod.deliveryDays} active={prod.active}/>
             ))}
             
 

@@ -97,9 +97,10 @@ type activeFiltersMenuProp = {
 type productProp = {
     id: number,
     name: string,
-    description: string,
     price: number,
     category: string,
+    rate: number,
+    deliveryDays: string,
     imgUrl: string,
     active: boolean
 }
@@ -108,6 +109,11 @@ type productCard = {
     name: string,
     price: number,
     imgUrl: string,
-    desc: string,
+    rating: number,
+    deliveryTime: string,
     active: boolean
+}
+
+type ProdRating = {
+    rate: number
 }
