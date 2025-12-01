@@ -110,7 +110,7 @@ type productCard = {
     price: number,
     imgUrl: string,
     rating: number,
-    deliveryTime: string,
+    deliveryDays: string,
     active: boolean
 }
 
