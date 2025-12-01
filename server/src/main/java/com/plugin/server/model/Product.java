@@ -1,4 +1,5 @@
 package com.plugin.server.model;
+import java.time.LocalDate;
 
 public class Product {
     
@@ -8,7 +9,7 @@ public class Product {
     private double price;
     private String category;
     private int rate;
-    private int deliveryDays;
+    private LocalDate deliveryDays;
     private String imgUrl;
     private boolean active;
 
@@ -18,8 +19,8 @@ public class Product {
         this.description = description;
         this.price = price;
         this.category = category;
-        this.rate = (int)(Math.random() * 11);
-        this.deliveryDays = (int)(Math.random() * 30) + 1;
+        this.rate = (int)(Math.random() * 7) + 1;
+        this.deliveryDays = LocalDate.now().plusDays((int)(Math.random() * 3) + 1);
         this.imgUrl = imgUrl;
         this.active = active;
     }
@@ -30,7 +31,7 @@ public class Product {
     public double getPrice(){return price;}
     public String getCategory(){return category;}
     public int getRate(){return rate;}
-    public int getDeliveryDays(){return deliveryDays;}
+    public LocalDate getDeliveryDays(){return deliveryDays;}
     public String getImgUrl(){return imgUrl;}
     public boolean getActive(){return active;}
 }
