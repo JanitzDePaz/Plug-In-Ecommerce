@@ -117,3 +117,8 @@ type productCard = {
 type ProdRating = {
     rate: number
 }
+
+type CategoryFiltersProp = {
+    categoryFilter: string,
+    changeCategoryFilter: (string) => void
+}
