@@ -15,10 +15,9 @@ export const ShopMain = () =>{
        productsData()
     },[])
 
-    const filteredData = categoryFilter === "empty" ? productData : productData.filter(obj => obj.category === categoryFilter)
-
+    const filteredData = categoryFilter === "Empty" ? productData : productData.filter(obj => obj.category === categoryFilter)
     return(
-         <main className="mx-auto grid grid-cols-[repeat(auto-fill,minmax(13rem,1fr))] gap-5">
+         <main className="w-full mx-auto grid grid-cols-[repeat(auto-fill,minmax(13rem,1fr))] gap-5">
             {   
                 filteredData.map((prod) => (
                 <ProductCards name={prod.name} price={prod.price} imgUrl={prod.imgUrl} rating={prod.rate} deliveryDays={prod.deliveryDays} active={prod.active}/>
