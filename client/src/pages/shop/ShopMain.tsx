@@ -3,6 +3,7 @@ import { getProducts } from "src/api/getProducts";
 import { ProductCards } from "src/components/cards/ProductCards";
 import { categoryFilterStorage } from "src/stores/shopStore";
 import { filterStorage } from "src/stores/shopStore";
+import { sortStorage } from "src/stores/shopStore";
 
 export const ShopMain = () => {
   const [productData, setProductData] = useState<productProp[]>([]);
@@ -10,6 +11,7 @@ export const ShopMain = () => {
   const changeMaxPrice = filterStorage((e) => e.changeMaxPrice);
   const minPrice = filterStorage((e) => e.minPrice);
   const maxPrice = filterStorage((e) => e.maxPrice);
+  const sortBy = sortStorage((e) => e.sortBy);
   useEffect(() => {
     const productsData = async () => {
       const data = await getProducts();
@@ -20,9 +22,11 @@ export const ShopMain = () => {
   }, []);
 
   useEffect(() => {
-    const newMaxPrice = Math.max(...productData.map((prod) => prod.price));
-    changeMaxPrice(newMaxPrice);
-    
+    if(productData.length > 1){
+      const newMaxPrice = Math.max(...productData.map((prod) => prod.price));
+      changeMaxPrice(newMaxPrice);
+    }
+          
   }, [productData]);
 
   const filteredData = productData.filter((obj) => {
@@ -33,7 +37,10 @@ export const ShopMain = () => {
   });
 
   //Sort alphabetically
-  filteredData.sort((a, b) => a.name.localeCompare(b.name));
+  if(sortBy === "Alphabetical"){
+      filteredData.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
 
   return (
     <main className="w-full mx-auto grid grid-cols-[repeat(auto-fill,minmax(13rem,1fr))] gap-5">

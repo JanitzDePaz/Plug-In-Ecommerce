@@ -1,10 +1,13 @@
 import { filterStorage } from "../../stores/shopStore"
 import { useRef } from "react"
+import { SortButtons } from "src/components/buttons/SortButtoms"
+import { sortStorage } from "../../stores/shopStore"
 
 export const ShopFilters = () => {
     const maxPrice = filterStorage((e) => e.maxPrice)
     const changeMinPrice = filterStorage((e) => e.changeMinPrice)
     const changeMaxPrice = filterStorage((e) => e.changeMaxPrice)
+    const changeSortBy = sortStorage((e) => e.changeSortBy)
 
     const minPriceRef = useRef<HTMLInputElement>(null)
     const maxPriceRef = useRef<HTMLInputElement>(null)
@@ -26,7 +29,10 @@ export const ShopFilters = () => {
                     <input ref={maxPriceRef} type="number" id="maxPrice"  placeholder={`${maxPrice}`} onBlur={(e) => changeMaxPrice(e.target.value)} onKeyDown={(e) => {if(e.key == "Enter"){changeMaxPrice(maxPriceRef.current?.value)}}} className="border w-20 no-spinner text-center rounded-lg"/>
                 </div>  
             </div>
-            
+
+            <h3 className="text-center text-2xl mt-10">Ordenar</h3>
+            <SortButtons text="A-Z" changeSorting={() => {changeSortBy("Alphabetical")}}/>
+
         </aside>
     )
 }

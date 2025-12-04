@@ -13,3 +13,8 @@ export const filterStorage = create<FilterProps>((set) => ({
     changeMinPrice: (min) => set({minPrice: min}),
     changeMaxPrice: (max) => set({maxPrice: max})
 }))
+
+export const sortStorage = create<SortProps>((set) => ({
+    sortBy: "Alphabetical",
+    changeSortBy: (sort) => set({sortBy: sort})
+}))
