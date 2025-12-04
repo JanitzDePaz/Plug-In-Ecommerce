@@ -129,3 +129,13 @@ type FilterProps = {
     changeMinPrice: (number) => void,
     changeMaxPrice: (number) => void
 }
+
+type SortProps = {
+    sortBy: string,
+    changeSortBy: (string) => void
+}
+
+type SortButtons = {
+    text: string,
+    changeSorting: () => void
+}
