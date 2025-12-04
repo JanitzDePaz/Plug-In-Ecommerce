@@ -122,3 +122,10 @@ type CategoryFiltersProp = {
     categoryFilter: string,
     changeCategoryFilter: (string) => void
 }
+
+type FilterProps = {
+    minPrice: number,
+    maxPrice: number,
+    changeMinPrice: (number) => void,
+    changeMaxPrice: (number) => void
+}
