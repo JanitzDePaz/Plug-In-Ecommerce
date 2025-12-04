@@ -13,17 +13,17 @@ export const ShopFilters = () => {
     console.log(maxPriceRef.current?.value)
 
     return(
-        <aside className="max-w-3/10 border">
+        <aside className="max-w-3/10 flex flex-col gap-5">
             <h3 className="text-center text-2xl">Filtros</h3>
-            <div className="flex-center flex-col px-5">
+            <div className="flex-center flex-col px-5 gap-2">
                 <div className="flex justify-between">
                     <label htmlFor="minPrice" className="w-20 text-xs">Min price</label>
-                    <label htmlFor="maxPrice" className="w-20 text-right text-xs">Max price</label>
+                    <label htmlFor="maxPrice" className="w-20 text-right text-xs ">Max price</label>
                 </div>
-                <div className="flex justify-between gap-2 items-center ">
-                    <input ref={minPriceRef} type="number" id="minPrice" placeholder="0" onBlur={(e) => changeMinPrice(e.target.value)} onKeyDown={(e) => {if(e.key == "Enter"){changeMinPrice(minPriceRef.current?.value)}}} className="border w-20 no-spinner text-center"/>
+                <div className="flex justify-between items-center gap-2">
+                    <input ref={minPriceRef} type="number" id="minPrice" placeholder="0" onBlur={(e) => changeMinPrice(e.target.value)} onKeyDown={(e) => {if(e.key == "Enter"){changeMinPrice(minPriceRef.current?.value)}}} className="border w-20 no-spinner text-center rounded-lg"/>
                     <hr className="w-5"/>                      
-                    <input ref={maxPriceRef} type="number" id="maxPrice"  placeholder={`${maxPrice}`} onBlur={(e) => changeMaxPrice(e.target.value)} onKeyDown={(e) => {if(e.key == "Enter"){changeMaxPrice(maxPriceRef.current?.value)}}} className="border w-20 no-spinner text-center"/>
+                    <input ref={maxPriceRef} type="number" id="maxPrice"  placeholder={`${maxPrice}`} onBlur={(e) => changeMaxPrice(e.target.value)} onKeyDown={(e) => {if(e.key == "Enter"){changeMaxPrice(maxPriceRef.current?.value)}}} className="border w-20 no-spinner text-center rounded-lg"/>
                 </div>  
             </div>
             
