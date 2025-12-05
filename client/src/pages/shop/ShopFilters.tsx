@@ -33,6 +33,8 @@ export const ShopFilters = () => {
             <SortButtons text="Nombre: Z-A" changeSorting={() => {changeSortBy("ReverseAlphabetical")}}/>
             <SortButtons text="Precio: Mayor a menor" changeSorting={() => {changeSortBy("DescendingPrice")}}/>
             <SortButtons text="Precio: Menor a mayor" changeSorting={() => {changeSortBy("AscendingPrice")}}/>
+            <SortButtons text="Puntuación: Mayor a menor" changeSorting={() => {changeSortBy("DescendingRate")}}/>
+            <SortButtons text="Puntuación: Menor a mayor" changeSorting={() => {changeSortBy("AscendingRate")}}/>
         </aside>
     )
 }

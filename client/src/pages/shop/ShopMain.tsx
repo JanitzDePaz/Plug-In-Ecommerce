@@ -36,17 +36,25 @@ export const ShopMain = () => {
     return filteredByCategory && filteredByPrice;
   });
 
-  if(sortBy === "Alphabetical"){
+  switch(sortBy){
+    case "Alphabetical":
       filteredData.sort((a, b) => a.name.localeCompare(b.name));
-  }
-  if(sortBy === "ReverseAlphabetical"){
+      break;
+    case "ReverseAlphabetical":
       filteredData.sort((a, b) => b.name.localeCompare(a.name));
-  }
-  if(sortBy === "DescendingPrice"){
+      break;
+    case "DescendingPrice":
       filteredData.sort((a, b) => b.price - a.price);
-  }
-  if(sortBy === "AscendingPrice"){
+      break
+    case "AscendingPrice":
       filteredData.sort((a, b) => a.price - b.price);
+      break
+    case "AscendingRate":
+      filteredData.sort((a, b) => a.rate - b.rate)
+      break
+    case "DescendingRate":
+      filteredData.sort((a, b) => b.rate - a.rate)
+      break
   }
 
 
