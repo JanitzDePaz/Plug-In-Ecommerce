@@ -12,8 +12,6 @@ export const ShopFilters = () => {
     const minPriceRef = useRef<HTMLInputElement>(null)
     const maxPriceRef = useRef<HTMLInputElement>(null)
 
-    console.log(minPriceRef.current?.value)
-    console.log(maxPriceRef.current?.value)
 
     return(
         <aside className="max-w-3/10 flex flex-col gap-5">
@@ -32,7 +30,7 @@ export const ShopFilters = () => {
 
             <h3 className="text-center text-2xl mt-10">Ordenar</h3>
             <SortButtons text="A-Z" changeSorting={() => {changeSortBy("Alphabetical")}}/>
-
+            <SortButtons text="Z-A" changeSorting={() => {changeSortBy("ReverseAlphabetical")}}/>
         </aside>
     )
 }

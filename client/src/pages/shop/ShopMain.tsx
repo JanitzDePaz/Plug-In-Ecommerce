@@ -40,6 +40,9 @@ export const ShopMain = () => {
   if(sortBy === "Alphabetical"){
       filteredData.sort((a, b) => a.name.localeCompare(b.name));
   }
+  if(sortBy === "ReverseAlphabetical"){
+      filteredData.sort((a, b) => b.name.localeCompare(a.name));
+  }
 
 
   return (
