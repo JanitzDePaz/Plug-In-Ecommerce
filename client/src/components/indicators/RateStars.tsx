@@ -9,8 +9,8 @@ export const RateStars = ({ rate }: ProdRating) => {
         <svg
           key={i}
           viewBox="0 0 24 24"
-          width="36"
-          height="36"
+          width="24"
+          height="24"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
@@ -24,8 +24,8 @@ export const RateStars = ({ rate }: ProdRating) => {
       {halfStars === 1 ? (
         <svg
           viewBox="0 0 24 24"
-          width="36"
-          height="36"
+          width="24"
+          height="24"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
@@ -52,8 +52,8 @@ export const RateStars = ({ rate }: ProdRating) => {
         <svg
           key={i}
           viewBox="0 0 24 24"
-          width="36"
-          height="36"
+          width="24"
+          height="24"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
@@ -63,6 +63,7 @@ export const RateStars = ({ rate }: ProdRating) => {
           />
         </svg>
       ))}
+      <h1 className="mx-2">{rate/2}/5</h1>
     </div>
   );
 };
