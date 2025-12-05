@@ -36,12 +36,17 @@ export const ShopMain = () => {
     return filteredByCategory && filteredByPrice;
   });
 
-  //Sort alphabetically
   if(sortBy === "Alphabetical"){
       filteredData.sort((a, b) => a.name.localeCompare(b.name));
   }
   if(sortBy === "ReverseAlphabetical"){
       filteredData.sort((a, b) => b.name.localeCompare(a.name));
+  }
+  if(sortBy === "DescendingPrice"){
+      filteredData.sort((a, b) => b.price - a.price);
+  }
+  if(sortBy === "AscendingPrice"){
+      filteredData.sort((a, b) => a.price - b.price);
   }
 
 

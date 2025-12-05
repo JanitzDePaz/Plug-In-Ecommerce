@@ -29,8 +29,10 @@ export const ShopFilters = () => {
             </div>
 
             <h3 className="text-center text-2xl mt-10">Ordenar</h3>
-            <SortButtons text="A-Z" changeSorting={() => {changeSortBy("Alphabetical")}}/>
-            <SortButtons text="Z-A" changeSorting={() => {changeSortBy("ReverseAlphabetical")}}/>
+            <SortButtons text="Nombre: A-Z" changeSorting={() => {changeSortBy("Alphabetical")}}/>
+            <SortButtons text="Nombre: Z-A" changeSorting={() => {changeSortBy("ReverseAlphabetical")}}/>
+            <SortButtons text="Precio: Mayor a menor" changeSorting={() => {changeSortBy("DescendingPrice")}}/>
+            <SortButtons text="Precio: Menor a mayor" changeSorting={() => {changeSortBy("AscendingPrice")}}/>
         </aside>
     )
 }

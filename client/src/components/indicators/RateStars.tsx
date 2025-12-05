@@ -63,7 +63,7 @@ export const RateStars = ({ rate }: ProdRating) => {
           />
         </svg>
       ))}
-      <h1 className="mx-2">{rate/2}/5</h1>
+      <p className="mx-2">{rate/2}/5</p>
     </div>
   );
 };
