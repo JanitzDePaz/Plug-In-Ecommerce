@@ -9,7 +9,7 @@ import {
 
 import Header from "src/components/layout/header/Header";
 import { Footer } from "src/components/layout/footer/Footer"
-import PlugInLogo from "../assets/icons/header/PlugInLogo.svg"
+import PlugInLogo from "../assets/icons/PlugInLogo.png"
 
 import "./app.css";
 import { useEffect, useRef } from "react";
