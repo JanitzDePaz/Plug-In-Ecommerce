@@ -4,6 +4,7 @@ import { ProductCards } from "src/components/cards/ProductCards";
 import { categoryFilterStorage } from "src/stores/shopStore";
 import { filterStorage } from "src/stores/shopStore";
 import { sortStorage } from "src/stores/shopStore";
+import { Link } from "react-router-dom";
 
 export const ShopMain = () => {
   const [productData, setProductData] = useState<productProp[]>([]);
@@ -65,17 +66,19 @@ export const ShopMain = () => {
 
   return (
     <main className="w-full h-fit mx-auto grid grid-cols-[repeat(auto-fill,minmax(13rem,1fr))] gap-5">
-      {filteredData.map((prod, key) => (
-        <ProductCards
-          key={key}
-          name={prod.name}
-          price={prod.price}
-          imgUrl={prod.imgUrl}
-          rating={prod.rate}
-          deliveryDays={prod.deliveryDays}
-          active={prod.active}
-        />
-      ))}
+      {filteredData.map((prod, key) => {
+        return(
+        <Link to= {`/DetallesDelProducto/${prod.name}`} key={key} >
+          <ProductCards
+            name={prod.name}
+            price={prod.price}
+            imgUrl={prod.imgUrl}
+            rating={prod.rate}
+            deliveryDays={prod.deliveryDays}
+            active={prod.active}
+          />
+        </Link>
+      )})}
     </main>
   );
 };
