@@ -30,7 +30,7 @@ export const ShopMain = () => {
       const newMaxPrice = Math.max(...productData.map((prod) => prod.price));
       const newMaxRate = Math.max(...productData.map((prod) => prod.rate));
       changeMaxPrice(newMaxPrice);
-      changeMaxRate(newMaxRate);
+      changeMaxRate(newMaxRate/2);
     }
   }, [productData]);
 
