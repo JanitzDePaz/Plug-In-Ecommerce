@@ -10,6 +10,6 @@ export const ProductCards = ({name, price, imgUrl, rating, deliveryDays, active 
         <p className="text-[0.9rem]">{name}</p>
         <p className="text-[1.3rem] text-red-600 font-bold">{`${price.toFixed(2)}€`}</p>
         <RateStars rate={rating} />
-        <p className="text-sm text-gray-800 flex-1">Recíbelo a partir del <strong>{dayName}</strong>, {deliveryDate.getDate()} de {monthName}</p>
+        <p className="text-sm text-gray-800 flex-1">Recíbelo a partir del <strong>{dayName}</strong> <br />{deliveryDate.getDate()} de {monthName}</p>
     </article>
 )}
