@@ -9,9 +9,16 @@ export const categoryFilterStorage = create<CategoryFiltersProp>((set) => ({
 
 export const filterStorage = create<FilterProps>((set) => ({
     minPrice: 0,
-    maxPrice: 10000,
     changeMinPrice: (min) => set({minPrice: min}),
-    changeMaxPrice: (max) => set({maxPrice: max})
+
+    maxPrice: 10000,
+    changeMaxPrice: (max) => set({maxPrice: max}),
+
+    minRate: 0,
+    changeMinRate: (min) => set({minRate: min}),
+    
+    maxRate: 10,
+    changeMaxRate: (max) => set({maxRate: max}),
 }))
 
 export const sortStorage = create<SortProps>((set) => ({
