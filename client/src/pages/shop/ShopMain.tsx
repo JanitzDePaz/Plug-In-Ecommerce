@@ -38,7 +38,7 @@ export const ShopMain = () => {
     const filteredByCategory =
       categoryFilter === "Empty" ? true : obj.category === categoryFilter;
     const filteredByPrice = obj.price >= minPrice && obj.price <= maxPrice;
-    const filteredByRate = obj.rate >= minRate && obj.rate <= maxRate;
+    const filteredByRate = obj.rate/2 >= minRate && obj.rate/2 <= maxRate;
     return filteredByCategory && filteredByPrice && filteredByRate;
   });
 

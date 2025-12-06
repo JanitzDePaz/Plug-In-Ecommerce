@@ -68,8 +68,10 @@ export const ShopFilters = () => {
                     type="number"
                     id="minRate"
                     placeholder="0"
-                    onBlur={(e) =>
+                    onBlur={(e) =>{
                         changeMinRate(e.target.value)
+                    }
+                        
                     }
                     onKeyDown={(e) => {
                         if (e.key == "Enter") {
