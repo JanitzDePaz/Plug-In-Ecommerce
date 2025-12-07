@@ -94,7 +94,7 @@ type activeFiltersMenuProp = {
     closeFilterMenu: () => void,
 }
 
-type productProp = {
+type ShopProductProp = {
     id: number,
     name: string,
     price: number,
@@ -102,7 +102,20 @@ type productProp = {
     rate: number,
     deliveryDays: string,
     imgUrl: string,
-    active: boolean
+    active: boolean,
+}
+
+type ShowProductProp = {
+    id: number,
+    name: string,
+    price: number,
+    category: string,
+    rate: number,
+    deliveryDays: string,
+    imgUrl: string,
+    active: boolean,
+    description: string,
+    longDescription: string
 }
 
 type productCard = {

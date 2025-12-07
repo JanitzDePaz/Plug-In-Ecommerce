@@ -7,7 +7,7 @@ import { sortStorage } from "src/stores/shopStore";
 import { Link } from "react-router-dom";
 
 export const ShopMain = () => {
-  const [productData, setProductData] = useState<productProp[]>([]);
+  const [productData, setProductData] = useState<ShopProductProp[]>([]);
   const categoryFilter = categoryFilterStorage((e) => e.categoryFilter);
   const changeMaxPrice = filterStorage((e) => e.changeMaxPrice);
   const minPrice = filterStorage((e) => e.minPrice);
