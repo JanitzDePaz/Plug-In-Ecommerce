@@ -1,10 +1,12 @@
 package com.plugin.server.controller;
 
 import com.plugin.server.model.Product;
+import com.plugin.server.model.ProductSummaryDTO;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
@@ -17,8 +19,7 @@ import java.util.Arrays;
 @CrossOrigin(origins = "http://localhost:5173")
 
 public class ProductController {
-        @GetMapping
-        public List<Product> getProducts() {
+        public List<Product> getAllProductsData() {
                 List<Product> productList = new ArrayList<>();
 
                 // Monitors
@@ -96,5 +97,31 @@ public class ProductController {
                                 new ArrayList<>(Arrays.asList("Resolución: 1080p", "Panel: IPS", "Frecuencia: 75Hz"))));
                 return productList;
         }
+        @GetMapping("/{slug}")
+        public ProductSummaryDTO getProductsSummaryDTO(@PathVariable String slug) {
+                List <Product> products = getAllProductsData();
+                ProductSummaryDTO productSummaryDTO = new ProductSummaryDTO();
 
+                for (Product product : products) {
+                        if (product.getSlug().equals(slug)) {
+                                productSummaryDTO.setId(product.getId());
+                                productSummaryDTO.setName(product.getName());
+                                productSummaryDTO.setSlug(product.getSlug());
+                                productSummaryDTO.setLongDescription(product.getLongDescription());
+                                productSummaryDTO.setPrice(product.getPrice());
+                                productSummaryDTO.setCategory(product.getCategory());
+                                productSummaryDTO.setRate(product.getRate());
+                                productSummaryDTO.setEstimateDeliveryDays(product.getEstimateDeliveryDays());
+                                productSummaryDTO.setImgUrl(product.getImgUrl());
+                                productSummaryDTO.setActive(product.getActive());
+                                productSummaryDTO.setStock(product.getStock());
+                                productSummaryDTO.setBrand(product.getBrand());
+                                productSummaryDTO.setDiscount(product.getDiscount());
+                                productSummaryDTO.setSpecifications(product.getSpecifications());
+                                
+
+                        }
+                };
+                return productSummaryDTO;
+        }       
 }

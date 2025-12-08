@@ -69,12 +69,16 @@ public class Product {
         return rate;
     }
 
-    public LocalDate getDeliveryDays() {
+    public LocalDate getEstimateDeliveryDays() {
         return estimateDeliveryDays;
     }
 
     public ArrayList<String> getImgUrl() {
         return imgUrl;
+    }
+
+    public String getFirstImg() {
+        return imgUrl.get(0);
     }
 
     public boolean getActive() {
