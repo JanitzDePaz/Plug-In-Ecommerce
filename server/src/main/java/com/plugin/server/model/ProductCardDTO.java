@@ -4,15 +4,41 @@ import java.time.LocalDate;
 import java.math.BigDecimal;
 
 public class ProductCardDTO {
+    private int id;
     private String name;
     private String slug;
     private BigDecimal price;
     private String imgUrl;
-    private int rating;
+    private int rate;
+    private String category;
     private LocalDate estimateDeliveryDays;
     private boolean active;
+    private int discount;
 
     public void ProductCardDTO(){}
+
+     public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public int getDiscount() {
+        return discount;
+    }
+    public void setDiscount(int discount) {
+        this.discount = discount;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     public String getName() {
         return name;
@@ -46,12 +72,12 @@ public class ProductCardDTO {
         this.price = price;
     }
 
-    public int getRating() {
-        return rating;
+    public int getRate() {
+        return rate;
     }
 
-    public void setRating(int rating) {
-        this.rating = rating;
+    public void setRate(int rate) {
+        this.rate = rate;
     }
 
     public LocalDate getEstimateDeliveryDays() {

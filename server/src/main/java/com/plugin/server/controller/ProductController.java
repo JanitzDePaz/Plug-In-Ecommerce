@@ -31,7 +31,7 @@ public class ProductController {
                                 "Monitor Gaming 24 pulgadas 165Hz.",
                                 "Panel IPS con tasa de refresco de 165Hz y 1ms de respuesta. Compatible con G-Sync y FreeSync Premium.",
                                 new BigDecimal("159.99"),
-                                "Monitores",
+                                "Monitor",
                                 new ArrayList<>(Arrays.asList("/products/monitors/monitor1/monitorImg1.png", "/products/monitors/monitor1/monitorImg2.png", "/products/monitors/monitor1/monitorImg3.png", "/products/monitors/monitor1/monitorImg4.png", "/products/monitors/monitor1/monitorImg5.png")),
                                 45,
                                 "AOC",
@@ -46,7 +46,7 @@ public class ProductController {
                                 "Monitor Curvo 1000R WQHD.",
                                 "Sumérgete en el juego con la curvatura 1000R que coincide con el campo de visión humano. Resolución WQHD.",
                                 new BigDecimal("299.00"),
-                                "Monitores",
+                                "Monitor",
                                 new ArrayList<>(Arrays.asList("/products/monitors/monitor2/monitorImg1.png", "/products/monitors/monitor2/monitorImg2.png", "/products/monitors/monitor2/monitorImg3.png", "/products/monitors/monitor2/monitorImg4.png", "/products/monitors/monitor2/monitorImg5.png")),
                                 20,
                                 "Samsung",
@@ -60,7 +60,7 @@ public class ProductController {
                                 "Monitor 4K USB-C Hub.",
                                 "La mejor precisión de color con tecnología IPS Black. Conectividad masiva con USB-C Hub integrado.",
                                 new BigDecimal("620.50"),
-                                "Monitores",
+                                "Monitor",
                                 new ArrayList<>(Arrays.asList("/products/monitors/monitor3/monitorImg1.png", "/products/monitors/monitor3/monitorImg2.png", "/products/monitors/monitor3/monitorImg3.png", "/products/monitors/monitor3/monitorImg4.png", "/products/monitors/monitor3/monitorImg5.png")),
                                 10,
                                 "Dell",
@@ -75,7 +75,7 @@ public class ProductController {
                                 "Monitor eSports 360Hz TN.",
                                 "Diseñado exclusivamente para competición profesional. Panel TN rápido con tecnología DyAc+.",
                                 new BigDecimal("699.99"),
-                                "Monitores",
+                                "Monitor",
                                 new ArrayList<>(Arrays.asList("/products/monitors/monitor4/monitorImg1.png", "/products/monitors/monitor4/monitorImg2.png", "/products/monitors/monitor4/monitorImg3.png", "/products/monitors/monitor4/monitorImg4.png", "/products/monitors/monitor4/monitorImg5.png")),
                                 5,
                                 "BenQ",
@@ -90,7 +90,7 @@ public class ProductController {
                                 "Monitor IPS Full HD básico.",
                                 "Diseño sin bordes en tres lados. Ideal para oficina y teletrabajo con protección ocular.",
                                 new BigDecimal("99.00"),
-                                "Monitores",
+                                "Monitor",
                                 new ArrayList<>(Arrays.asList("/products/monitors/monitor5/monitorImg1.png", "/products/monitors/monitor5/monitorImg2.png", "/products/monitors/monitor5/monitorImg3.png", "/products/monitors/monitor5/monitorImg4.png", "/products/monitors/monitor5/monitorImg5.png")),
                                 100,
                                 "LG",
@@ -105,13 +105,16 @@ public class ProductController {
 
                 for(Product product : products ) {
                         ProductCardDTO productCardDTO = new ProductCardDTO();
+                        productCardDTO.setId(product.getId());
+                        productCardDTO.setCategory(product.getCategory());
                         productCardDTO.setName(product.getName());
                         productCardDTO.setSlug(product.getSlug());
                         productCardDTO.setPrice(product.getPrice());
                         productCardDTO.setImgUrl(product.getFirstImg());
-                        productCardDTO.setRating(product.getRate());
+                        productCardDTO.setRate(product.getRate());
                         productCardDTO.setEstimateDeliveryDays(product.getEstimateDeliveryDays());
                         productCardDTO.setActive(product.getActive());
+                        productCardDTO.setDiscount(product.getDiscount());
                         productCardsDTOList.add(productCardDTO);
                 };
 

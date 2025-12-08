@@ -7,7 +7,7 @@ import { sortStorage } from "src/stores/shopStore";
 import { Link } from "react-router-dom";
 
 export const ShopMain = () => {
-  const [productData, setProductData] = useState<ShopProductProp[]>([]);
+  const [productData, setProductData] = useState<ShopProductCardProp[]>([]);
   const categoryFilter = categoryFilterStorage((e) => e.categoryFilter);
   const changeMaxPrice = filterStorage((e) => e.changeMaxPrice);
   const minPrice = filterStorage((e) => e.minPrice);
@@ -35,6 +35,8 @@ export const ShopMain = () => {
     }
   }, [productData]);
 
+  
+
   const filteredData = productData.filter((obj) => {
     const filteredByCategory =
       categoryFilter === "Empty" ? true : obj.category === categoryFilter;
@@ -42,6 +44,9 @@ export const ShopMain = () => {
     const filteredByRate = obj.rate/2 >= minRate && obj.rate/2 <= maxRate;
     return filteredByCategory && filteredByPrice && filteredByRate;
   });
+
+  console.log(productData)
+  console.log(filteredData)
 
   switch (sortBy) {
     case "Alphabetical":
@@ -63,7 +68,7 @@ export const ShopMain = () => {
       filteredData.sort((a, b) => b.rate - a.rate);
       break;
   }
-
+  
   return (
     <main className="w-full h-fit mx-auto grid grid-cols-[repeat(auto-fill,minmax(13rem,1fr))] gap-5">
       {filteredData.map((prod, key) => {
