@@ -1,6 +1,7 @@
 package com.plugin.server.controller;
 
 import com.plugin.server.model.Product;
+import com.plugin.server.model.ProductCardDTO;
 import com.plugin.server.model.ProductSummaryDTO;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -97,6 +98,27 @@ public class ProductController {
                                 new ArrayList<>(Arrays.asList("Resolución: 1080p", "Panel: IPS", "Frecuencia: 75Hz"))));
                 return productList;
         }
+        @GetMapping
+        public List<ProductCardDTO> getAllProductsCardsDTO() {
+                List <Product> products = getAllProductsData();
+                List<ProductCardDTO> productCardsDTOList = new ArrayList<>();
+
+                for(Product product : products ) {
+                        ProductCardDTO productCardDTO = new ProductCardDTO();
+                        productCardDTO.setName(product.getName());
+                        productCardDTO.setSlug(product.getSlug());
+                        productCardDTO.setPrice(product.getPrice());
+                        productCardDTO.setImgUrl(product.getFirstImg());
+                        productCardDTO.setRating(product.getRate());
+                        productCardDTO.setEstimateDeliveryDays(product.getEstimateDeliveryDays());
+                        productCardDTO.setActive(product.getActive());
+                        productCardsDTOList.add(productCardDTO);
+                };
+
+                return productCardsDTOList;
+        }
+
+
         @GetMapping("/{slug}")
         public ProductSummaryDTO getProductsSummaryDTO(@PathVariable String slug) {
                 List <Product> products = getAllProductsData();
