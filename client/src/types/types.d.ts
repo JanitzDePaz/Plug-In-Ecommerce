@@ -106,17 +106,21 @@ type ShopProductCardProp = {
     active: boolean,
 }
 
-type ShowProductProp = {
+type ShowProductDetailsProp = {
     id: number,
+    slug: string,
     name: string,
+    longDescription: string,
     price: number,
     category: string,
     rate: number,
     deliveryDays: string,
-    imgUrl: string,
+    imgUrl: string[],
+    mainImg: string,
     active: boolean,
-    description: string,
-    longDescription: string
+    stock: number,
+    brand: string,
+    specifications: string[],
 }
 
 type productCard = {

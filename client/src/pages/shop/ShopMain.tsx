@@ -73,7 +73,7 @@ export const ShopMain = () => {
     <main className="w-full h-fit mx-auto grid grid-cols-[repeat(auto-fill,minmax(13rem,1fr))] gap-5">
       {filteredData.map((prod, key) => {
         return(
-        <Link to= {`/DetallesDelProducto/${prod.name}`} key={key} >
+        <Link to= {`/DetallesDelProducto/${prod.slug}`} key={key} >
           <ProductCards
             name={prod.name}
             price={prod.price}
