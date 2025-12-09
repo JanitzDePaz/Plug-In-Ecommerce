@@ -101,7 +101,7 @@ type ShopProductCardProp = {
     price: number,
     category: string,
     rate: number,
-    deliveryDays: string,
+    estimateDeliveryDays: string,
     imgUrl: string,
     active: boolean,
 }

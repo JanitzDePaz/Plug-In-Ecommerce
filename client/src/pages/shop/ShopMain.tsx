@@ -79,7 +79,7 @@ export const ShopMain = () => {
             price={prod.price}
             imgUrl={prod.imgUrl}
             rating={prod.rate}
-            deliveryDays={prod.deliveryDays}
+            deliveryDays={prod.estimateDeliveryDays}
             active={prod.active}
           />
         </Link>
