@@ -110,7 +110,7 @@ public class ProductController {
                         productCardDTO.setName(product.getName());
                         productCardDTO.setSlug(product.getSlug());
                         productCardDTO.setPrice(product.getPrice());
-                        productCardDTO.setImgUrl(product.getFirstImg());
+                        productCardDTO.setImgUrl(product.getMainImg());
                         productCardDTO.setRate(product.getRate());
                         productCardDTO.setEstimateDeliveryDays(product.getEstimateDeliveryDays());
                         productCardDTO.setActive(product.getActive());
@@ -138,6 +138,7 @@ public class ProductController {
                                 productSummaryDTO.setRate(product.getRate());
                                 productSummaryDTO.setEstimateDeliveryDays(product.getEstimateDeliveryDays());
                                 productSummaryDTO.setImgUrl(product.getImgUrl());
+                                productSummaryDTO.setMainImg(product.getMainImg());
                                 productSummaryDTO.setActive(product.getActive());
                                 productSummaryDTO.setStock(product.getStock());
                                 productSummaryDTO.setBrand(product.getBrand());

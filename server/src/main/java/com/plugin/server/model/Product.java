@@ -16,6 +16,7 @@ public class Product {
     private int rate;
     private LocalDate estimateDeliveryDays;
     private ArrayList<String> imgUrl;
+    private String mainImg;
     private boolean active;
     private int stock;
     private String brand;
@@ -34,6 +35,7 @@ public class Product {
         this.rate = (int) (Math.random() * 10) + 1;
         this.estimateDeliveryDays = LocalDate.now().plusDays((int) (Math.random() * 3) + 1);
         this.imgUrl = imgUrl;
+        this.mainImg = imgUrl.get(0);
         this.stock = stock;
         this.active = stock > 0;
         this.brand = brand;
@@ -77,8 +79,8 @@ public class Product {
         return imgUrl;
     }
 
-    public String getFirstImg() {
-        return imgUrl.get(0);
+    public String getMainImg() {
+        return mainImg;
     }
 
     public boolean getActive() {

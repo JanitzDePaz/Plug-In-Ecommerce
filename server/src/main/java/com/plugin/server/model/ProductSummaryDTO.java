@@ -14,6 +14,7 @@ public class ProductSummaryDTO {
     private int rate;
     private LocalDate estimateDeliveryDays;
     private ArrayList<String> imgUrl;
+    private String mainImg;
     private boolean active;
     private int stock;
     private String brand;
@@ -88,6 +89,14 @@ public class ProductSummaryDTO {
 
     public ArrayList<String> getImgUrl() {
         return imgUrl;
+    }
+
+    public String getMainImg() {
+        return mainImg;
+    }
+
+    public void setMainImg( String mainImg) {
+        this.mainImg = mainImg;
     }
 
     public void setImgUrl(ArrayList<String> imgUrl) {
