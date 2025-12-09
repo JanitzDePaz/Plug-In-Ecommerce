@@ -24,7 +24,7 @@ public class ProductController {
                 List<Product> productList = new ArrayList<>();
 
                 // Monitors
-                //Aoc Gaming
+                // Aoc Gaming
                 productList.add(new Product(
                                 101,
                                 "AOC Gaming 24G2SP",
@@ -32,14 +32,18 @@ public class ProductController {
                                 "Panel IPS con tasa de refresco de 165Hz y 1ms de respuesta. Compatible con G-Sync y FreeSync Premium.",
                                 new BigDecimal("159.99"),
                                 "Monitor",
-                                new ArrayList<>(Arrays.asList("/products/monitors/monitor1/monitorImg1.png", "/products/monitors/monitor1/monitorImg2.png", "/products/monitors/monitor1/monitorImg3.png", "/products/monitors/monitor1/monitorImg4.png", "/products/monitors/monitor1/monitorImg5.png")),
+                                new ArrayList<>(Arrays.asList(
+                                                "/products/monitors/AOC-Gaming-24G2SP/AOC-Gaming-24G2SP-Front.png",
+                                                "/products/monitors/AOC-Gaming-24G2SP/AOC-Gaming-24G2SP-Left.png",
+                                                "/products/monitors/AOC-Gaming-24G2SP/AOC-Gaming-24G2SP-Right.png",
+                                                "/products/monitors/AOC-Gaming-24G2SP/AOC-Gaming-24G2SP-Back.png")),
                                 45,
                                 "AOC",
                                 10,
                                 new ArrayList<>(Arrays.asList("Resolución: 1920x1080", "Refresco: 165Hz",
                                                 "Panel: IPS"))));
 
-                //Samsung Odyssey
+                // Samsung Odyssey
                 productList.add(new Product(
                                 102,
                                 "Samsung Odyssey G5",
@@ -47,7 +51,10 @@ public class ProductController {
                                 "Sumérgete en el juego con la curvatura 1000R que coincide con el campo de visión humano. Resolución WQHD.",
                                 new BigDecimal("299.00"),
                                 "Monitor",
-                                new ArrayList<>(Arrays.asList("/products/monitors/monitor2/monitorImg1.png", "/products/monitors/monitor2/monitorImg2.png", "/products/monitors/monitor2/monitorImg3.png", "/products/monitors/monitor2/monitorImg4.png", "/products/monitors/monitor2/monitorImg5.png")),
+                                new ArrayList<>(Arrays.asList(
+                                                "/products/monitors/samsung-odyssey-g5/samsung-odyssey-g5-Front.png",
+                                                "/products/monitors/samsung-odyssey-g5/samsung-odyssey-g5-Side.png",
+                                                "/products/monitors/samsung-odyssey-g5/samsung-odyssey-g5-Back.png")),
                                 20,
                                 "Samsung",
                                 5,
@@ -61,7 +68,14 @@ public class ProductController {
                                 "La mejor precisión de color con tecnología IPS Black. Conectividad masiva con USB-C Hub integrado.",
                                 new BigDecimal("620.50"),
                                 "Monitor",
-                                new ArrayList<>(Arrays.asList("/products/monitors/monitor3/monitorImg1.png", "/products/monitors/monitor3/monitorImg2.png", "/products/monitors/monitor3/monitorImg3.png", "/products/monitors/monitor3/monitorImg4.png", "/products/monitors/monitor3/monitorImg5.png")),
+                                new ArrayList<>(Arrays.asList(
+                                                "/products/monitors/Dell-UltraSharp-U2723QE/Dell-UltraSharp-U2723QE-Front.png",
+                                                "/products/monitors/Dell-UltraSharp-U2723QE/Dell-UltraSharp-U2723QE-Right.png",
+                                                "/products/monitors/Dell-UltraSharp-U2723QE/Dell-UltraSharp-U2723QE-Left.png",
+                                                "/products/monitors/Dell-UltraSharp-U2723QE/Dell-UltraSharp-U2723QE-BackPorts.png",
+                                                "/products/monitors/Dell-UltraSharp-U2723QE/Dell-UltraSharp-U2723QE-Back.png",
+                                                "/products/monitors/Dell-UltraSharp-U2723QE/Dell-UltraSharp-U2723QE-Adjustable1.png",
+                                                "/products/monitors/Dell-UltraSharp-U2723QE/Dell-UltraSharp-U2723QE-Adjustable2.png")),
                                 10,
                                 "Dell",
                                 0,
@@ -76,7 +90,11 @@ public class ProductController {
                                 "Diseñado exclusivamente para competición profesional. Panel TN rápido con tecnología DyAc+.",
                                 new BigDecimal("699.99"),
                                 "Monitor",
-                                new ArrayList<>(Arrays.asList("/products/monitors/monitor4/monitorImg1.png", "/products/monitors/monitor4/monitorImg2.png", "/products/monitors/monitor4/monitorImg3.png", "/products/monitors/monitor4/monitorImg4.png", "/products/monitors/monitor4/monitorImg5.png")),
+                                new ArrayList<>(Arrays.asList(
+                                                "/products/monitors/benq-zowie-xl2566k/benq-zowie-xl2566k-Front.png",
+                                                "/products/monitors/benq-zowie-xl2566k/benq-zowie-xl2566k-Right.png",
+                                                "/products/monitors/benq-zowie-xl2566k/benq-zowie-xl2566k-Left.png",
+                                                "/products/monitors/benq-zowie-xl2566k/benq-zowie-xl2566k-Back.png")),
                                 5,
                                 "BenQ",
                                 0,
@@ -91,19 +109,24 @@ public class ProductController {
                                 "Diseño sin bordes en tres lados. Ideal para oficina y teletrabajo con protección ocular.",
                                 new BigDecimal("99.00"),
                                 "Monitor",
-                                new ArrayList<>(Arrays.asList("/products/monitors/monitor5/monitorImg1.png", "/products/monitors/monitor5/monitorImg2.png", "/products/monitors/monitor5/monitorImg3.png", "/products/monitors/monitor5/monitorImg4.png", "/products/monitors/monitor5/monitorImg5.png")),
+                                new ArrayList<>(Arrays.asList(
+                                                "/products/monitors/lg-24mp400-b/lg-24mp400-b-Front.png",
+                                                "/products/monitors/lg-24mp400-b/lg-24mp400-b-Right.png",
+                                                "/products/monitors/lg-24mp400-b/lg-24mp400-b-Left.png",
+                                                "/products/monitors/lg-24mp400-b/lg-24mp400-b-Side.png")),
                                 100,
                                 "LG",
                                 15,
                                 new ArrayList<>(Arrays.asList("Resolución: 1080p", "Panel: IPS", "Frecuencia: 75Hz"))));
                 return productList;
         }
+
         @GetMapping
         public List<ProductCardDTO> getAllProductsCardsDTO() {
-                List <Product> products = getAllProductsData();
+                List<Product> products = getAllProductsData();
                 List<ProductCardDTO> productCardsDTOList = new ArrayList<>();
 
-                for(Product product : products ) {
+                for (Product product : products) {
                         ProductCardDTO productCardDTO = new ProductCardDTO();
                         productCardDTO.setId(product.getId());
                         productCardDTO.setCategory(product.getCategory());
@@ -116,15 +139,15 @@ public class ProductController {
                         productCardDTO.setActive(product.getActive());
                         productCardDTO.setDiscount(product.getDiscount());
                         productCardsDTOList.add(productCardDTO);
-                };
+                }
+                ;
 
                 return productCardsDTOList;
         }
 
-
         @GetMapping("/{slug}")
         public ProductSummaryDTO getProductsSummaryDTO(@PathVariable String slug) {
-                List <Product> products = getAllProductsData();
+                List<Product> products = getAllProductsData();
                 ProductSummaryDTO productSummaryDTO = new ProductSummaryDTO();
 
                 for (Product product : products) {
@@ -144,10 +167,10 @@ public class ProductController {
                                 productSummaryDTO.setBrand(product.getBrand());
                                 productSummaryDTO.setDiscount(product.getDiscount());
                                 productSummaryDTO.setSpecifications(product.getSpecifications());
-                                
 
                         }
-                };
+                }
+                ;
                 return productSummaryDTO;
-        }       
+        }
 }
