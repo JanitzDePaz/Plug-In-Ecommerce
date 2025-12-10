@@ -5,6 +5,9 @@ import { getProductDetails } from "src/api/getProductDetails";
 export default function ProductPage(){
     const { slug } = useParams();
     const [ product, setProduct ] = useState<ShowProductDetailsProp | null>(null);
+    const mainImg = productSummaryStorage((e) => e.mainImg)
+    const changeMainImg = productSummaryStorage((e) => e.changeMainImg)
+
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -13,7 +16,14 @@ export default function ProductPage(){
         }
 
         fetchProduct();
+        
     }, [slug]);
+
+    useEffect(() => {
+        if(product){
+            changeMainImg(product.mainImg);
+        }
+    }, [product, changeMainImg]);
 
     if(!product){
         return <div>Loading...</div>

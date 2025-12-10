@@ -166,3 +166,9 @@ type FilterProps = {
     maxRate: number,
     changeMaxRate: (number) => void,
 }
+
+
+type ProductSummaryProp = {
+    mainImg: string,
+    changeMainImg: (string) => void
+}
