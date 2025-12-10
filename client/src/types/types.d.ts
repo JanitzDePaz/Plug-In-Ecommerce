@@ -114,13 +114,14 @@ type ShowProductDetailsProp = {
     price: number,
     category: string,
     rate: number,
-    deliveryDays: string,
+    estimateDeliveryDays: string,
     imgUrl: string[],
     mainImg: string,
     active: boolean,
     stock: number,
     brand: string,
     specifications: string[],
+    discount: number
 }
 
 type productCard = {
@@ -173,6 +174,7 @@ type ProductSummaryProp = {
     changeMainImg: (string) => void
 }
 
-type GrayButtonProps = {
+type ButtonProps = {
     text: string,
+    customCSS: string,
 }
