@@ -172,3 +172,7 @@ type ProductSummaryProp = {
     mainImg: string,
     changeMainImg: (string) => void
 }
+
+type GrayButtonProps = {
+    text: string,
+}
