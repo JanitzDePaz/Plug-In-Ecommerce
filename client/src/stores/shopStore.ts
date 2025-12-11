@@ -25,3 +25,9 @@ export const sortStorage = create<SortProps>((set) => ({
     sortBy: "Alphabetical",
     changeSortBy: (sort) => set({sortBy: sort})
 }))
+
+
+export const productSummaryStorage = create<ProductSummaryProp>((set) => ({
+    mainImg: "Empty",
+    changeMainImg: (product) => set({mainImg: product})
+}))

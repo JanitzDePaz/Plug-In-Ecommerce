@@ -15,9 +15,9 @@ public class ProductCardDTO {
     private boolean active;
     private int discount;
 
-    public void ProductCardDTO(){}
+    public ProductCardDTO() {}
 
-     public int getId() {
+    public int getId() {
         return id;
     }
 

@@ -114,13 +114,14 @@ type ShowProductDetailsProp = {
     price: number,
     category: string,
     rate: number,
-    deliveryDays: string,
+    estimateDeliveryDays: string,
     imgUrl: string[],
     mainImg: string,
     active: boolean,
     stock: number,
     brand: string,
     specifications: string[],
+    discount: number
 }
 
 type productCard = {
@@ -165,4 +166,15 @@ type FilterProps = {
      
     maxRate: number,
     changeMaxRate: (number) => void,
+}
+
+
+type ProductSummaryProp = {
+    mainImg: string,
+    changeMainImg: (string) => void
+}
+
+type ButtonProps = {
+    text: string,
+    customCSS: string,
 }
