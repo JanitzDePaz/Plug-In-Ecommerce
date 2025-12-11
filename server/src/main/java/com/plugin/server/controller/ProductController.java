@@ -118,6 +118,96 @@ public class ProductController {
                                 "LG",
                                 15,
                                 new ArrayList<>(Arrays.asList("Resolución: 1080p", "Panel: IPS", "Frecuencia: 75Hz"))));
+
+
+
+
+                                productList.add(new Product(
+            201, // ID
+            "Sony WH-1000XM5", // Nombre
+            "Auriculares inalámbricos con cancelación de ruido líder.", // Descripción corta
+            "Experiencia de escucha inmersiva con dos procesadores para cancelación de ruido de última generación y sonido de alta resolución. Diseño ligero y cómodo.", // Descripción larga
+            new BigDecimal("349.99"), // Precio
+            "Auriculares", // Categoría
+            new ArrayList<>(Arrays.asList( // Rutas de imágenes
+                "/products/headphones/sony-xm5/sony-xm5-front.png",
+                "/products/headphones/sony-xm5/sony-xm5-side.png",
+                "/products/headphones/sony-xm5/sony-xm5-case.png")),
+            30, // Stock
+            "Sony", // Marca
+            15, // Descuento (%)
+            new ArrayList<>(Arrays.asList("Tipo: Over-Ear", "Cancelación de Ruido: Sí",
+                                          "Conectividad: Bluetooth 5.2", "Autonomía: 30h"))));
+
+        // 2. Apple AirPods Pro 2da Gen (In-Ear TWS)
+        productList.add(new Product(
+            202,
+            "Apple AirPods Pro (2da Gen)",
+            "Auriculares Inalámbricos True Wireless con Audio Espacial.",
+            "Mejor cancelación de ruido, modo de sonido ambiente adaptativo y hasta 6 horas de autonomía con una sola carga. Chip H2 para un rendimiento superior.",
+            new BigDecimal("279.00"),
+            "Auriculares",
+            new ArrayList<>(Arrays.asList(
+                "/products/headphones/airpods-pro-2/airpods-pro-2-front.png",
+                "/products/headphones/airpods-pro-2/airpods-pro-2-case.png",
+                "/products/headphones/airpods-pro-2/airpods-pro-2-ear.png")),
+            50,
+            "Apple",
+            5,
+            new ArrayList<>(Arrays.asList("Tipo: In-Ear (TWS)", "Cancelación de Ruido: Adaptativa",
+                                          "Chip: Apple H2", "Resistencia: IPX4"))));
+
+        // 3. HyperX Cloud Alpha (Gaming Headset)
+        productList.add(new Product(
+            203,
+            "HyperX Cloud Alpha",
+            "Auriculares Gaming con doble cámara para PC/Consolas.",
+            "Tecnología de cámara doble para mayor distinción y claridad. Almohadillas de espuma viscoelástica y estructura de aluminio duradera.",
+            new BigDecimal("89.99"),
+            "Auriculares",
+            new ArrayList<>(Arrays.asList(
+                "/products/headphones/hyperx-alpha/hyperx-alpha-front.png",
+                "/products/headphones/hyperx-alpha/hyperx-alpha-mic.png",
+                "/products/headphones/hyperx-alpha/hyperx-alpha-side.png")),
+            40,
+            "HyperX",
+            10,
+            new ArrayList<>(Arrays.asList("Tipo: Over-Ear (Con cable)", "Micrófono: Desmontable con Cancelación de Ruido",
+                                          "Drivers: Doble Cámara", "Plataforma: Multiplataforma"))));
+
+        // 4. Bose QuietComfort Ultra (Over-Ear con Gran Comodidad)
+        productList.add(new Product(
+            204,
+            "Bose QuietComfort Ultra",
+            "La mejor cancelación de ruido de Bose con un ajuste increíble.",
+            "Sonido inmersivo y personalizado con tecnología CustomTune. Ideales para viajes largos gracias a su excepcional comodidad y rendimiento ANC.",
+            new BigDecimal("429.95"),
+            "Auriculares",
+            new ArrayList<>(Arrays.asList(
+                "/products/headphones/bose-qc-ultra/bose-qc-ultra-front.png",
+                "/products/headphones/bose-qc-ultra/bose-qc-ultra-folded.png")),
+            15,
+            "Bose",
+            0,
+            new ArrayList<>(Arrays.asList("Tipo: Over-Ear", "Cancelación de Ruido: Lider en la Industria",
+                                          "Tecnología: QuietComfort", "Plegables: Sí"))));
+
+        // 5. Samsung Galaxy Buds2 Pro (In-Ear Económicos)
+        productList.add(new Product(
+            205,
+            "Samsung Galaxy Buds2 Pro",
+            "TWS pequeños con sonido Hi-Fi de 24 bits.",
+            "Diseño ergonómico y compacto para un ajuste cómodo. Audio de alta fidelidad con cancelación de ruido inteligente (ANC).",
+            new BigDecimal("129.99"),
+            "Auriculares",
+            new ArrayList<>(Arrays.asList(
+                "/products/headphones/galaxy-buds2-pro/buds2-pro-case.png",
+                "/products/headphones/galaxy-buds2-pro/buds2-pro-open.png")),
+            60,
+            "Samsung",
+            20,
+            new ArrayList<>(Arrays.asList("Tipo: In-Ear (TWS)", "Sonido: Hi-Fi 24-bit",
+                                          "Batería: 5h (ANC on)", "Compatibilidad: Android/iOS"))));
                 return productList;
         }
 
