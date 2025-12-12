@@ -388,6 +388,95 @@ public class ProductController {
             new ArrayList<>(Arrays.asList("Conexión: Cableado (Speedflex)", "Rueda: 4 direcciones (HyperScroll)",
                                             "Iluminación: Chroma RGB Underglow", "Sensor: Focus+ 26K"))));
 
+
+                                            // 1. Wooting 60HE+ (El rey actual de los teclados gaming)
+        productList.add(new Product(
+            501,
+            "Wooting 60HE+",
+            "Teclado analógico 60% con la respuesta más rápida del mundo.",
+            "El teclado que revolucionó los esports. Interruptores magnéticos Lekker que permiten Rapid Trigger, punto de actuación ajustable (0.1mm a 4.0mm) y movimiento analógico.",
+            new BigDecimal("179.99"),
+            "Teclados",
+            new ArrayList<>(Arrays.asList(
+                "/products/keyboards/wooting-60he/wooting-60he-top.png",
+                "/products/keyboards/wooting-60he/wooting-60he-strap.png",
+                "/products/keyboards/wooting-60he/wooting-60he-angle.png")),
+            15,
+            "Wooting",
+            0,
+            new ArrayList<>(Arrays.asList("Switch: Magnético Lekker L60", "Layout: 60% Compacto",
+                                            "Función: Rapid Trigger", "Material: PBT Double-shot"))));
+
+        // 2. Logitech MX Keys S (El estándar de oficina)
+        productList.add(new Product(
+            502,
+            "Logitech MX Keys S",
+            "Teclado inalámbrico de perfil bajo para productividad.",
+            "Escritura fluida, natural y precisa con teclas cóncavas. Iluminación inteligente que detecta tus manos y automatización de tareas con Smart Actions.",
+            new BigDecimal("119.00"),
+            "Teclados",
+            new ArrayList<>(Arrays.asList(
+                "/products/keyboards/mx-keys-s/mx-keys-s-top.png",
+                "/products/keyboards/mx-keys-s/mx-keys-s-side.png",
+                "/products/keyboards/mx-keys-s/mx-keys-s-desk.png")),
+            60,
+            "Logitech",
+            10,
+            new ArrayList<>(Arrays.asList("Tipo: Membrana (Tijera)", "Perfil: Bajo (Low Profile)",
+                                            "Batería: USB-C Recargable", "Conexión: Multi-dispositivo (3)"))));
+
+        // 3. Razer Huntsman V3 Pro TKL (Esports Mainstream)
+        productList.add(new Product(
+            503,
+            "Razer Huntsman V3 Pro TKL",
+            "Teclado óptico analógico para competición sin teclado numérico.",
+            "Velocidad inigualable con los switches ópticos analógicos Gen-2 de Razer. Modo de disparo rápido, actuación ajustable y almacenamiento híbrido integrado.",
+            new BigDecimal("229.99"),
+            "Teclados",
+            new ArrayList<>(Arrays.asList(
+                "/products/keyboards/huntsman-v3-pro/huntsman-v3-top.png",
+                "/products/keyboards/huntsman-v3-pro/huntsman-v3-wrist.png",
+                "/products/keyboards/huntsman-v3-pro/huntsman-v3-side.png")),
+            25,
+            "Razer",
+            5,
+            new ArrayList<>(Arrays.asList("Switch: Óptico Analógico Gen-2", "Layout: TKL (Tenkeyless)",
+                                            "Reposamuñecas: Magnético incluido", "Placa: Aluminio cepillado"))));
+
+        // 4. Keychron Q1 Pro (Entrada al mundo Custom)
+        productList.add(new Product(
+            504,
+            "Keychron Q1 Pro",
+            "Teclado mecánico custom inalámbrico QMK/VIA totalmente de aluminio.",
+            "Cuerpo de aluminio CNC completo, diseño de doble junta (Gasket Mount) y soporte para QMK/VIA. Una experiencia de escritura premium y sonido 'thocky' de serie.",
+            new BigDecimal("199.00"),
+            "Teclados",
+            new ArrayList<>(Arrays.asList(
+                "/products/keyboards/keychron-q1-pro/q1-pro-top.png",
+                "/products/keyboards/keychron-q1-pro/q1-pro-exploded.png",
+                "/products/keyboards/keychron-q1-pro/q1-pro-knob.png")),
+            10,
+            "Keychron",
+            0,
+            new ArrayList<>(Arrays.asList("Layout: 75% con Perilla", "Conexión: Bluetooth 5.1 / Cable",
+                                            "Hot-Swappable: Sí", "Montaje: Double Gasket"))));
+
+        // 5. Corsair K70 MAX RGB (Clásico Full Size)
+        productList.add(new Product(
+            505,
+            "Corsair K70 MAX RGB",
+            "Teclado mecánico-magnético premium de tamaño completo.",
+            "Equipado con interruptores magnéticos CORSAIR MGX ajustables. Proceso AXON para una velocidad de 8000Hz y reposamuñecas de espuma viscoelástica.",
+            new BigDecimal("229.99"),
+            "Teclados",
+            new ArrayList<>(Arrays.asList(
+                "/products/keyboards/corsair-k70-max/k70-max-top.png",
+                "/products/keyboards/corsair-k70-max/k70-max-wheel.png")),
+            40,
+            "Corsair",
+            15,
+            new ArrayList<>(Arrays.asList("Switch: Magnético MGX", "Layout: 100% Full Size",
+                                            "Polling Rate: 8000Hz", "Keycaps: PBT Double-shot"))));
                                           return productList;
         }
 
