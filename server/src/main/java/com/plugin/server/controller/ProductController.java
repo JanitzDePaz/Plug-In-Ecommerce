@@ -208,7 +208,98 @@ public class ProductController {
             20,
             new ArrayList<>(Arrays.asList("Tipo: In-Ear (TWS)", "Sonido: Hi-Fi 24-bit",
                                           "Batería: 5h (ANC on)", "Compatibilidad: Android/iOS"))));
-                return productList;
+                                          
+                
+                // 1. Shure SM7B (El estándar para Podcast/Streaming)
+        productList.add(new Product(
+            301, // ID
+            "Shure SM7B", // Nombre
+            "Micrófono dinámico vocal legendario para estudios y podcasting.", // Descripción corta
+            "Conocido por su sonido cálido y suave. Ideal para grabaciones de voz profesionales, streaming y podcasting. Rechazo excepcional de ruido electromagnético.", // Descripción larga
+            new BigDecimal("399.00"), // Precio
+            "Micrófonos", // Categoría
+            new ArrayList<>(Arrays.asList( // Rutas de imágenes
+                "/products/microphones/shure-sm7b/shure-sm7b-front.png",
+                "/products/microphones/shure-sm7b/shure-sm7b-side.png",
+                "/products/microphones/shure-sm7b/shure-sm7b-angle.png")),
+            25, // Stock
+            "Shure", // Marca
+            0, // Descuento
+            new ArrayList<>(Arrays.asList("Tipo: Dinámico (XLR)", "Patrón: Cardioide",
+                                            "Respuesta: 50Hz - 20kHz", "Uso: Estudio/Broadcast"))));
+
+        // 2. Blue Yeti X (El rey del USB)
+        productList.add(new Product(
+            302,
+            "Blue Yeti X",
+            "Micrófono USB profesional para juegos y streaming.",
+            "Matriz de cuatro cápsulas de condensador para un sonido nítido. Medidor LED de alta resolución y perilla inteligente multifunción. Software Blue VO!CE incluido.",
+            new BigDecimal("169.99"),
+            "Micrófonos",
+            new ArrayList<>(Arrays.asList(
+                "/products/microphones/blue-yeti-x/blue-yeti-x-front.png",
+                "/products/microphones/blue-yeti-x/blue-yeti-x-knob.png",
+                "/products/microphones/blue-yeti-x/blue-yeti-x-stand.png")),
+            45,
+            "Logitech / Blue",
+            10,
+            new ArrayList<>(Arrays.asList("Tipo: Condensador (USB)", "Patrones: 4 (Cardioide, Omni, Bi, Stereo)",
+                                            "Frecuencia: 20Hz - 20kHz", "Extras: Iluminación LED"))));
+
+        // 3. HyperX QuadCast S (El favorito de los Gamers con RGB)
+        productList.add(new Product(
+            303,
+            "HyperX QuadCast S",
+            "Micrófono USB de condensador con iluminación RGB.",
+            "Increíble iluminación RGB personalizable. Incluye soporte antivibración y filtro pop integrado. Sensor de silenciamiento con un toque e indicador LED.",
+            new BigDecimal("159.99"),
+            "Micrófonos",
+            new ArrayList<>(Arrays.asList(
+                "/products/microphones/hyperx-quadcast-s/quadcast-s-front.png",
+                "/products/microphones/hyperx-quadcast-s/quadcast-s-rgb.png",
+                "/products/microphones/hyperx-quadcast-s/quadcast-s-top.png")),
+            60,
+            "HyperX",
+            5,
+            new ArrayList<>(Arrays.asList("Tipo: Condensador (USB)", "Iluminación: RGB Dinámico",
+                                            "Montura: Antivibración incluida", "Control: Tap-to-Mute"))));
+
+        // 4. Røde Wireless GO II (Inalámbrico compacto)
+        productList.add(new Product(
+            304,
+            "Røde Wireless GO II",
+            "Sistema de micrófono inalámbrico compacto de doble canal.",
+            "El sistema de micrófono inalámbrico más pequeño y versátil. Alcance de hasta 200m, grabación a bordo y compatibilidad universal con cámaras y móviles.",
+            new BigDecimal("299.00"),
+            "Micrófonos",
+            new ArrayList<>(Arrays.asList(
+                "/products/microphones/rode-wireless-go/rode-go-ii-pair.png",
+                "/products/microphones/rode-wireless-go/rode-go-ii-transmitter.png",
+                "/products/microphones/rode-wireless-go/rode-go-ii-receiver.png")),
+            15,
+            "Røde",
+            0,
+            new ArrayList<>(Arrays.asList("Tipo: Inalámbrico (Lavalier)", "Alcance: 200m",
+                                            "Batería: 7h recargable", "Canales: Doble"))));
+
+        // 5. Audio-Technica AT2020 (Entrada al mundo profesional XLR)
+        productList.add(new Product(
+            305,
+            "Audio-Technica AT2020",
+            "Micrófono de condensador cardioide para estudio.",
+            "El estándar de precio/rendimiento en tecnología de micrófonos de condensador de estudio. Ideal para project/home studio. Requiere alimentación Phantom 48V.",
+            new BigDecimal("99.00"),
+            "Micrófonos",
+            new ArrayList<>(Arrays.asList(
+                "/products/microphones/at2020/at2020-front.png",
+                "/products/microphones/at2020/at2020-mount.png")),
+            80,
+            "Audio-Technica",
+            20,
+            new ArrayList<>(Arrays.asList("Tipo: Condensador (XLR)", "Diafragma: Baja masa",
+                                            "SPL Máximo: 144 dB", "Requiere: Interfaz de Audio / 48V"))));
+                                          
+                                          return productList;
         }
 
         @GetMapping
