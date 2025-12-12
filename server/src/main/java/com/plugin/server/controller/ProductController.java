@@ -299,6 +299,95 @@ public class ProductController {
             new ArrayList<>(Arrays.asList("Tipo: Condensador (XLR)", "Diafragma: Baja masa",
                                             "SPL Máximo: 144 dB", "Requiere: Interfaz de Audio / 48V"))));
                                           
+                // 1. Logitech G Pro X Superlight 2 (El estándar de Esports)
+        productList.add(new Product(
+            401,
+            "Logitech G Pro X Superlight 2",
+            "El ratón inalámbrico más ligero y preciso para competición.",
+            "Diseñado con profesionales de los esports. Peso inferior a 60g, interruptores híbridos LIGHTFORCE y sensor HERO 2 para una precisión milimétrica sin cables.",
+            new BigDecimal("169.00"),
+            "Ratones",
+            new ArrayList<>(Arrays.asList(
+                "/products/mice/g-pro-x-superlight-2/g-pro-x-2-top.png",
+                "/products/mice/g-pro-x-superlight-2/g-pro-x-2-side.png",
+                "/products/mice/g-pro-x-superlight-2/g-pro-x-2-bottom.png")),
+            40,
+            "Logitech G",
+            0,
+            new ArrayList<>(Arrays.asList("Sensor: HERO 2 (32k DPI)", "Peso: 60g",
+                                            "Batería: 95 horas", "Polling Rate: 2000Hz"))));
+
+        // 2. Razer DeathAdder V3 Pro (Ergonomía Gaming)
+        productList.add(new Product(
+            402,
+            "Razer DeathAdder V3 Pro",
+            "Ratón ergonómico ultraligero para agarre de palma.",
+            "La leyenda ha evolucionado. 63g de peso, forma ergonómica refinada y sensor óptico Razer Focus Pro 30K. Conexión inalámbrica HyperSpeed un 25% más rápida.",
+            new BigDecimal("159.99"),
+            "Ratones",
+            new ArrayList<>(Arrays.asList(
+                "/products/mice/deathadder-v3-pro/deathadder-v3-front.png",
+                "/products/mice/deathadder-v3-pro/deathadder-v3-side.png",
+                "/products/mice/deathadder-v3-pro/deathadder-v3-grip.png")),
+            25,
+            "Razer",
+            10,
+            new ArrayList<>(Arrays.asList("Sensor: Focus Pro 30K", "Peso: 63g",
+                                            "Switches: Ópticos Gen-3", "Diseño: Ergonómico diestro"))));
+
+        // 3. Logitech MX Master 3S (El Rey de la Productividad)
+        productList.add(new Product(
+            403,
+            "Logitech MX Master 3S",
+            "Ratón de alto rendimiento para creativos y programadores.",
+            "Clics silenciosos y desplazamiento electromagnético MagSpeed para una velocidad y precisión infinitas. Sensor de 8000 DPI que funciona incluso sobre cristal.",
+            new BigDecimal("129.00"),
+            "Ratones",
+            new ArrayList<>(Arrays.asList(
+                "/products/mice/mx-master-3s/mx-master-3s-top.png",
+                "/products/mice/mx-master-3s/mx-master-3s-side.png",
+                "/products/mice/mx-master-3s/mx-master-3s-thumb.png")),
+            50,
+            "Logitech",
+            15,
+            new ArrayList<>(Arrays.asList("Tipo: Productividad", "Scroll: MagSpeed Infinito",
+                                            "Conectividad: Bluetooth / Logi Bolt", "Botones: 7 personalizables"))));
+
+        // 4. Logitech G502 X Plus (El todoterreno con RGB)
+        productList.add(new Product(
+            404,
+            "Logitech G502 X Plus",
+            "La reinvención del ratón gaming más popular del mundo.",
+            "Icono rediseñado. Interruptores híbridos óptico-mecánicos LIGHTFORCE, iluminación RGB LIGHTSYNC de 8 zonas y tecnología inalámbrica LIGHTSPEED de calidad profesional.",
+            new BigDecimal("145.00"),
+            "Ratones",
+            new ArrayList<>(Arrays.asList(
+                "/products/mice/g502-x-plus/g502-x-plus-top.png",
+                "/products/mice/g502-x-plus/g502-x-plus-rgb.png",
+                "/products/mice/g502-x-plus/g502-x-plus-bottom.png")),
+            35,
+            "Logitech G",
+            5,
+            new ArrayList<>(Arrays.asList("Botones: 13 programables", "Iluminación: RGB 8 zonas",
+                                            "Switch: Híbrido Óptico-Mecánico", "Peso: 106g"))));
+
+        // 5. Razer Basilisk V3 (Calidad-Precio con cable)
+        productList.add(new Product(
+            405,
+            "Razer Basilisk V3",
+            "Ratón gaming ergonómico con rueda inclinable.",
+            "Domina tu estilo de juego. 11 botones programables, rueda inclinable HyperScroll inteligente y una base con iluminación RGB Chroma espectacular.",
+            new BigDecimal("79.99"),
+            "Ratones",
+            new ArrayList<>(Arrays.asList(
+                "/products/mice/razer-basilisk-v3/basilisk-v3-top.png",
+                "/products/mice/razer-basilisk-v3/basilisk-v3-underglow.png")),
+            100,
+            "Razer",
+            20,
+            new ArrayList<>(Arrays.asList("Conexión: Cableado (Speedflex)", "Rueda: 4 direcciones (HyperScroll)",
+                                            "Iluminación: Chroma RGB Underglow", "Sensor: Focus+ 26K"))));
+
                                           return productList;
         }
 
