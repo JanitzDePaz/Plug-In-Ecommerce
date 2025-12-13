@@ -130,9 +130,9 @@ public class ProductController {
             new BigDecimal("349.99"), // Precio
             "Auriculares", // Categoría
             new ArrayList<>(Arrays.asList( // Rutas de imágenes
-                "/products/headphones/sony-xm5/sony-xm5-front.png",
-                "/products/headphones/sony-xm5/sony-xm5-side.png",
-                "/products/headphones/sony-xm5/sony-xm5-case.png")),
+                "/products/headphones/sony-xm5/sony-xm5-Front.png",
+                "/products/headphones/sony-xm5/sony-xm5-Data.png",
+                "/products/headphones/sony-xm5/sony-xm5-Side.png")),
             30, // Stock
             "Sony", // Marca
             15, // Descuento (%)
@@ -148,9 +148,9 @@ public class ProductController {
             new BigDecimal("279.00"),
             "Auriculares",
             new ArrayList<>(Arrays.asList(
-                "/products/headphones/airpods-pro-2/airpods-pro-2-front.png",
-                "/products/headphones/airpods-pro-2/airpods-pro-2-case.png",
-                "/products/headphones/airpods-pro-2/airpods-pro-2-ear.png")),
+                "/products/headphones/airpods-pro-2/airpods-pro-2-Front.png",
+                "/products/headphones/airpods-pro-2/airpods-pro-2-Side.png",
+                "/products/headphones/airpods-pro-2/airpods-pro-2-Ear.png")),
             50,
             "Apple",
             5,
