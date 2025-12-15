@@ -34,8 +34,6 @@ export default function ProductPage(){
         return <div>Loading...</div>
     }
 
-    console.log(product)
-
     const deliveryDate = new Date(product.estimateDeliveryDays)
     const dayName = deliveryDate.toLocaleDateString("es-ES", {weekday: "long"})
     const monthName = deliveryDate.toLocaleDateString("es-ES", {month: "long"})

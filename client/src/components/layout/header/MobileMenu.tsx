@@ -2,9 +2,23 @@ import { menuStorage } from "src/stores/menuStore";
 import { headerItems } from "src/constants/headerItems";
 import { Link } from "react-router";
 import clsx from "clsx";
+import { useEffect } from "react";
 
 export default function MobileMenu() {
   const { openedMenu, closeMenu } = menuStorage();
+
+  useEffect(() => {
+    if (openedMenu) {
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.documentElement.style.overflow = "";
+    }
+
+    return () => {
+      document.documentElement.style.overflow = "";
+    };
+  }, [openedMenu]);
+
   return (
     <nav
       className={clsx(
