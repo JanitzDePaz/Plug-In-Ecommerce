@@ -31,7 +31,11 @@ export const ShopFilters = () => {
                     id="minPrice"
                     placeholder="0"
                     onBlur={(e) =>{
-                        changeMinPrice(e.target.value)}}
+                        const value = parseInt(e.target.value)
+                        if(!isNaN(value)){
+                          changeMinPrice(e.target.value)
+                        }
+                      }}
                     onKeyDown={(e) => {
                         if (e.key == "Enter") {
                         changeMinPrice(minPriceRef.current?.value);
@@ -46,7 +50,10 @@ export const ShopFilters = () => {
                     id="maxPrice"
                     placeholder={`${maxPrice}`}
                     onBlur={(e) => {
-                        changeMaxPrice(e.target.value);
+                        const value = parseInt(e.target.value)
+                        if(!isNaN(value)){
+                          changeMaxPrice(e.target.value)
+                        }
                     }}
                     onKeyDown={(e) => {
                         if (e.key == "Enter") {
@@ -69,7 +76,10 @@ export const ShopFilters = () => {
                     id="minRate"
                     placeholder="0"
                     onBlur={(e) =>{
+                      const value = parseInt(e.target.value)
+                      if(!isNaN(value)){
                         changeMinRate(e.target.value)
+                      }
                     }
                         
                     }
@@ -86,9 +96,12 @@ export const ShopFilters = () => {
                     type="number"
                     id="maxRate"
                     placeholder={`${maxRate}`}
-                    onBlur={(e) =>
+                    onBlur={(e) => {
+                      const value = parseInt(e.target.value)
+                      if(!isNaN(value)){
                         changeMaxRate(e.target.value)
-                    }
+                      }  
+                    }}
                     onKeyDown={(e) => {
                         if (e.key == "Enter") {
                         changeMaxRate(maxRateRef.current?.value);
