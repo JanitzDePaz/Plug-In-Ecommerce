@@ -12,11 +12,6 @@ export const ShopFilters = () => {
   const changeMaxRate = filterStorage((e) => e.changeMaxRate);
   const changeSortBy = sortStorage((e) => e.changeSortBy);
 
-  const minPriceRef = useRef<HTMLInputElement>(null);
-  const maxPriceRef = useRef<HTMLInputElement>(null);
-  const minRateRef = useRef<HTMLInputElement>(null);
-  const maxRateRef = useRef<HTMLInputElement>(null);
-
   return (
     <aside className="max-w-3/10 flex flex-col">
       <section className="flex flex-col gap-5">
@@ -26,7 +21,6 @@ export const ShopFilters = () => {
                 <h4>Precio</h4>
                 <div className="flex justify-between items-center gap-2">
                     <input
-                    ref={minPriceRef}
                     type="number"
                     id="minPrice"
                     placeholder="0"
@@ -38,14 +32,17 @@ export const ShopFilters = () => {
                       }}
                     onKeyDown={(e) => {
                         if (e.key == "Enter") {
-                        changeMinPrice(minPriceRef.current?.value);
+                          const value = parseInt(e.currentTarget.value)
+                          if(!isNaN(value)){
+                            changeMinPrice(e.currentTarget.value);
+                          }
+                        
                         }
                     }}
                     className="max-w-20 border no-spinner text-center py-1 px-2 border-gray-400 text-md rounded-sm"
                     />
                     <hr className="w-5" />
                     <input
-                    ref={maxPriceRef}
                     type="number"
                     id="maxPrice"
                     placeholder={`${maxPrice}`}
@@ -57,7 +54,11 @@ export const ShopFilters = () => {
                     }}
                     onKeyDown={(e) => {
                         if (e.key == "Enter") {
-                            changeMaxPrice(maxPriceRef.current?.value);
+                          const value = parseInt(e.currentTarget.value)
+                          if(!isNaN(value)){
+                            changeMaxPrice(e.currentTarget.value);
+                          }
+                            
                         }
                     }}
                     className="max-w-20 border no-spinner text-center py-1 px-2 border-gray-400 text-md rounded-sm"
@@ -71,7 +72,6 @@ export const ShopFilters = () => {
                 <div className="flex justify-between items-center gap-2">
                     
                     <input
-                    ref={minRateRef}
                     type="number"
                     id="minRate"
                     placeholder="0"
@@ -85,14 +85,17 @@ export const ShopFilters = () => {
                     }
                     onKeyDown={(e) => {
                         if (e.key == "Enter") {
-                        changeMinRate(minRateRef.current?.value);
+                          const value = parseInt(e.currentTarget.value)
+                          if(!isNaN(value)){
+                            changeMinRate(e.currentTarget.value);
+                          }
+                        
                         }
                     }}
                     className="max-w-20 border no-spinner text-center py-1 px-2 border-gray-400 text-md rounded-sm"
                     />
                     <hr className="w-5" />
                     <input
-                    ref={maxRateRef}
                     type="number"
                     id="maxRate"
                     placeholder={`${maxRate}`}
@@ -104,7 +107,10 @@ export const ShopFilters = () => {
                     }}
                     onKeyDown={(e) => {
                         if (e.key == "Enter") {
-                        changeMaxRate(maxRateRef.current?.value);
+                          const value = parseInt(e.currentTarget.value)
+                          if(!isNaN(value)){
+                            changeMaxRate(e.currentTarget.value);
+                          }
                         }
                     }}
                     className="max-w-20 border no-spinner text-center py-1 px-2 border-gray-400 text-md rounded-sm"
