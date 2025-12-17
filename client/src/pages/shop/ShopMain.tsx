@@ -45,8 +45,6 @@ export const ShopMain = () => {
     return filteredByCategory && filteredByPrice && filteredByRate;
   });
 
-  console.log(productData)
-  console.log(filteredData)
 
   switch (sortBy) {
     case "Alphabetical":

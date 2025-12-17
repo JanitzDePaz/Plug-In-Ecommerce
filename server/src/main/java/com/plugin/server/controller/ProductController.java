@@ -128,7 +128,7 @@ public class ProductController {
             "Auriculares inalámbricos con cancelación de ruido líder.", // Descripción corta
             "Experiencia de escucha inmersiva con dos procesadores para cancelación de ruido de última generación y sonido de alta resolución. Diseño ligero y cómodo.", // Descripción larga
             new BigDecimal("349.99"), // Precio
-            "Auriculares", // Categoría
+            "Headphone", // Categoría
             new ArrayList<>(Arrays.asList( // Rutas de imágenes
                 "/products/headphones/sony-xm5/sony-xm5-Front.png",
                 "/products/headphones/sony-xm5/sony-xm5-Data.png",
@@ -146,7 +146,7 @@ public class ProductController {
             "Auriculares Inalámbricos True Wireless con Audio Espacial.",
             "Mejor cancelación de ruido, modo de sonido ambiente adaptativo y hasta 6 horas de autonomía con una sola carga. Chip H2 para un rendimiento superior.",
             new BigDecimal("279.00"),
-            "Auriculares",
+            "Headphone",
             new ArrayList<>(Arrays.asList(
                 "/products/headphones/airpods-pro-2/airpods-pro-2-Front.png",
                 "/products/headphones/airpods-pro-2/airpods-pro-2-Side.png",
@@ -164,7 +164,7 @@ public class ProductController {
             "Auriculares Gaming con doble cámara para PC/Consolas.",
             "Tecnología de cámara doble para mayor distinción y claridad. Almohadillas de espuma viscoelástica y estructura de aluminio duradera.",
             new BigDecimal("89.99"),
-            "Auriculares",
+            "Headphone",
             new ArrayList<>(Arrays.asList(
                 "/products/headphones/hyperx-alpha/angle.png",
                 "/products/headphones/hyperx-alpha/front.png",
@@ -182,7 +182,7 @@ public class ProductController {
             "La mejor cancelación de ruido de Bose con un ajuste increíble.",
             "Sonido inmersivo y personalizado con tecnología CustomTune. Ideales para viajes largos gracias a su excepcional comodidad y rendimiento ANC.",
             new BigDecimal("429.95"),
-            "Auriculares",
+            "Headphone",
             new ArrayList<>(Arrays.asList(
                 "/products/headphones/bose-qc-ultra/angle.png",
                 "/products/headphones/bose-qc-ultra/front.png",
@@ -200,7 +200,7 @@ public class ProductController {
             "TWS pequeños con sonido Hi-Fi de 24 bits.",
             "Diseño ergonómico y compacto para un ajuste cómodo. Audio de alta fidelidad con cancelación de ruido inteligente (ANC).",
             new BigDecimal("129.99"),
-            "Auriculares",
+            "Headphone",
             new ArrayList<>(Arrays.asList(
                 "/products/headphones/galaxy-buds2-pro/case.png",
                 "/products/headphones/galaxy-buds2-pro/open.png",
