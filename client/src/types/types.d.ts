@@ -175,6 +175,8 @@ type ProductSummaryProp = {
 }
 
 type ButtonProps = {
+    typeOfButton: string,
     text: string,
     customCSS: string,
+    icon: string
 }
