@@ -4,8 +4,9 @@ import { getProductDetails } from "src/api/getProductDetails";
 import { productSummaryStorage } from "src/stores/shopStore";
 import { Link } from "react-router";
 import { RateStars } from "src/components/indicators/RateStars";
-import { GrayButton } from "src/components/buttons/GrayButton";
-import { BlueButton } from "src/components/buttons/BlueButton";
+import { ShopButtons } from "src/components/buttons/ShopButtons";
+import AddToCartIcon from "../../../assets/icons/shop/AddToCart.svg"
+import DeliveryTruck from "../../../assets/icons/shop/DeliveryTruck.svg"
 
 export default function ProductPage(){
     const { slug } = useParams();
@@ -40,8 +41,8 @@ export default function ProductPage(){
 
    
     return(
-        <main className="flex flex-col gap-5 justify-around min-h-[85vh] my-5 w-9/10 m-auto">
-            <Link to="/Tienda"><GrayButton text="← Volver a la tienda" customCSS=""/></Link>
+        <main className="flex flex-col gap-5 justify-around min-h-[85vh] my-5 w-8/10 m-auto">
+            <Link to="/Tienda"><ShopButtons typeOfButton="gray" text="← Volver a la tienda" customCSS="" icon=""/></Link>
             <span className="flex justify-evenly flex-1 gap-5">
                 <section className="flex flex-col gap-5 w-5/15">
                     <img src={`/public/${mainImg}`} alt={`Main img for ${product.name}`} className="w-full"/>
@@ -66,7 +67,7 @@ export default function ProductPage(){
                     <div className="flex flex-col gap-5">
                         <p>Opiniones de los usuarios</p>
                         <RateStars rate={product.rate} />
-                        <GrayButton text="Mira las opiniones" customCSS={""} /> 
+                        <ShopButtons typeOfButton="gray" text="Mira las opiniones" customCSS={""} icon="" /> 
                     </div>
                 </section>
                 <section className="bg-gray-200  h-fit flex flex-col gap-5 py-5 w-3/15 px-8 rounded-lg">
@@ -75,9 +76,8 @@ export default function ProductPage(){
                             {product.discount > 0 ? <p className="text-[0.7rem] font-extrabold bg-blue-700 p-2 rounded-lg w-fit h-fit text-white">{product.discount}% de descuento</p> : null  }
                         </div>
 
-                        <p>Recibe el pedido a partir del {dayName}, {deliveryDate.getDay()} de {monthName}</p>
                         
-                        <BlueButton text="Añadir al carrito" customCSS={""}/>
+                        <ShopButtons typeOfButton="blue" text="Añadir al carrito" customCSS="" icon=""/>
                 </section>
             </span>
             
