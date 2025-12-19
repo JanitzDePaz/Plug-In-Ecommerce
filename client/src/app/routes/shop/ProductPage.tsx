@@ -70,14 +70,18 @@ export default function ProductPage(){
                         <ShopButtons typeOfButton="gray" text="Mira las opiniones" customCSS={""} icon="" /> 
                     </div>
                 </section>
-                <section className="bg-gray-200  h-fit flex flex-col gap-5 py-5 w-3/15 px-8 rounded-lg">
+                <section className="bg-gray-200  h-fit flex flex-col gap-5 py-5 w-4/15 px-8 rounded-lg">
                         <div className="flex justify-between">
                             <h2 className="text-2xl text-red-600 font-bold">{product.price}€</h2>
                             {product.discount > 0 ? <p className="text-[0.7rem] font-extrabold bg-blue-700 p-2 rounded-lg w-fit h-fit text-white">{product.discount}% de descuento</p> : null  }
                         </div>
-
+                        <span className="flex gap-5 justify-center items-center">
+                            <img src={DeliveryTruck} alt="Delivery truck icon" className="h-15 object-contain"/>
+                            <p>Recibe el pedido a partir del {dayName} {deliveryDate.getDay()} de {monthName}</p>
+                        </span>
                         
-                        <ShopButtons typeOfButton="blue" text="Añadir al carrito" customCSS="" icon=""/>
+                        
+                        <ShopButtons typeOfButton="blue" text="Añadir al carrito" customCSS="" icon={`${AddToCartIcon}`}/>
                 </section>
             </span>
             
