@@ -403,25 +403,7 @@ public class ProductController {
                                             "Iluminación: Chroma RGB Underglow", "Sensor: Focus+ 26K"))));
 
 
-                                            // 1. Wooting 60HE+ (El rey actual de los teclados gaming)
-        productList.add(new Product(
-            501,
-            "Wooting 60HE+",
-            "Teclado analógico 60% con la respuesta más rápida del mundo.",
-            "El teclado que revolucionó los esports. Interruptores magnéticos Lekker que permiten Rapid Trigger, punto de actuación ajustable (0.1mm a 4.0mm) y movimiento analógico.",
-            new BigDecimal("179.99"),
-            "Teclados",
-            new ArrayList<>(Arrays.asList(
-                "/products/keyboards/wooting-60he/wooting-60he-top.png",
-                "/products/keyboards/wooting-60he/wooting-60he-strap.png",
-                "/products/keyboards/wooting-60he/wooting-60he-angle.png")),
-            15,
-            "Wooting",
-            0,
-            new ArrayList<>(Arrays.asList("Switch: Magnético Lekker L60", "Layout: 60% Compacto",
-                                            "Función: Rapid Trigger", "Material: PBT Double-shot"))));
-
-        // 2. Logitech MX Keys S (El estándar de oficina)
+        // 1. Logitech MX Keys S (El estándar de oficina)
         productList.add(new Product(
             502,
             "Logitech MX Keys S",
@@ -430,16 +412,16 @@ public class ProductController {
             new BigDecimal("119.00"),
             "Teclados",
             new ArrayList<>(Arrays.asList(
-                "/products/keyboards/mx-keys-s/mx-keys-s-top.png",
-                "/products/keyboards/mx-keys-s/mx-keys-s-side.png",
-                "/products/keyboards/mx-keys-s/mx-keys-s-desk.png")),
+                "/products/keyboards/mx-keys-s/keyboard-profile-view.png",
+                "/products/keyboards/mx-keys-s/eco-friendly-features.png",
+                "/products/keyboards/mx-keys-s/typing-comfort-lifestyle.png")),
             60,
             "Logitech",
             10,
             new ArrayList<>(Arrays.asList("Tipo: Membrana (Tijera)", "Perfil: Bajo (Low Profile)",
                                             "Batería: USB-C Recargable", "Conexión: Multi-dispositivo (3)"))));
 
-        // 3. Razer Huntsman V3 Pro TKL (Esports Mainstream)
+        // 2. Razer Huntsman V3 Pro TKL (Esports Mainstream)
         productList.add(new Product(
             503,
             "Razer Huntsman V3 Pro TKL",
@@ -457,7 +439,7 @@ public class ProductController {
             new ArrayList<>(Arrays.asList("Switch: Óptico Analógico Gen-2", "Layout: TKL (Tenkeyless)",
                                             "Reposamuñecas: Magnético incluido", "Placa: Aluminio cepillado"))));
 
-        // 4. Keychron Q1 Pro (Entrada al mundo Custom)
+        // 3. Keychron Q1 Pro (Entrada al mundo Custom)
         productList.add(new Product(
             504,
             "Keychron Q1 Pro",
@@ -475,7 +457,7 @@ public class ProductController {
             new ArrayList<>(Arrays.asList("Layout: 75% con Perilla", "Conexión: Bluetooth 5.1 / Cable",
                                             "Hot-Swappable: Sí", "Montaje: Double Gasket"))));
 
-        // 5. Corsair K70 MAX RGB (Clásico Full Size)
+        // 4. Corsair K70 MAX RGB (Clásico Full Size)
         productList.add(new Product(
             505,
             "Corsair K70 MAX RGB",

@@ -24,8 +24,6 @@ The project aims to deliver a complete full-stack solution built with a **React 
 
 
 ### Next improvements
-* **[BUG FIX] Fix Product Filters:** Locate and resolve the current bug affecting the product filtering functionality on the main shop view.
-* **[BUG FIX] Solve Top Filters Issue:** Investigate and fix the specific bug related to the superior/top-level filtering component (e.g., category or sort options).
 * **[UI/UX] Product Image Management:**
     * Adjust the styling and layout of existing product images for better consistency.
     * Add new high-resolution images for all current mock products.
