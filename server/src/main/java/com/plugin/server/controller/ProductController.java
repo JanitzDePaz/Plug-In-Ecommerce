@@ -451,9 +451,7 @@ public class ProductController {
             new BigDecimal("199.00"),
             "Teclados",
             new ArrayList<>(Arrays.asList(
-                "/products/keyboards/keychron-q1-pro/q1-pro-top.png",
-                "/products/keyboards/keychron-q1-pro/q1-pro-exploded.png",
-                "/products/keyboards/keychron-q1-pro/q1-pro-knob.png")),
+                "/products/keyboards/keychron-q1-pro/front-view.png")),
             10,
             "Keychron",
             0,
