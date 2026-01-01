@@ -8,6 +8,7 @@ public class ProductSummaryDTO {
     private int id;
     private String slug;
     private String name;
+    private String description;
     private String longDescription;
     private BigDecimal price;
     private String category;
@@ -45,6 +46,14 @@ public class ProductSummaryDTO {
 
     public void setSlug(String slug) {
         this.slug = slug;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getLongDescription() {
