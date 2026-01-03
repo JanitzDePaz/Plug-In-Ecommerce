@@ -34,11 +34,6 @@ export default function ProductPage(){
     if(!product){
         return <div>Loading...</div>
     }
-
-    const deliveryDate = new Date(product.estimateDeliveryDays)
-    const dayName = deliveryDate.toLocaleDateString("es-ES", {weekday: "long"})
-    const monthName = deliveryDate.toLocaleDateString("es-ES", {month: "long"})
-
    
     return(
         <main className="flex flex-col gap-5 justify-around min-h-[85vh] my-5 w-8/10 m-auto">
@@ -77,7 +72,7 @@ export default function ProductPage(){
                         </div>
                         <span className="flex gap-5 justify-center items-center">
                             <img src={DeliveryTruck} alt="Delivery truck icon" className="h-15 object-contain"/>
-                            <p>Recibe el pedido a partir del {dayName} {deliveryDate.getDay()} de {monthName}</p>
+                            <p>Recibe el pedido a partir del {product.dayName} {product.estimatedDate.getDay()} de {product.monthName}</p>
                         </span>
                         
                         
