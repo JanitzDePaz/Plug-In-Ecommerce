@@ -20,6 +20,7 @@ export const ShopMain = () => {
   useEffect(() => {
     const productsData = async () => {
       const data = await getProducts();
+      console.log(data);
       setProductData(data);
     };
 
@@ -77,7 +78,9 @@ export const ShopMain = () => {
             price={prod.price}
             imgUrl={prod.imgUrl}
             rating={prod.rate}
-            deliveryDays={prod.estimateDeliveryDays}
+            deliveryDays={prod.estimatedDate}
+            dayName={prod.dayName}
+            monthName={prod.monthName}
             active={prod.active}
           />
         </Link>

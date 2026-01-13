@@ -94,16 +94,32 @@ type activeFiltersMenuProp = {
     closeFilterMenu: () => void,
 }
 
+type ShopProductCardPropDTO = {
+    id: number,
+    name: string,
+    slug: string,
+    price: number,
+    imgUrl: string,
+    rate: number,
+    category: string,
+    estimateDeliveryDays: Date,
+    active: boolean,
+    discount: number
+}
+
 type ShopProductCardProp = {
     id: number,
     name: string,
     slug: string,
     price: number,
-    category: string,
-    rate: number,
-    estimateDeliveryDays: string,
     imgUrl: string,
+    rate: number,
+    category: string,
+    estimatedDate: Date,
+    dayName: string,
+    monthName: string,
     active: boolean,
+    discount: number
 }
 
 type ShowProductDetailsProp = {
@@ -115,7 +131,7 @@ type ShowProductDetailsProp = {
     price: number,
     category: string,
     rate: number,
-    estimatedDate: date,
+    estimatedDate: Date,
     dayName: string,
     monthName: string,
     imgUrl: string[],
@@ -132,7 +148,9 @@ type productCard = {
     price: number,
     imgUrl: string,
     rating: number,
-    deliveryDays: string,
+    deliveryDays: Date,
+    dayName: string,
+    monthName: string,
     active: boolean
 }
 
