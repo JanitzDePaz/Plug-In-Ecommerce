@@ -22,7 +22,7 @@ export default function Header() {
         <nav className="hidden md:block">
           <ul className="flex md:gap-10 gap-5">
             {headerItems.map((item, i) => (
-              <li key={i} className="hover:scale-110 duration-100">
+              <li key={item.id} className="hover:scale-110 duration-100">
                 <Link className="text-[#163461] hover:text-" to={item.to}>
                   {item.label}
                 </Link>
@@ -34,6 +34,7 @@ export default function Header() {
           <input
             name="Input"
             placeholder="Buscar"
+            aria-label="Busca-producto"
             className={clsx(
               "w-56 absolute left-0 top-1/2 -translate-y-1/2 border-2 border-[#ccc] px-2 py-1 rounded-[50px] shadow-sm focus:outline-none focus:border-blue-500 focus:shadow-md duration-300",
               searchInput
