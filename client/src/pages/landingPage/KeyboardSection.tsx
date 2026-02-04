@@ -69,7 +69,7 @@ export const KeyboardSection = () => {
         />
         <LandingPrimaryButton text="Compra aquí" route="/Tienda" style=""/>
       </div>
-      <div className="w-screen sm:w-[90vw] xl:w-[40vw] p-5 sm:p-[5vh] flex-center items-center flex-col gap-10 bg-gray-200 rounded-2xl border-2 border-black">
+      <div className="w-screen hidden xl:w-[40vw] p-[5vh] xl:flex justify-center items-center flex-col gap-10 bg-gray-200 rounded-2xl border-2 border-black">
         {activeTypingTest ? (
           <>
             <section className="flex-center items-start w-full relative">
