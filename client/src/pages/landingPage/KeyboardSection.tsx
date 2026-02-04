@@ -39,6 +39,10 @@ export const KeyboardSection = () => {
         setWritedText((prev) => prev.slice(0, -1));
       }
 
+      if(event.key === " "){
+        event.preventDefault();
+      }
+
       //Deletes the las character of the writedText
       if (event.key === "Backspace") {
         setWritedText((prev) => prev.slice(0, -1));
