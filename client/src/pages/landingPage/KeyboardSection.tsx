@@ -73,11 +73,11 @@ export const KeyboardSection = () => {
         />
         <LandingPrimaryButton text="Compra aquí" route="/Tienda" style=""/>
       </div>
-      <div className="w-screen hidden xl:w-[40vw] p-[5vh] xl:flex justify-center items-center flex-col gap-10 bg-gray-200 rounded-2xl border-2 border-black">
+      <div className="w-screen h-[60vh] hidden xl:w-[40vw] p-[10vh] xl:flex justify-center gap-15 items-center flex-col bg-[rgba(112,105,75,0.3)] rounded-4xl shadow-2xl text-white font-mono">
         {activeTypingTest ? (
           <>
             <section className="flex-center items-start w-full relative">
-              <p className="w-10 text-center absolute bottom-0 right-0 translate-y-9 border border-black text-black  rounded-full">
+              <p className="w-10 text-center absolute bottom-0 right-0 translate-y-9 border border-white rounded-full">
                 {typingTestTimer}
               </p>
               <div className="flex flex-wrap">
@@ -85,7 +85,7 @@ export const KeyboardSection = () => {
                   <div key={i} className="flex h-fit">
                     {word.split("").map((char, charIndex) => (
                       <p
-                        className="text-sm sm:text-2xl font-mono text-black"
+                        className="text-sm sm:text-2xl"
                         key={charIndex}
                       >{`${char}`}</p>
                     ))}
@@ -94,9 +94,9 @@ export const KeyboardSection = () => {
                 ))}
               </div>
             </section>
-            <section className="w-full flex flex-wrap content-start relative h-[35vh] overflow-y-scroll overflow-x-hidden border-2 border-gray-400">
+            <section className="w-full flex flex-wrap content-start relative h-[35vh] overflow-y-scroll overflow-x-hidden bg-[rgba(0,0,0,0.48)] rounded-4xl p-5">
               {writedText.length < 1 ? (
-                <p className="text-2xl text-black absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                <p className="text-2xl absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                   Escribe para empezar...
                 </p>
               ) : (
@@ -109,11 +109,11 @@ export const KeyboardSection = () => {
                           <p
                             key={i}
                             className={clsx(
-                              "text-2xl font-mono",
+                              "text-2xl",
                               writedText.split(" ")[compareCharIndex - 1] ===
                                 textToWrite.split(" ")[compareCharIndex - 1]
                                 ? "text-green-500"
-                                : "text-black"
+                                : ""
                             )}
                           >{`${char}`}</p>
                         );
@@ -127,27 +127,20 @@ export const KeyboardSection = () => {
           </>
         ) : (
           <>
-            <h3 className=" row-1 col-start-1 col-end-4 text-black text-4xl font-light font-mono">
+            <h3 className=" row-1 col-start-1 col-end-4 text-4xl font-extrabold">
               Typing test
             </h3>
             {notPlayed.current ? (
-              <article className="w-full col-start-1 col-end-4">
-                <h4 className="lg:text-2xl text-black font-mono sm:text-xl text-lg font-medium">
+              <div className="w-full col-start-1 col-end-4 flex flex-col gap-4">
+                <h4 className="text-2xl font-bold">
                   Manual del test
                 </h4>
-                <p className="text-black font-mono text-lg sm:text-xl lg:text-xl">
-                  En este typing test se <strong>valorará</strong> las palabras
-                  por <strong>minuto, la duracion y la precision.</strong>{" "}
-                  <br />
-                  El test se puede parar pulsando la tecla{" "}
-                  <strong>Enter</strong> y se valorará con el texto escrito.{" "}
-                  <br />
-                  El test corrige palabra por palabra y una palabra mal escrita{" "}
-                  <strong>no contará</strong> para los resultados.
-                </p>
-              </article>
+                <p>En este typing test se <strong>valorará</strong> las palabras por <strong>minuto, la duracion y la precision.</strong></p>
+                <p>El test se puede parar pulsando la tecla<strong> Enter</strong> y se valorará con el texto escrito.</p>
+                <p>El test corrige palabra por palabra y una palabra mal escrita<strong> no contará</strong> para los resultados.</p>
+              </div>
             ) : (
-              <div className="flex justify-around w-full flex-wrap">
+              <div className="flex justify-around w-4/5 flex-wrap">
                 <TypingTestResultCard
                   numberResult={wordPerMinute}
                   typingTestResultType="wpm"
@@ -169,7 +162,7 @@ export const KeyboardSection = () => {
                 setWritedText("");
                 notPlayed.current = false;
               }}
-              className="row-3 col-start-1 col-end-4 text-xl lg:text-2xl font-mono bg-gray-500 rounded-2xl border-2 border-black px-5 py-2"
+              className="row-3 col-start-1 col-end-4 text-xl text-black bg-white rounded-4xl px-6 py-4 shadow-2xl hover:text-[rgb(93,93,93)]"
             >
               Empieza el typing test aqui
             </button>
