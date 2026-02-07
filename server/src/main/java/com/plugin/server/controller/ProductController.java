@@ -219,7 +219,7 @@ public class ProductController {
             "Micrófono dinámico vocal legendario para estudios y podcasting.", // Descripción corta
             "Conocido por su sonido cálido y suave. Ideal para grabaciones de voz profesionales, streaming y podcasting. Rechazo excepcional de ruido electromagnético.", // Descripción larga
             new BigDecimal("399.00"), // Precio
-            "Micrófonos", // Categoría
+            "Micrófono", // Categoría
             new ArrayList<>(Arrays.asList( // Rutas de imágenes
                 "/products/microphones/shure-sm7b/shure-sm7b-front.png",
                 "/products/microphones/shure-sm7b/shure-sm7b-side.png",
@@ -237,7 +237,7 @@ public class ProductController {
             "Micrófono USB profesional para juegos y streaming.",
             "Matriz de cuatro cápsulas de condensador para un sonido nítido. Medidor LED de alta resolución y perilla inteligente multifunción. Software Blue VO!CE incluido.",
             new BigDecimal("169.99"),
-            "Micrófonos",
+            "Micrófono",
             new ArrayList<>(Arrays.asList(
                 "/products/microphones/blue-yeti-x/blue-yeti-x-front.png",
                 "/products/microphones/blue-yeti-x/blue-yeti-x-knob.png",
@@ -255,7 +255,7 @@ public class ProductController {
             "Micrófono USB de condensador con iluminación RGB.",
             "Increíble iluminación RGB personalizable. Incluye soporte antivibración y filtro pop integrado. Sensor de silenciamiento con un toque e indicador LED.",
             new BigDecimal("159.99"),
-            "Micrófonos",
+            "Micrófono",
             new ArrayList<>(Arrays.asList(
                 "/products/microphones/hyperx-quadcast-s/quadcast-s-front.png",
                 "/products/microphones/hyperx-quadcast-s/quadcast-s-rgb.png",
@@ -273,7 +273,7 @@ public class ProductController {
             "Sistema de micrófono inalámbrico compacto de doble canal.",
             "El sistema de micrófono inalámbrico más pequeño y versátil. Alcance de hasta 200m, grabación a bordo y compatibilidad universal con cámaras y móviles.",
             new BigDecimal("299.00"),
-            "Micrófonos",
+            "Micrófono",
             new ArrayList<>(Arrays.asList(
                 "/products/microphones/rode-wireless-go/rode-go-ii-pair.png",
                 "/products/microphones/rode-wireless-go/rode-go-ii-transmitter.png",
@@ -291,7 +291,7 @@ public class ProductController {
             "Micrófono de condensador cardioide para estudio.",
             "El estándar de precio/rendimiento en tecnología de micrófonos de condensador de estudio. Ideal para project/home studio. Requiere alimentación Phantom 48V.",
             new BigDecimal("99.00"),
-            "Micrófonos",
+            "Micrófono",
             new ArrayList<>(Arrays.asList(
                 "/products/microphones/at2020/at2020-front.png",
                 "/products/microphones/at2020/at2020-mount.png")),
@@ -308,7 +308,7 @@ public class ProductController {
             "El ratón inalámbrico más ligero y preciso para competición.",
             "Diseñado con profesionales de los esports. Peso inferior a 60g, interruptores híbridos LIGHTFORCE y sensor HERO 2 para una precisión milimétrica sin cables.",
             new BigDecimal("169.00"),
-            "Ratones",
+            "Ratón",
             new ArrayList<>(Arrays.asList(
                 "/products/mouses/g-pro-x-superlight-2/side-view.png",
                 "/products/mouses/g-pro-x-superlight-2/awards.png",
@@ -328,7 +328,7 @@ public class ProductController {
             "Ratón ergonómico ultraligero para agarre de palma.",
             "La leyenda ha evolucionado. 63g de peso, forma ergonómica refinada y sensor óptico Razer Focus Pro 30K. Conexión inalámbrica HyperSpeed un 25% más rápida.",
             new BigDecimal("159.99"),
-            "Ratones",
+            "Ratón",
             new ArrayList<>(Arrays.asList(
                 "/products/mouses/deathadder-v3-pro/top-view.png",
                 "/products/mouses/deathadder-v3-pro/weight.png",
@@ -349,7 +349,7 @@ public class ProductController {
             "Ratón de alto rendimiento para creativos y programadores.",
             "Clics silenciosos y desplazamiento electromagnético MagSpeed para una velocidad y precisión infinitas. Sensor de 8000 DPI que funciona incluso sobre cristal.",
             new BigDecimal("129.00"),
-            "Ratones",
+            "Ratón",
             new ArrayList<>(Arrays.asList(
                 "/products/mouses/mx-master-3s/side-view.png",
                 "/products/mouses/mx-master-3s/sensor.png",
@@ -369,7 +369,7 @@ public class ProductController {
             "La reinvención del ratón gaming más popular del mundo.",
             "Icono rediseñado. Interruptores híbridos óptico-mecánicos LIGHTFORCE, iluminación RGB LIGHTSYNC de 8 zonas y tecnología inalámbrica LIGHTSPEED de calidad profesional.",
             new BigDecimal("145.00"),
-            "Ratones",
+            "Ratón",
             new ArrayList<>(Arrays.asList(
                 "/products/mouses/g502-x-plus/view.png",
                 "/products/mouses/g502-x-plus/top-view.png",
@@ -389,7 +389,7 @@ public class ProductController {
             "Ratón gaming ergonómico con rueda inclinable.",
             "Domina tu estilo de juego. 11 botones programables, rueda inclinable HyperScroll inteligente y una base con iluminación RGB Chroma espectacular.",
             new BigDecimal("79.99"),
-            "Ratones",
+            "Ratón",
             new ArrayList<>(Arrays.asList(
                 "/products/mouses/razer-basilisk-v3/top-view.png",
                 "/products/mouses/razer-basilisk-v3/side-buttons.png",
@@ -410,7 +410,7 @@ public class ProductController {
             "Teclado inalámbrico de perfil bajo para productividad.",
             "Escritura fluida, natural y precisa con teclas cóncavas. Iluminación inteligente que detecta tus manos y automatización de tareas con Smart Actions.",
             new BigDecimal("119.00"),
-            "Teclados",
+            "Teclado",
             new ArrayList<>(Arrays.asList(
                 "/products/keyboards/mx-keys-s/keyboard-profile-view.png",
                 "/products/keyboards/mx-keys-s/eco-friendly-features.png",
@@ -428,7 +428,7 @@ public class ProductController {
             "Teclado óptico analógico para competición sin teclado numérico.",
             "Velocidad inigualable con los switches ópticos analógicos Gen-2 de Razer. Modo de disparo rápido, actuación ajustable y almacenamiento híbrido integrado.",
             new BigDecimal("229.99"),
-            "Teclados",
+            "Teclado",
             new ArrayList<>(Arrays.asList(
                 "/products/keyboards/huntsman-v3-pro/front-view.png",
                 "/products/keyboards/huntsman-v3-pro/switches.png",
@@ -449,7 +449,7 @@ public class ProductController {
             "Teclado mecánico custom inalámbrico QMK/VIA totalmente de aluminio.",
             "Cuerpo de aluminio CNC completo, diseño de doble junta (Gasket Mount) y soporte para QMK/VIA. Una experiencia de escritura premium y sonido 'thocky' de serie.",
             new BigDecimal("199.00"),
-            "Teclados",
+            "Teclado",
             new ArrayList<>(Arrays.asList(
                 "/products/keyboards/keychron-q1-pro/front-view.png")),
             10,
@@ -465,7 +465,7 @@ public class ProductController {
             "Teclado mecánico-magnético premium de tamaño completo.",
             "Equipado con interruptores magnéticos CORSAIR MGX ajustables. Proceso AXON para una velocidad de 8000Hz y reposamuñecas de espuma viscoelástica.",
             new BigDecimal("229.99"),
-            "Teclados",
+            "Teclado",
             new ArrayList<>(Arrays.asList(
                 "/products/keyboards/corsair-k70-max/k70-max-top.png",
                 "/products/keyboards/corsair-k70-max/k70-max-wheel.png")),
