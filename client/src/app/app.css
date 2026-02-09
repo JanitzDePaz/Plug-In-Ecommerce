@@ -71,6 +71,7 @@
 
 .landingPrimaryButton,
 .landingSecondaryButton {
+  display: inline-flex;
   width: fit-content;
   border: 1px solid white;
   border-radius: 80px;
@@ -84,16 +85,22 @@
   font-weight: 400;
 }
 
-.landingPrimaryButton:hover,
-.landingSecondaryButton:hover {
-  transition: 0.2s ease-out;
-  transform: scale(1.1);
-}
-
 .landingSecondaryButton {
   color: white;
   font-weight: 300;
 }
+
+.landingPrimaryButton:hover{
+  color: #919191;
+  transition: 0.2s;
+}
+
+.landingSecondaryButton:hover {
+  color: #7c7c7c;
+  transition: 0.2s;
+}
+
+
 
 .changeColorButtons {
   height: 2.5rem;
