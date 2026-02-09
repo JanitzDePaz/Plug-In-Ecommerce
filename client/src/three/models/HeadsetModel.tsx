@@ -23,7 +23,7 @@ export default function Headphone(props: React.ComponentProps<"group">) {
   const { headsetColor1, headsetColor2 } = headsetColorControl();
 
   const { nodes, materials } = useGLTF(
-    "landingPage/headphone.glb"
+    "/landingPage/headphone.glb"
   ) as any as GLTFResult;
   materials["Material.002"].color.set(headsetColor1); //External color
   materials["Material.001"].color.set(headsetColor2); //Ear pads
@@ -48,4 +48,4 @@ export default function Headphone(props: React.ComponentProps<"group">) {
 }
 
 // Preload del modelo
-useGLTF.preload("landingPage/headphone.glb");
+useGLTF.preload("/landingPage/headphone.glb");
