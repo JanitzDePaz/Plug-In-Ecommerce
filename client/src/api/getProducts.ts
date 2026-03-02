@@ -6,11 +6,10 @@ export const getProducts = async () => {
   }
   const productsData = await res.json();
 
-  const cleanProducts: ShopProductCardProp[] = [];
+  const cleanProducts: ProductCardsData[] = [];
 
-  productsData.forEach((prod : ShopProductCardPropDTO) => {
+  productsData.forEach((prod: ProductCardPropDTO) => {
     const deliveryDate = new Date(prod.estimateDeliveryDays);
-
     const cleanProd = {
       id: prod.id,
       name: prod.name,
@@ -28,6 +27,5 @@ export const getProducts = async () => {
 
     cleanProducts.push(cleanProd);
   });
-
   return cleanProducts;
 };

@@ -7,7 +7,7 @@ import { sortStorage } from "src/stores/shopStore";
 import { Link } from "react-router-dom";
 
 export const ShopMain = () => {
-  const [productData, setProductData] = useState<ShopProductCardProp[]>([]);
+  const [productData, setProductData] = useState<ProductCardsData[]>([]);
   const categoryFilter = categoryFilterStorage((e) => e.categoryFilter);
   const changeMaxPrice = filterStorage((e) => e.changeMaxPrice);
   const minPrice = filterStorage((e) => e.minPrice);
@@ -16,7 +16,7 @@ export const ShopMain = () => {
   const minRate = filterStorage((e) => e.minRate);
   const maxRate = filterStorage((e) => e.maxRate);
   const sortBy = sortStorage((e) => e.sortBy);
-  
+
   useEffect(() => {
     const productsData = async () => {
       const data = await getProducts();
@@ -32,20 +32,17 @@ export const ShopMain = () => {
       const newMaxPrice = Math.max(...productData.map((prod) => prod.price));
       const newMaxRate = Math.max(...productData.map((prod) => prod.rate));
       changeMaxPrice(newMaxPrice);
-      changeMaxRate(newMaxRate/2);
+      changeMaxRate(newMaxRate / 2);
     }
   }, [productData]);
-
-  
 
   const filteredData = productData.filter((obj) => {
     const filteredByCategory =
       categoryFilter === "Empty" ? true : obj.category === categoryFilter;
     const filteredByPrice = obj.price >= minPrice && obj.price <= maxPrice;
-    const filteredByRate = obj.rate/2 >= minRate && obj.rate/2 <= maxRate;
+    const filteredByRate = obj.rate / 2 >= minRate && obj.rate / 2 <= maxRate;
     return filteredByCategory && filteredByPrice && filteredByRate;
   });
-
 
   switch (sortBy) {
     case "Alphabetical":
@@ -67,24 +64,26 @@ export const ShopMain = () => {
       filteredData.sort((a, b) => b.rate - a.rate);
       break;
   }
-  
+
   return (
     <main className="w-full h-fit mx-auto grid grid-cols-[repeat(auto-fill,minmax(13rem,1fr))] gap-5">
       {filteredData.map((prod, key) => {
-        return(
-        <Link to= {`/DetallesDelProducto/${prod.slug}`} key={key} >
-          <ProductCards
-            name={prod.name}
-            price={prod.price}
-            imgUrl={prod.imgUrl}
-            rating={prod.rate}
-            deliveryDays={prod.estimatedDate}
-            dayName={prod.dayName}
-            monthName={prod.monthName}
-            active={prod.active}
-          />
-        </Link>
-      )})}
+        return (
+          <Link to={`/DetallesDelProducto/${prod.slug}`} key={key}>
+            <ProductCards
+              name={prod.name}
+              price={prod.price}
+              imgUrl={prod.imgUrl}
+              rating={prod.rate}
+              deliveryDays={prod.estimatedDate}
+              dayName={prod.dayName}
+              monthName={prod.monthName}
+              active={prod.active}
+              discount={prod.discount}
+            />
+          </Link>
+        );
+      })}
     </main>
   );
 };
