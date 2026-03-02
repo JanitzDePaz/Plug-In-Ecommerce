@@ -1,4 +1,4 @@
-import { Component, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import numbersGoingUp from "src/animations/numbersGoingUp";
 import { slideDown } from "src/animations/slideDown";
 import { LandingPrimaryButton } from "src/components/buttons/LandingPrimaryButton";

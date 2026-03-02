@@ -1,5 +1,4 @@
 import { filterStorage } from "../../stores/shopStore";
-import { useRef } from "react";
 import { SortButtons } from "src/components/buttons/SortButtoms";
 import { sortStorage } from "../../stores/shopStore";
 
