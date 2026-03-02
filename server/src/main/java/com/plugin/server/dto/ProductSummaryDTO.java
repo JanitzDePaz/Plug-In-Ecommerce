@@ -1,11 +1,12 @@
-package com.plugin.server.model;
+package com.plugin.server.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductSummaryDTO {
-    private int id;
+    private Long id;
     private String slug;
     private String name;
     private String description;
@@ -14,21 +15,41 @@ public class ProductSummaryDTO {
     private String category;
     private int rate;
     private LocalDate estimateDeliveryDays;
-    private ArrayList<String> imgUrl;
-    private String mainImg;
+    private List<String> images;
+    private String mainImage;
     private boolean active;
     private int stock;
     private String brand;
     private int discount;
-    private ArrayList<String> specifications;
+    private List<String> specifications;
 
-    public ProductSummaryDTO() {}
+    public ProductSummaryDTO(Long id, String name, String slug, String description,
+            String longDescription, BigDecimal price, Integer discount, Integer stock, String category,
+            String brand, String mainImage, List<String> images, List<String> specifications,
+            Boolean active) {
+        this.id = id;
+        this.name = name;
+        this.slug = slug;
+        this.description = description;
+        this.longDescription = longDescription;
+        this.price = price;
+        this.discount = discount;
+        this.stock = stock;
+        this.category = category;
+        this.brand = brand;
+        this.mainImage = mainImage;
+        this.images = images;
+        this.specifications = specifications;
+        this.active = active;
+        this.rate = (int) (Math.random() * 10) + 1;
+        this.estimateDeliveryDays = LocalDate.now().plusDays((int) (Math.random() * 3) + 1);
+    }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -96,20 +117,20 @@ public class ProductSummaryDTO {
         this.estimateDeliveryDays = estimateDeliveryDays;
     }
 
-    public ArrayList<String> getImgUrl() {
-        return imgUrl;
+    public List<String> getImages() {
+        return images;
     }
 
-    public String getMainImg() {
-        return mainImg;
+    public String getMainImage() {
+        return mainImage;
     }
 
-    public void setMainImg( String mainImg) {
-        this.mainImg = mainImg;
+    public void setMainImage(String mainImage) {
+        this.mainImage = mainImage;
     }
 
-    public void setImgUrl(ArrayList<String> imgUrl) {
-        this.imgUrl = imgUrl;
+    public void setImages(ArrayList<String> imgUrl) {
+        this.images = imgUrl;
     }
 
     public boolean isActive() {
@@ -144,7 +165,7 @@ public class ProductSummaryDTO {
         this.discount = discount;
     }
 
-    public ArrayList<String> getSpecifications() {
+    public List<String> getSpecifications() {
         return specifications;
     }
 
@@ -152,4 +173,3 @@ public class ProductSummaryDTO {
         this.specifications = specifications;
     }
 }
-

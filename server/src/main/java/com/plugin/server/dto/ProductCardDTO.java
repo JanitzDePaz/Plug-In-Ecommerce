@@ -1,10 +1,11 @@
-package com.plugin.server.model;
+package com.plugin.server.dto;
 
 import java.time.LocalDate;
+
 import java.math.BigDecimal;
 
 public class ProductCardDTO {
-    private int id;
+    private long id;
     private String name;
     private String slug;
     private BigDecimal price;
@@ -15,19 +16,32 @@ public class ProductCardDTO {
     private boolean active;
     private int discount;
 
-    public ProductCardDTO() {}
+    public ProductCardDTO(long id, String name, String slug, BigDecimal price,
+            String imgUrl, String category, boolean active, int discount) {
+        this.id = id;
+        this.name = name;
+        this.slug = slug;
+        this.price = price;
+        this.imgUrl = imgUrl;
+        this.rate = (int) (Math.random() * 10) + 1;
+        this.category = category;
+        this.active = active;
+        this.discount = discount;
+        this.estimateDeliveryDays = LocalDate.now().plusDays((int) (Math.random() * 3) + 1);
+    }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public int getDiscount() {
         return discount;
     }
+
     public void setDiscount(int discount) {
         this.discount = discount;
     }
