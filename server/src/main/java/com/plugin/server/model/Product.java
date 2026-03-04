@@ -18,7 +18,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     private String name;
     private String slug;
     private String description;
@@ -42,14 +42,10 @@ public class Product {
     private List<String> specifications;
     private boolean active;
 
-    // Backend generated fields
-    private LocalDate estimateDeliveryDays;
-    private int rate;
-
     public Product() {
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -71,14 +67,6 @@ public class Product {
 
     public String getCategory() {
         return category;
-    }
-
-    public int getRate() {
-        return rate;
-    }
-
-    public LocalDate getEstimateDeliveryDays() {
-        return estimateDeliveryDays;
     }
 
     public List<String> getImages() {
