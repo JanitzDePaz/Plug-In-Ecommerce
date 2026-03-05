@@ -19,6 +19,10 @@ export const filterStorage = create<FilterProps>((set) => ({
     
     maxRate: 10,
     changeMaxRate: (max) => set({maxRate: max}),
+
+    absoluteMaxRate: 10000,
+    changeAbsoluteMaxRate: (max) => set({absoluteMaxRate: max})
+
 }))
 
 export const sortStorage = create<SortProps>((set) => ({

@@ -184,6 +184,9 @@ type FilterProps = {
 
   maxRate: number;
   changeMaxRate: (number) => void;
+
+  absoluteMaxRate: number;
+  changeAbsoluteMaxRate: (number) => void;
 };
 
 type ProductSummaryProp = {
