@@ -5,6 +5,7 @@ import { sortStorage } from "../../stores/shopStore";
 export const ShopFilters = () => {
   const maxPrice = filterStorage((e) => e.maxPrice);
   const maxRate = filterStorage((e) => e.maxRate);
+  const minRate = filterStorage((e) => e.minRate);
   const changeMinPrice = filterStorage((e) => e.changeMinPrice);
   const changeMaxPrice = filterStorage((e) => e.changeMaxPrice);
   const changeMinRate = filterStorage((e) => e.changeMinRate);
@@ -16,110 +17,114 @@ export const ShopFilters = () => {
       <section className="flex flex-col gap-5">
         <h3 className="text-center text-xl">Filtros</h3>
         <section className="flex-center flex-col gap-5">
-            <div className="flex flex-col gap-2">
-                <h4>Precio</h4>
-                <div className="flex justify-between items-center gap-2">
-                    <input
-                    type="number"
-                    id="minPrice"
-                    placeholder="0"
-                    onBlur={(e) =>{
-                        const value = parseInt(e.target.value)
-                        if(!isNaN(value)){
-                          changeMinPrice(e.target.value)
-                        }
-                      }}
-                    onKeyDown={(e) => {
-                        if (e.key == "Enter") {
-                          const value = parseInt(e.currentTarget.value)
-                          if(!isNaN(value)){
-                            changeMinPrice(e.currentTarget.value);
-                          }
-                        
-                        }
-                    }}
-                    className="max-w-20 border no-spinner text-center py-1 px-2 border-gray-400 text-md rounded-sm"
-                    />
-                    <hr className="w-5" />
-                    <input
-                    type="number"
-                    id="maxPrice"
-                    placeholder={`${maxPrice}`}
-                    onBlur={(e) => {
-                        const value = parseInt(e.target.value)
-                        if(!isNaN(value)){
-                          changeMaxPrice(e.target.value)
-                        }
-                    }}
-                    onKeyDown={(e) => {
-                        if (e.key == "Enter") {
-                          const value = parseInt(e.currentTarget.value)
-                          if(!isNaN(value)){
-                            changeMaxPrice(e.currentTarget.value);
-                          }
-                            
-                        }
-                    }}
-                    className="max-w-20 border no-spinner text-center py-1 px-2 border-gray-400 text-md rounded-sm"
-                    />
-                </div>
+          <div className="flex flex-col gap-2">
+            <h4>Precio</h4>
+            <div className="flex justify-between items-center gap-2">
+              <input
+                type="number"
+                id="minPrice"
+                placeholder="0"
+                onBlur={(e) => {
+                  const value = parseInt(e.target.value);
+                  if (!isNaN(value)) {
+                    changeMinPrice(e.target.value);
+                  }
+                }}
+                onKeyDown={(e) => {
+                  if (e.key == "Enter") {
+                    const value = parseInt(e.currentTarget.value);
+                    if (!isNaN(value)) {
+                      changeMinPrice(e.currentTarget.value);
+                    }
+                  }
+                }}
+                className="max-w-20 border no-spinner text-center py-1 px-2 border-gray-400 text-md rounded-sm"
+              />
+              <hr className="w-5" />
+              <input
+                type="number"
+                id="maxPrice"
+                placeholder={`${maxPrice}`}
+                onBlur={(e) => {
+                  const value = parseInt(e.target.value);
+                  if (!isNaN(value)) {
+                    changeMaxPrice(e.target.value);
+                  }
+                }}
+                onKeyDown={(e) => {
+                  if (e.key == "Enter") {
+                    const value = parseInt(e.currentTarget.value);
+                    if (!isNaN(value)) {
+                      changeMaxPrice(e.currentTarget.value);
+                    }
+                  }
+                }}
+                className="max-w-20 border no-spinner text-center py-1 px-2 border-gray-400 text-md rounded-sm"
+              />
             </div>
-          
+          </div>
 
-            <div className="flex flex-col gap-2">
-                <h4 className="w-full">Valoración</h4>
-                <div className="flex justify-between items-center gap-2">
-                    
-                    <input
-                    type="number"
-                    id="minRate"
-                    placeholder="0"
-                    onBlur={(e) =>{
-                      const value = parseInt(e.target.value)
-                      if(!isNaN(value)){
-                        changeMinRate(e.target.value)
-                      }
+          <div className="flex flex-col gap-2">
+            <h4 className="w-full">Valoración</h4>
+            <div className="flex justify-between items-center gap-2">
+              <input
+                type="text"
+                id="minRate"
+                placeholder="0"
+                onInput={(e) => {
+                  if (e.currentTarget.value == "") {
+                    changeMinRate(0);
+                  } else {
+                    const cleanValue = e.currentTarget.value.replace(
+                      /[^0-9]/g,
+                      "",
+                    );
+                    e.currentTarget.value = cleanValue;
+                    changeMinRate(cleanValue);
+                    if (cleanValue == "") {
+                      changeMinRate(0);
                     }
-                        
+                  }
+                }}
+                onKeyDown={(e) => {
+                  if (e.key == "Enter") {
+                    const value = parseInt(e.currentTarget.value);
+                    if (value > maxRate) {
+                      e.currentTarget.value = String(maxRate);
+                      changeMinRate(maxRate);
                     }
-                    onKeyDown={(e) => {
-                        if (e.key == "Enter") {
-                          const value = parseInt(e.currentTarget.value)
-                          if(!isNaN(value)){
-                            changeMinRate(e.currentTarget.value);
-                          }
-                        
-                        }
-                    }}
-                    className="max-w-20 border no-spinner text-center py-1 px-2 border-gray-400 text-md rounded-sm"
-                    />
-                    <hr className="w-5" />
-                    <input
-                    type="number"
-                    id="maxRate"
-                    placeholder={`${maxRate}`}
-                    onBlur={(e) => {
-                      const value = parseInt(e.target.value)
-                      if(!isNaN(value)){
-                        changeMaxRate(e.target.value)
-                      }  
-                    }}
-                    onKeyDown={(e) => {
-                        if (e.key == "Enter") {
-                          const value = parseInt(e.currentTarget.value)
-                          if(!isNaN(value)){
-                            changeMaxRate(e.currentTarget.value);
-                          }
-                        }
-                    }}
-                    className="max-w-20 border no-spinner text-center py-1 px-2 border-gray-400 text-md rounded-sm"
-                    />
-                </div>
+                    e.currentTarget.blur();
+                  }
+                }}
+                className="max-w-20 border no-spinner text-center py-1 px-2 border-gray-400 text-md rounded-sm"
+              />
+              <hr className="w-5" />
+              <input
+                type="number"
+                id="maxRate"
+                placeholder={`${maxRate}`}
+                onBlur={(e) => {
+                  const value = parseInt(e.target.value);
+                  if (!isNaN(value)) {
+                    changeMaxRate(e.target.value);
+                  }
+                }}
+                onKeyDown={(e) => {
+                  if (e.key == "Enter") {
+                    const value = parseInt(e.currentTarget.value);
+                    if (!isNaN(value)) {
+                      changeMaxRate(e.currentTarget.value);
+                    }
+                  }
+                }}
+                className="max-w-20 border no-spinner text-center py-1 px-2 border-gray-400 text-md rounded-sm"
+              />
             </div>
+          </div>
         </section>
-    </section>
-    <hr className="my-10"/>
-    <section className="flex flex-col gap-5">
+      </section>
+      <hr className="my-10" />
+      <section className="flex flex-col gap-5">
         <h3 className="text-center text-xl">Ordenar</h3>
         <SortButtons
           text="Nombre: A-Z"
