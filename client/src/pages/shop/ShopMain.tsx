@@ -12,6 +12,7 @@ export const ShopMain = () => {
   const changeMaxPrice = filterStorage((e) => e.changeMaxPrice);
   const minPrice = filterStorage((e) => e.minPrice);
   const maxPrice = filterStorage((e) => e.maxPrice);
+  const changeAbsoluteMaxRate = filterStorage((e) => e.changeAbsoluteMaxRate)
   const changeMaxRate = filterStorage((e) => e.changeMaxRate);
   const minRate = filterStorage((e) => e.minRate);
   const maxRate = filterStorage((e) => e.maxRate);
@@ -32,6 +33,7 @@ export const ShopMain = () => {
       const newMaxPrice = Math.max(...productData.map((prod) => prod.price));
       const newMaxRate = Math.max(...productData.map((prod) => prod.rate));
       changeMaxPrice(newMaxPrice);
+      changeAbsoluteMaxRate(newMaxRate / 2);
       changeMaxRate(newMaxRate / 2);
     }
   }, [productData]);

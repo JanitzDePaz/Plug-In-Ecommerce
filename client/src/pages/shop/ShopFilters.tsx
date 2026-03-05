@@ -5,12 +5,12 @@ import { sortStorage } from "../../stores/shopStore";
 export const ShopFilters = () => {
   const maxPrice = filterStorage((e) => e.maxPrice);
   const maxRate = filterStorage((e) => e.maxRate);
-  const minRate = filterStorage((e) => e.minRate);
   const changeMinPrice = filterStorage((e) => e.changeMinPrice);
   const changeMaxPrice = filterStorage((e) => e.changeMaxPrice);
   const changeMinRate = filterStorage((e) => e.changeMinRate);
   const changeMaxRate = filterStorage((e) => e.changeMaxRate);
   const changeSortBy = sortStorage((e) => e.changeSortBy);
+  const absoluteMaxRate = filterStorage((e) => e.absoluteMaxRate);
 
   return (
     <aside className="max-w-3/10 flex flex-col">
@@ -76,14 +76,11 @@ export const ShopFilters = () => {
                     changeMinRate(0);
                   } else {
                     const cleanValue = e.currentTarget.value.replace(
-                      /[^0-9]/g,
+                      /[^0-9.]/g,
                       "",
                     );
                     e.currentTarget.value = cleanValue;
                     changeMinRate(cleanValue);
-                    if (cleanValue == "") {
-                      changeMinRate(0);
-                    }
                   }
                 }}
                 onKeyDown={(e) => {
@@ -100,21 +97,29 @@ export const ShopFilters = () => {
               />
               <hr className="w-5" />
               <input
-                type="number"
+                type="text "
                 id="maxRate"
-                placeholder={`${maxRate}`}
-                onBlur={(e) => {
-                  const value = parseInt(e.target.value);
-                  if (!isNaN(value)) {
-                    changeMaxRate(e.target.value);
+                placeholder={`${absoluteMaxRate}`}
+                onInput={(e) => {
+                  if (e.currentTarget.value == "") {
+                    changeMaxRate(0);
+                  } else {
+                    const cleanValue = e.currentTarget.value.replace(
+                      /[^0-9.]/g,
+                      "",
+                    );
+                    e.currentTarget.value = cleanValue;
+                    changeMaxRate(cleanValue);
                   }
                 }}
                 onKeyDown={(e) => {
                   if (e.key == "Enter") {
                     const value = parseInt(e.currentTarget.value);
-                    if (!isNaN(value)) {
-                      changeMaxRate(e.currentTarget.value);
+                    if (value > absoluteMaxRate) {
+                      e.currentTarget.value = String(absoluteMaxRate);
+                      changeMaxRate(absoluteMaxRate);
                     }
+                    e.currentTarget.blur();
                   }
                 }}
                 className="max-w-20 border no-spinner text-center py-1 px-2 border-gray-400 text-md rounded-sm"
