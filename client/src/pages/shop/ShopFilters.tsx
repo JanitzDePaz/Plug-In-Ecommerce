@@ -21,21 +21,29 @@ export const ShopFilters = () => {
             <h4>Precio</h4>
             <div className="flex justify-between items-center gap-2">
               <input
-                type="number"
+                type="text"
                 id="minPrice"
                 placeholder="0"
-                onBlur={(e) => {
-                  const value = parseInt(e.target.value);
-                  if (!isNaN(value)) {
-                    changeMinPrice(e.target.value);
+                onInput={(e) => {
+                  if (e.currentTarget.value == "") {
+                    changeMinPrice(0);
+                  } else {
+                    const cleanValue = e.currentTarget.value.replace(
+                      /[^0-9.]/g,
+                      "",
+                    );
+                    e.currentTarget.value = cleanValue;
+                    changeMinPrice(cleanValue);
                   }
                 }}
                 onKeyDown={(e) => {
                   if (e.key == "Enter") {
                     const value = parseInt(e.currentTarget.value);
-                    if (!isNaN(value)) {
-                      changeMinPrice(e.currentTarget.value);
+                    if (value > maxPrice) {
+                      e.currentTarget.value = String(maxPrice);
+                      changeMinPrice(maxPrice);
                     }
+                    e.currentTarget.blur();
                   }
                 }}
                 className="max-w-20 border no-spinner text-center py-1 px-2 border-gray-400 text-md rounded-sm"
