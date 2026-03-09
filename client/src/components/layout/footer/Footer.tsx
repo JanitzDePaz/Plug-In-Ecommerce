@@ -23,7 +23,7 @@ export const Footer = () => {
       <section className="footerSections">
         <h3 className="footerSectionTitles">Redes</h3>
         <ul className="flex-center gap-2 xl:gap-10 w-full ">
-          <li className="flex-1 max-w-[60px]">
+          <li className="flex-1 max-w-15">
             <a href="">
               <img
                 src={facebookLogo}
@@ -32,7 +32,7 @@ export const Footer = () => {
               />
             </a>
           </li>
-          <li className="flex-1 max-w-[60px]">
+          <li className="flex-1 max-w-15">
             <a href="">
               <img
                 src={instagramLogo}
@@ -41,7 +41,7 @@ export const Footer = () => {
               />
             </a>
           </li>
-          <li className="flex-1 max-w-[60px]">
+          <li className="flex-1 max-w-15">
             <a href="">
               <img
                 src={whatsappLogo}
@@ -50,7 +50,7 @@ export const Footer = () => {
               />
             </a>
           </li>
-          <li className="flex-1 max-w-[60px]">
+          <li className="flex-1 max-w-15">
             <a href="">
               <img src={xLogo} alt="X logo" className="imageLink" />
             </a>
