@@ -1,5 +1,5 @@
 export const getProductDetails = async (productSlug: string) => {
-  const url = import.meta.env.API_URL;
+  const url = import.meta.env.VITE_API_URL;
 
   const res = await fetch(`${url}/products/${productSlug}`);
 
