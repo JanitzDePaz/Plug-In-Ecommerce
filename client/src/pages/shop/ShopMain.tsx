@@ -10,9 +10,10 @@ export const ShopMain = () => {
   const [productData, setProductData] = useState<ProductCardsData[]>([]);
   const categoryFilter = categoryFilterStorage((e) => e.categoryFilter);
   const changeMaxPrice = filterStorage((e) => e.changeMaxPrice);
+  const changeAbsoluteMaxPrice = filterStorage((e) => e.changeAbsoluteMaxPrice);
   const minPrice = filterStorage((e) => e.minPrice);
   const maxPrice = filterStorage((e) => e.maxPrice);
-  const changeAbsoluteMaxRate = filterStorage((e) => e.changeAbsoluteMaxRate)
+  const changeAbsoluteMaxRate = filterStorage((e) => e.changeAbsoluteMaxRate);
   const changeMaxRate = filterStorage((e) => e.changeMaxRate);
   const minRate = filterStorage((e) => e.minRate);
   const maxRate = filterStorage((e) => e.maxRate);
@@ -32,6 +33,7 @@ export const ShopMain = () => {
     if (productData.length > 1) {
       const newMaxPrice = Math.max(...productData.map((prod) => prod.price));
       const newMaxRate = Math.max(...productData.map((prod) => prod.rate));
+      changeAbsoluteMaxPrice(newMaxPrice);
       changeMaxPrice(newMaxPrice);
       changeAbsoluteMaxRate(newMaxRate / 2);
       changeMaxRate(newMaxRate / 2);

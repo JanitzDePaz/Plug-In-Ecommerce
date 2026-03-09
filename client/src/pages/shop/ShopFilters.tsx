@@ -11,6 +11,7 @@ export const ShopFilters = () => {
   const changeMaxRate = filterStorage((e) => e.changeMaxRate);
   const changeSortBy = sortStorage((e) => e.changeSortBy);
   const absoluteMaxRate = filterStorage((e) => e.absoluteMaxRate);
+  const absoluteMaxPrice = filterStorage((e) => e.absoluteMaxPrice);
 
   return (
     <aside className="max-w-3/10 flex flex-col">
@@ -50,21 +51,29 @@ export const ShopFilters = () => {
               />
               <hr className="w-5" />
               <input
-                type="number"
-                id="maxPrice"
-                placeholder={`${maxPrice}`}
-                onBlur={(e) => {
-                  const value = parseInt(e.target.value);
-                  if (!isNaN(value)) {
-                    changeMaxPrice(e.target.value);
+                type="text "
+                id="maxRate"
+                placeholder={`${absoluteMaxPrice}`}
+                onInput={(e) => {
+                  if (e.currentTarget.value == "") {
+                    changeMaxPrice(0);
+                  } else {
+                    const cleanValue = e.currentTarget.value.replace(
+                      /[^0-9.]/g,
+                      "",
+                    );
+                    e.currentTarget.value = cleanValue;
+                    changeMaxPrice(cleanValue);
                   }
                 }}
                 onKeyDown={(e) => {
                   if (e.key == "Enter") {
                     const value = parseInt(e.currentTarget.value);
-                    if (!isNaN(value)) {
-                      changeMaxPrice(e.currentTarget.value);
+                    if (value > absoluteMaxPrice) {
+                      e.currentTarget.value = String(absoluteMaxPrice);
+                      changeMaxPrice(absoluteMaxPrice);
                     }
+                    e.currentTarget.blur();
                   }
                 }}
                 className="max-w-20 border no-spinner text-center py-1 px-2 border-gray-400 text-md rounded-sm"
