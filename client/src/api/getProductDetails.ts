@@ -1,5 +1,7 @@
 export const getProductDetails = async (productSlug: string) => {
-  const res = await fetch(`http://localhost:8080/products/${productSlug}`);
+  const url = import.meta.env.API_URL;
+
+  const res = await fetch(`${url}/products/${productSlug}`);
 
   if (!res.ok) {
     throw new Error(`HTTP error! status: ${res.status}`);
