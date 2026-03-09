@@ -15,7 +15,7 @@ import com.plugin.server.repository.ProductRepository;
 
 @RestController
 @RequestMapping("/products")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://plug-in-ecommerce.vercel.app")
 
 public class ProductController {
 
