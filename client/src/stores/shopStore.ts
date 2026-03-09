@@ -2,35 +2,35 @@ import { create } from "zustand";
 
 export const categoryFilterStorage = create<CategoryFiltersProp>((set) => ({
   categoryFilter: "Empty",
-  changeCategoryFilter: (category) => set({ categoryFilter: category }),
+  setCategoryFilter: (category) => set({ categoryFilter: category }),
 }));
 
 export const filterStorage = create<FilterProps>((set) => ({
   minPrice: 0,
-  changeMinPrice: (min) => set({ minPrice: min }),
+  setMinPrice: (min) => set({ minPrice: min }),
 
   maxPrice: 10000,
-  changeMaxPrice: (max) => set({ maxPrice: max }),
+  setMaxPrice: (max) => set({ maxPrice: max }),
 
   minRate: 0,
-  changeMinRate: (min) => set({ minRate: min }),
+  setMinRate: (min) => set({ minRate: min }),
 
   maxRate: 10,
-  changeMaxRate: (max) => set({ maxRate: max }),
+  setMaxRate: (max) => set({ maxRate: max }),
 
   absoluteMaxRate: 10,
-  changeAbsoluteMaxRate: (max) => set({ absoluteMaxRate: max }),
+  setAbsoluteMaxRate: (max) => set({ absoluteMaxRate: max }),
 
   absoluteMaxPrice: 10000,
-  changeAbsoluteMaxPrice: (max) => set({ absoluteMaxPrice: max }),
+  setAbsoluteMaxPrice: (max) => set({ absoluteMaxPrice: max }),
 }));
 
 export const sortStorage = create<SortProps>((set) => ({
   sortBy: "Alphabetical",
-  changeSortBy: (sort) => set({ sortBy: sort }),
+  setSortBy: (sort) => set({ sortBy: sort }),
 }));
 
 export const productSummaryStorage = create<ProductSummaryProp>((set) => ({
   mainImg: "Empty",
-  changeMainImg: (product) => set({ mainImg: product }),
+  setMainImg: (product) => set({ mainImg: product }),
 }));

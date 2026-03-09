@@ -159,12 +159,12 @@ type ProdRating = {
 
 type CategoryFiltersProp = {
   categoryFilter: string;
-  changeCategoryFilter: (string) => void;
+  setCategoryFilter: (string) => void;
 };
 
 type SortProps = {
   sortBy: string;
-  changeSortBy: (string) => void;
+  setSortBy: (string) => void;
 };
 
 type SortButtons = {
@@ -174,27 +174,27 @@ type SortButtons = {
 
 type FilterProps = {
   minPrice: number;
-  changeMinPrice: (number) => void;
+  setMinPrice: (number) => void;
 
   maxPrice: number;
-  changeMaxPrice: (number) => void;
+  setMaxPrice: (number) => void;
 
   minRate: number;
-  changeMinRate: (number) => void;
+  setMinRate: (number) => void;
 
   maxRate: number;
-  changeMaxRate: (number) => void;
+  setMaxRate: (number) => void;
 
   absoluteMaxRate: number;
-  changeAbsoluteMaxRate: (number) => void;
-  
+  setAbsoluteMaxRate: (number) => void;
+
   absoluteMaxPrice: number;
-  changeAbsoluteMaxPrice: (number) => void;
+  setAbsoluteMaxPrice: (number) => void;
 };
 
 type ProductSummaryProp = {
   mainImg: string;
-  changeMainImg: (string) => void;
+  setMainImg: (string) => void;
 };
 
 type ButtonProps = {

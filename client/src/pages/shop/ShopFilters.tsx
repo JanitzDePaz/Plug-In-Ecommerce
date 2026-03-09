@@ -5,11 +5,11 @@ import { sortStorage } from "../../stores/shopStore";
 export const ShopFilters = () => {
   const maxPrice = filterStorage((e) => e.maxPrice);
   const maxRate = filterStorage((e) => e.maxRate);
-  const changeMinPrice = filterStorage((e) => e.changeMinPrice);
-  const changeMaxPrice = filterStorage((e) => e.changeMaxPrice);
-  const changeMinRate = filterStorage((e) => e.changeMinRate);
-  const changeMaxRate = filterStorage((e) => e.changeMaxRate);
-  const changeSortBy = sortStorage((e) => e.changeSortBy);
+  const changeMinPrice = filterStorage((e) => e.setMinPrice);
+  const changeMaxPrice = filterStorage((e) => e.setMaxPrice);
+  const changeMinRate = filterStorage((e) => e.setMinRate);
+  const changeMaxRate = filterStorage((e) => e.setMaxRate);
+  const changeSortBy = sortStorage((e) => e.setSortBy);
   const absoluteMaxRate = filterStorage((e) => e.absoluteMaxRate);
   const absoluteMaxPrice = filterStorage((e) => e.absoluteMaxPrice);
 

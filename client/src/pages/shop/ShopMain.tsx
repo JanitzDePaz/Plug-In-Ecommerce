@@ -9,12 +9,12 @@ import { Link } from "react-router-dom";
 export const ShopMain = () => {
   const [productData, setProductData] = useState<ProductCardsData[]>([]);
   const categoryFilter = categoryFilterStorage((e) => e.categoryFilter);
-  const changeMaxPrice = filterStorage((e) => e.changeMaxPrice);
-  const changeAbsoluteMaxPrice = filterStorage((e) => e.changeAbsoluteMaxPrice);
+  const changeMaxPrice = filterStorage((e) => e.setMaxPrice);
+  const changeAbsoluteMaxPrice = filterStorage((e) => e.setAbsoluteMaxPrice);
   const minPrice = filterStorage((e) => e.minPrice);
   const maxPrice = filterStorage((e) => e.maxPrice);
-  const changeAbsoluteMaxRate = filterStorage((e) => e.changeAbsoluteMaxRate);
-  const changeMaxRate = filterStorage((e) => e.changeMaxRate);
+  const changeAbsoluteMaxRate = filterStorage((e) => e.setAbsoluteMaxRate);
+  const changeMaxRate = filterStorage((e) => e.setMaxRate);
   const minRate = filterStorage((e) => e.minRate);
   const maxRate = filterStorage((e) => e.maxRate);
   const sortBy = sortStorage((e) => e.sortBy);
