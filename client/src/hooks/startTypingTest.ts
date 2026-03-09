@@ -4,19 +4,19 @@ import { onTypingTestEnd } from "./onTypingTestEnd";
 
 export const startTypingTest = (time: number) => {
   typingTestStorage.getState().activateTypingTest();
-  typingTestStorage.getState().restartTypingTestTimer()
-  typingTestStorage.getState().updateLastTextWrited("")
-  typingTestStorage.getState().changeTextToWrite(typingTestTexts[Math.floor(Math.random() * 9 + 1)])
-  typingTestStorage.getState().StartTest()
-  
+  typingTestStorage.getState().restartTypingTestTimer();
+  typingTestStorage.getState().updateLastTextWrited("");
+  typingTestStorage
+    .getState()
+    .setTextToWrite(typingTestTexts[Math.floor(Math.random() * 9 + 1)]);
+  typingTestStorage.getState().StartTest();
 
   const secondsInterval = setInterval(() => {
-    
     const currentTimer = typingTestStorage.getState().typingTestTimer;
-    const stopTest = typingTestStorage.getState().stopTest
+    const stopTest = typingTestStorage.getState().stopTest;
     if (currentTimer >= time || stopTest) {
       clearInterval(secondsInterval);
-      onTypingTestEnd()
+      onTypingTestEnd();
       return;
     }
     typingTestStorage.getState().addSeconds();

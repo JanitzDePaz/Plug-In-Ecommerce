@@ -19,14 +19,14 @@ type cartProp = {
 type HeadsetColorProp = {
   headsetColor1: string;
   headsetColor2: string;
-  changeColorAquamarineContour: () => void;
-  changeColorPurpleContour: () => void;
-  changeColorWhiteContour: () => void;
-  changeColorBlackContour: () => void;
-  changeColorGrayPads: () => void;
-  changeColorWhitePads: () => void;
-  changeColorBlackPads: () => void;
-  changeColorBrownPads: () => void;
+  setColorAquamarineContour: () => void;
+  setColorPurpleContour: () => void;
+  setColorWhiteContour: () => void;
+  setColorBlackContour: () => void;
+  setColorGrayPads: () => void;
+  setColorWhitePads: () => void;
+  setColorBlackPads: () => void;
+  setColorBrownPads: () => void;
 };
 
 type LandingPrimaryButtonProps = {
@@ -62,19 +62,19 @@ type typingTestProp = {
   desactivatedTimer: () => void;
 
   textToWrite: string;
-  changeTextToWrite: (string) => void;
+  setTextToWrite: (string) => void;
 
   lastTextWrited: string;
   updateLastTextWrited: (string) => void;
 
   wordPerMinute: float;
-  changeWordPerMinute: (number) => void;
+  setWordPerMinute: (number) => void;
 
   wordPerSecond: float;
-  changeWordPerSecond: (number) => void;
+  setWordPerSecond: (number) => void;
 
   writedWordsAccuracy: number;
-  changeWordAccuracy: (number) => void;
+  setWordAccuracy: (number) => void;
 
   stopTest: boolean;
   finishTest: () => void;
