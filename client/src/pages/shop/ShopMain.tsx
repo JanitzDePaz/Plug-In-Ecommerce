@@ -5,6 +5,8 @@ import { categoryFilterStorage } from "src/stores/shopStore";
 import { filterStorage } from "src/stores/shopStore";
 import { sortStorage } from "src/stores/shopStore";
 import { Link } from "react-router-dom";
+import clsx from "clsx";
+import { loading } from "src/animations/loadingAnimation";
 
 export const ShopMain = () => {
   const [productData, setProductData] = useState<ProductCardsData[]>([]);
@@ -22,12 +24,20 @@ export const ShopMain = () => {
   useEffect(() => {
     const productsData = async () => {
       const data = await getProducts();
-      console.log(data);
       setProductData(data);
     };
 
     productsData();
   }, []);
+
+  useEffect(() => {
+    if (productData.length < 1) {
+      const loadingAni = loading("dot");
+      return () => {
+        loadingAni.kill();
+      };
+    }
+  }, [productData.length]);
 
   useEffect(() => {
     if (productData.length > 1) {
@@ -70,24 +80,44 @@ export const ShopMain = () => {
   }
 
   return (
-    <main className="w-full h-fit mx-auto grid grid-cols-[repeat(auto-fill,minmax(13rem,1fr))] gap-5">
-      {filteredData.map((prod, key) => {
-        return (
-          <Link to={`/DetallesDelProducto/${prod.slug}`} key={key}>
-            <ProductCards
-              name={prod.name}
-              price={prod.price}
-              imgUrl={prod.imgUrl}
-              rating={prod.rate}
-              deliveryDays={prod.estimatedDate}
-              dayName={prod.dayName}
-              monthName={prod.monthName}
-              active={prod.active}
-              discount={prod.discount}
-            />
-          </Link>
-        );
-      })}
+    <main
+      className={clsx(
+        "w-full h-fit mx-auto",
+        productData.length < 1
+          ? "flex justify-center items-center min-h-[70vh]"
+          : "grid grid-cols-[repeat(auto-fill,minmax(13rem,1fr))] gap-5",
+      )}
+    >
+      {productData.length < 1 ? (
+        <div className="flex items-end gap-1">
+          <h1 className="text-2xl font-semibold h-fit text-gray-700">
+            Cargando
+          </h1>
+          <div className="flex gap-1 mb-2">
+            <div className="dot w-1 h-1 bg-gray-700 rounded-full"></div>
+            <div className="dot w-1 h-1 bg-gray-700 rounded-full"></div>
+            <div className="dot w-1 h-1 bg-gray-700 rounded-full"></div>
+          </div>
+        </div>
+      ) : (
+        filteredData.map((prod, key) => {
+          return (
+            <Link to={`/DetallesDelProducto/${prod.slug}`} key={key}>
+              <ProductCards
+                name={prod.name}
+                price={prod.price}
+                imgUrl={prod.imgUrl}
+                rating={prod.rate}
+                deliveryDays={prod.estimatedDate}
+                dayName={prod.dayName}
+                monthName={prod.monthName}
+                active={prod.active}
+                discount={prod.discount}
+              />
+            </Link>
+          );
+        })
+      )}
     </main>
   );
 };
