@@ -5,19 +5,30 @@ The project aims to deliver a complete full-stack solution built with a **React 
 
 ---
 
-## 🚀 Technologies Used
+## 🚀 Demo
 
-### **Frontend**
-- ⚛️ React  
-- 🟦 TypeScript  
-- 🎨 TailwindCSS  
-- 🎞️ GSAP (scroll animations)  
-- 🔀 React Router  
+- **Live Site:** [https://plug-in-ecommerce.vercel.app]
+
+## 💻 Frontend
+
+- ⚛️ React
+- 🟦 TypeScript
+- 🎨 TailwindCSS
+- 🎞️ GSAP (scroll animations)
+- 🔀 React Router
 - ⚡ Vite
+- 📦 Zustand (State Management)
 
-### **Backend**
-- ☕ Java 17+  
-- 🌱 Spring Boot  
-- 🗄️ SQL (MySQL or PostgreSQL)  
-- 🔗 Spring Web  
+## ⚙️ Backend
+
+- ☕ Java 17+
+- 🌱 Spring Boot
+- 🗄️ SQL (PostgreSQL)
+- 🔗 Spring Web
 - 📚 Spring Data JPA
+
+## ☁️ Deployment
+
+- 🔼 Vercel (Frontend)
+- ☁️ Render (Backend)
+- 🐘 Neon (Database)
