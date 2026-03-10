@@ -4,7 +4,7 @@ export const ShopTopFilters = () => {
   const { setCategoryFilter: changeCategoryFilter } = categoryFilterStorage();
 
   return (
-    <nav className="flex gap-5 py-5">
+    <nav className="flex justify-center gap-5 flex-wrap ">
       {shopTopFilterItems.map((btn, i) => (
         <button
           key={i}

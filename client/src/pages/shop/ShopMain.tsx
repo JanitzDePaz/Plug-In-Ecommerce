@@ -84,14 +84,14 @@ export const ShopMain = () => {
       className={clsx(
         "w-full h-fit mx-auto",
         productData.length < 1
-          ? "flex justify-center items-center min-h-[70vh]"
+          ? "flex justify-center py-10"
           : "grid grid-cols-[repeat(auto-fill,minmax(13rem,1fr))] gap-5",
       )}
     >
       {productData.length < 1 ? (
         <div className="flex items-end gap-1">
           <h1 className="text-2xl font-semibold h-fit text-gray-700">
-            Cargando
+            Cargando productos
           </h1>
           <div className="flex gap-1 mb-2">
             <div className="dot w-1 h-1 bg-gray-700 rounded-full"></div>

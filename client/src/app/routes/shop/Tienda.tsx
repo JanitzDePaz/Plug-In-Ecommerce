@@ -4,12 +4,13 @@ import { ShopMain } from "src/pages/shop/ShopMain";
 export default function Tienda(){
    
     return(
-        <main className="flex flex-col items-center">
-            <ShopTopFilters />
-            <div className="flex justify-center gap-10 w-8/10 my-5">
-                <ShopFilters />
+        <main className="flex-center gap-20 w-[80vw] py-15 m-auto">
+            <ShopFilters />
+            <div className="flex flex-1 gap-10 flex-col min-h-[85vh]">
+                <ShopTopFilters />
                 <ShopMain />
             </div>
+            
         </main> 
     );
 }
