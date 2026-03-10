@@ -116,7 +116,7 @@ export const ShopFilters = () => {
               <input
                 type="text "
                 id="maxRate"
-                placeholder={`${absoluteMaxRate}`}
+                placeholder={`${absoluteMaxRate/2}`}
                 onInput={(e) => {
                   if (e.currentTarget.value == "") {
                     changeMaxRate(0);
