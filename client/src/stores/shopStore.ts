@@ -34,3 +34,8 @@ export const productSummaryStorage = create<ProductSummaryProp>((set) => ({
   mainImg: "Empty",
   setMainImg: (product) => set({ mainImg: product }),
 }));
+
+export const mobileShopState = create<MobileShopState>((set) => ({
+  activeMobileShop: false,
+  setMobileShopState: (bool) => set({ activeMobileShop: bool }),
+}));

@@ -203,3 +203,9 @@ type ButtonProps = {
   customCSS: string;
   icon: string;
 };
+
+
+type MobileShopState = {
+  activeMobileShop: boolean,
+  setMobileShopState: (bool) => void
+}
