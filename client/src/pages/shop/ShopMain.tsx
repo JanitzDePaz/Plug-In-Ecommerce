@@ -82,9 +82,9 @@ export const ShopMain = () => {
   return (
     <main
       className={clsx(
-        "w-full h-fit mx-auto",
+        "xl:w-[70vw] md:w-[80vw] sm:w-[75vw] h-fit px-4 sm:px-6 lg:px-8",
         productData.length < 1
-          ? "flex justify-center py-10"
+          ? "flex justify-center items-center py-20"
           : "grid grid-cols-[repeat(auto-fill,minmax(13rem,1fr))] gap-5",
       )}
     >

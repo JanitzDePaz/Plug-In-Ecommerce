@@ -14,7 +14,7 @@ export const ShopFilters = () => {
   const absoluteMaxPrice = filterStorage((e) => e.absoluteMaxPrice);
 
   return (
-    <aside className="max-w-3/10 flex flex-col">
+    <aside className="w-full flex flex-col">
       <section className="flex flex-col gap-5">
         <h3 className="text-center text-xl">Filtros</h3>
         <section className="flex-center flex-col gap-5">
