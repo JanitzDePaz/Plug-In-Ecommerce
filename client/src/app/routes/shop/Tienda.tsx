@@ -8,10 +8,7 @@ export default function Tienda() {
   const activeMobileShop = mobileShopState((e) => e.activeMobileShop);
   const setMobileShopState = mobileShopState((e) => e.setMobileShopState);
   return (
-    <main className="flex flex-col justify-center items-center">
-      <div className="hidden md:block">
-        <ShopTopFilters />
-      </div>
+    <main className="flex justify-between gap-10 w-[95vw] md:w-[90vw] lg:w-[85vw] py-10 md:py-5 mx-auto">
       <button
         onClick={() => setMobileShopState(true)}
         className="md:hidden fixed top-30 left-2 z-40 bg-black text-white p-4 rounded-full shadow-2xl active:scale-95 transition-transform"
@@ -30,16 +27,16 @@ export default function Tienda() {
           <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
         </svg>
       </button>
-
-      <div className="flex-center md:flex-row gap-10 lg:gap-20 w-[95vw] md:w-[90vw] lg:w-[85vw] py-10 md:py-5">
-        <div className="hidden md:block w-3xs">
-          <ShopFilters />
+      <div className="hidden md:block w-3xs">
+        <ShopFilters />
+      </div>
+      <div className="flex flex-1 flex-col">
+        <div className="hidden md:block">
+          <ShopTopFilters />
         </div>
-
         <ShopMain />
       </div>
 
-      
       <MobileFilters />
     </main>
   );
