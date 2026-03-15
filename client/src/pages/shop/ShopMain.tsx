@@ -4,7 +4,6 @@ import { ProductCards } from "src/components/cards/ProductCards";
 import { categoryFilterStorage } from "src/stores/shopStore";
 import { filterStorage } from "src/stores/shopStore";
 import { sortStorage } from "src/stores/shopStore";
-import { Link } from "react-router-dom";
 import clsx from "clsx";
 import { loading } from "src/animations/loadingAnimation";
 
@@ -102,9 +101,10 @@ export const ShopMain = () => {
       ) : (
         filteredData.map((prod, key) => {
           return (
-            <Link to={`/DetallesDelProducto/${prod.slug}`} key={key}>
-              <ProductCards
+            <ProductCards
                 name={prod.name}
+                key={key}
+                slug={prod.slug}
                 price={prod.price}
                 imgUrl={prod.imgUrl}
                 rating={prod.rate}
@@ -114,8 +114,7 @@ export const ShopMain = () => {
                 active={prod.active}
                 discount={prod.discount}
               />
-            </Link>
-          );
+            )
         })
       )}
     </main>

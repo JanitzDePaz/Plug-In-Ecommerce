@@ -143,6 +143,7 @@ type ShowProductDetailsProp = {
 
 type ProductCard = {
   name: string;
+  slug: string;
   price: number;
   imgUrl: string;
   rating: number;
