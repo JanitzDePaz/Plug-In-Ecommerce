@@ -27,6 +27,13 @@ export const ProductCards = ({
           Recíbelo a partir del <strong>{dayName}</strong> <br />
           {deliveryDays.getDate()} de {monthName}
         </p>
+        {discount == 0 
+          ? null
+          : <div className="flex-center items-center absolute left-2 top-2 bg-red-600 rounded-xl p-2 w-12">
+              <p className="font-bold">{`${discount}€`}</p>
+          </div>
+
+        }
         {
           active ? null : <div className="absolute inset-0 w-full h-full bg-gray-300 opacity-90 z-100 rounded-2xl flex-center items-center">
             <p className="text-2xl">Sin stock</p>
