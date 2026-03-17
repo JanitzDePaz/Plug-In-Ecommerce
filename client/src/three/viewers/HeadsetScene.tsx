@@ -1,9 +1,21 @@
 import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Headphone from "../models/HeadsetModel";
 import { OrbitControls } from "@react-three/drei";
 
 export default function () {
+  const [canInteract, setCanInteract] = useState(false)
+
+  useEffect(() => {
+    const checkWidth = () => {
+      setCanInteract(window.innerWidth >= 1024)
+    }
+
+    checkWidth()
+    window.addEventListener("resize", checkWidth)
+
+    return () => window.removeEventListener("resize", checkWidth)
+  })
   return (
     <Canvas className="h-full w-full" camera={{ position: [0, 0, 4] }}>
       <Suspense fallback={null}>
@@ -15,7 +27,7 @@ export default function () {
           enableZoom={false}
           enableDamping={false}
           enablePan={false}
-          enableRotate={true}
+          enableRotate={canInteract}
           autoRotate={true}
           autoRotateSpeed={1.5}
         />
