@@ -8,17 +8,19 @@ import {
 } from "react-router";
 
 import Header from "src/components/layout/header/Header";
-import { Footer } from "src/components/layout/footer/Footer"
-import PlugInLogo from "../assets/icons/PlugInLogo.png"
+import { Footer } from "src/components/layout/footer/Footer";
+import PlugInLogo from "../assets/icons/PlugInLogo.png";
 
 import "./app.css";
 import { useEffect, useRef } from "react";
+import { ClerkProvider } from "@clerk/react";
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const hideFooter = useRef<boolean>(false)
+  // hide footer when the page is loading
+  const hideFooter = useRef<boolean>(false);
   useEffect(() => {
-    hideFooter.current = true
-  },[])
+    hideFooter.current = true;
+  }, []);
   return (
     <html lang="en">
       <head>
@@ -30,14 +32,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-1">
-          {children}
-        </main>
-        {hideFooter.current ? <Footer /> : <></>}
-        
-        <ScrollRestoration />
-        <Scripts />
+        <ClerkProvider
+          publishableKey={import.meta.env.VITE_CLERK_PUBLISHABLE_KEY}
+        >
+          <Header />
+          <main className="flex-1">{children}</main>
+          {hideFooter.current ? <Footer /> : <></>}
+
+          <ScrollRestoration />
+          <Scripts />
+        </ClerkProvider>
       </body>
     </html>
   );
