@@ -1,14 +1,15 @@
 import { useAuth, useUser } from "@clerk/react";
 
-export const getCartProducts = () => {
+export const useCart = () => {
   const { getToken } = useAuth();
   const { user, isLoaded } = useUser();
   const url = import.meta.env.VITE_API_URL;
 
   const getProducts = async (): Promise<UserCartProducts[]> => {
     const token = await getToken();
-    if(!isLoaded){return []}
-    if (!user) return [];
+    if (!isLoaded || !user) {
+      return [];
+    }
     const res = await fetch(`${url}/api/cart/${user.id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -19,8 +20,27 @@ export const getCartProducts = () => {
     }
 
     const cartProducts = await res.json();
-    
+
     return cartProducts;
   };
-  return { getProducts };
+
+  const addProduct = async (productId: number) => {
+    const token = await getToken();
+    if (!isLoaded || !user) {
+      return [];
+    }
+
+    const res = await fetch(`${url}/api/cart/${user.id}/${productId}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (res.ok) {
+      return "Se ha añadido correctamente";
+    }
+  };
+  return { getProducts, addProduct };
 };

@@ -2,12 +2,12 @@ import { cartStorage } from "src/stores/menuStore";
 import clsx from "clsx";
 import { Show, SignInButton, useUser } from "@clerk/react";
 import { useEffect, useState } from "react";
-import { getCartProducts } from "src/api/getCartProducts";
+import { useCart } from "src/api/useCart";
 
 export const CartMenu = () => {
   const { cartMenu } = cartStorage();
   const [cartProducts, setCartProducts] = useState<UserCartProducts[]>([]);
-  const { getProducts } = getCartProducts();
+  const { getProducts } = useCart();
   const { user, isLoaded } = useUser();
   useEffect(() => {
     const getData = async () => {
