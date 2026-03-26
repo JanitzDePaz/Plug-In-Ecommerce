@@ -6,17 +6,17 @@ export const useCart = () => {
   const url = import.meta.env.VITE_API_URL;
 
   const getProducts = async (): Promise<UserCartProducts[]> => {
-    const token = await getToken();
     if (!isLoaded || !user) {
       return [];
     }
+    const token = await getToken();
     const res = await fetch(`${url}/api/cart/${user.id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
     if (!res.ok) {
-      throw new Error("Error al conectar con la API del carrito");
+      throw new Error("Error en la respuesta.");
     }
 
     const cartProducts = await res.json();
@@ -25,11 +25,10 @@ export const useCart = () => {
   };
 
   const addProduct = async (productId: number) => {
-    const token = await getToken();
     if (!isLoaded || !user) {
-      return [];
+      throw new Error("Error al conectar conectar con el usuario.");
     }
-
+    const token = await getToken();
     const res = await fetch(`${url}/api/cart/${user.id}/${productId}`, {
       method: "POST",
       headers: {
@@ -38,8 +37,8 @@ export const useCart = () => {
       },
     });
 
-    if (res.ok) {
-      return "Se ha añadido correctamente";
+    if (!res.ok) {
+      throw new Error("No se pudo agregar el producto.");
     }
   };
   return { getProducts, addProduct };
