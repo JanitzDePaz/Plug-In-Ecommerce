@@ -24,7 +24,7 @@ export const ProductCards = ({
         <p className="text-[1.3rem] text-red-600 font-bold">
           {discount == 0
             ? `${price.toFixed(2)}€`
-            : (price - (price * discount) / 100).toFixed(2)}
+            : `${(price - (price * discount) / 100).toFixed(2)}€`}
         </p>
         <RateStars rate={rating} />
         <p className="text-sm text-gray-800 flex-1">
