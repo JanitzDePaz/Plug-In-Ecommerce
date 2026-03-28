@@ -32,7 +32,6 @@ export const useCart = () => {
     const res = await fetch(`${url}/api/cart/${user.id}/${productId}`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     });
