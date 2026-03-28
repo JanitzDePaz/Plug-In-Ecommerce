@@ -40,5 +40,21 @@ export const useCart = () => {
       throw new Error("No se pudo agregar el producto.");
     }
   };
-  return { getProducts, addProduct };
+
+  const delProduct = async (productId: number) => {
+    if (!isLoaded || !user) {
+      throw new Error("Error al conectar conectar con el usuario.");
+    }
+    const token = await getToken();
+    const res = await fetch(`${url}/api/cart/${user.id}/${productId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (!res.ok) {
+      throw new Error("No se pudo eliminar el producto.");
+    }
+  };
+  return { getProducts, addProduct, delProduct };
 };
