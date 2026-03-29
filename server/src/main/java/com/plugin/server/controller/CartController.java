@@ -40,4 +40,8 @@ public class CartController {
         }
     }
 
+    public ProductRepository getProductRepository() {
+        return productRepository;
+    }
+
 }
